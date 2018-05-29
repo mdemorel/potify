@@ -1,0 +1,27 @@
+
+  <div class="frame" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 100%), url('<%= image_path(pot.photo) %>');">
+    <% if pot.user != current_user %>
+      <div class="avatar">
+        <%= user.photo %>
+      </div>
+    <% end %>
+    <div class="status-icons">
+      <i class="fas fa-tint"></i>
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-leaf"></i>
+      <i class="fas fa-cut"></i>
+      <i class="fas fa-snowflake"></i>
+    </div>
+    <%= link_to pot_path(pot) do %>
+      <div class="pot-details">
+        <div class="pot-name">
+          <%= pot.name %>
+        </div>
+        <div class="pot-category">
+          <%= pot.plant.name %>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "", pot_path(pot), class: "card-link" %>
+  </div>
+
