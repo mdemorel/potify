@@ -1,0 +1,14 @@
+<div class="container">
+<h1>Welcome to plants index</h1>
+  <div class="plants">
+    <%= @plants.each do |plant| %>
+      <div class="col-xs-12 col-md-4">
+        <div class="card">
+          <%= plant.name %>
+          <%= plant.category %>
+          <%= plant.photo %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
