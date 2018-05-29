@@ -1,14 +1,12 @@
-<div class="banner in-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= @pot.photo %>);background-position: center;">
-  <div class="banner-content">
-    <
-  </div>
 
-  <div class="container">
-    <div class="pot">
-      <div class="pot-image" style="url(<%= @pot.photo %>); background-position: center">
-        <h3> <%= @pot.name %></h3>
+
+<div class="wrapper wrapper-plant">
+  <div class="container pot">
+    <div class="pot-content">
+      <div class="pot-image">
       </div>
       <div class="pot-info">
+        <h3> <%= @pot.name %></h3>
         <p>Description: <%= @pot.description %></p>
         <p>Size: <%= @pot.size %></p>
         <p>Family: <%= @pot.plant %></p>
@@ -20,3 +18,4 @@
       </div>
     </div>
   </div>
+</div>
