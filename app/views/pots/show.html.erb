@@ -1,0 +1,22 @@
+<div class="banner in-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= @pot.photo %>);background-position: center;">
+  <div class="banner-content">
+    <
+  </div>
+
+  <div class="container">
+    <div class="pot">
+      <div class="pot-image" style="url(<%= @pot.photo %>); background-position: center">
+        <h3> <%= @pot.name %></h3>
+      </div>
+      <div class="pot-info">
+        <p>Description: <%= @pot.description %></p>
+        <p>Size: <%= @pot.size %></p>
+        <p>Family: <%= @pot.plant %></p>
+        <p>Adoption_date: <%= @pot.adoption_date %> </p>
+        <p>Last_watering: <%= @pot.last_watering %></p>
+        <p>Last_potting: <%= @pot.last_potting %></p>
+        <p>Last_fertilizing: <%= @pot.last_fertilizing %></p>
+        <p>Last_cutting: <%= @pot.last_cutting %></p>
+      </div>
+    </div>
+  </div>
