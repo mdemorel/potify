@@ -14,18 +14,30 @@ class PotsController < ApplicationController
 
   def create
     @pot = Pot.new(pot_params)
+    if @pot.save
+      redirect_to pot_path(@pot)
+    else
+      render :new
+    end
   end
 
   def edit
-
+    @pot = Pot.find(params[:id])
   end
 
   def update
-
+    @pot = Pot.find(params[:id])
+    @pot.update(pot_params)
+    if @pot.save
+      redirect_to pot_path(@pot)
+    else
+      render :new
+    end
   end
 
   def destroy
-
+    @pot = Pot.find(params[:id])
+    @pot.destroy
   end
 
   private
