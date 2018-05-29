@@ -1,21 +1,27 @@
 <div class="navbar-potify">
+  <!-- Search Bar & Discover button -->
+  <div class="navbar-titles col-xs-6 col-md-4 hidden-xs hidden-sm ">
+    <%= link_to "SEARCH", "#", class: "navbar-potify-item navbar-potify-link" %>
+    <%= link_to "DISCOVER", "#", class: "navbar-potify-item navbar-potify-link" %>
+  </div>
+
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-potify-brand" do %>
-    <h1 class="navbar-potify-brand">potify</h1>
-  <% end %>
+  <div class="col-offset-12 col-xs-12 col-md-4">
+    <%= link_to root_path, class: "navbar-potify-brand" do %>
+      <h1 class="navbar-potify-brand">potify</h1>
+    <% end %>
+  </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-potify-right hidden-xs hidden-sm">
+  <div class="navbar-titles col-xs-6 col-md-4 hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Discover", "#", class: "navbar-potify-item navbar-potify-link" %>
-      <%= link_to "My garden", "#", class: "navbar-potify-item navbar-potify-link" %>
-      <%= link_to "Add a plant", "#", class: "navbar-potify-item navbar-potify-link" %>
+      <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
 
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-potify-item">
+      <div class="navbar-potify-item right">
         <div class="dropdown">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-potify-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
@@ -48,9 +54,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
-        <li><a href="#">Discover</a></li>
-        <li><a href="#">My garden</a></li>
-        <li><a href="#">Add a plant</a></li>
+        <li><a href="#">SEARCH</a></li>
+        <li><a href="#">DISCOVER</a></li>
+        <li><a href="#">ADD A PLANT</a></li>
+        <!-- log out link -->
       </ul>
     </div>
   </div>
