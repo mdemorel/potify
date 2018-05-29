@@ -1,7 +1,7 @@
 <div class="navbar-potify">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-potify-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <h1 class="navbar-potify-brand">potify</h1>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-potify-item navbar-potify-link" %>
-      <%= link_to "Trips", "#", class: "navbar-potify-item navbar-potify-link" %>
-      <%= link_to "Messages", "#", class: "navbar-potify-item navbar-potify-link" %>
+      <%= link_to "Discover", "#", class: "navbar-potify-item navbar-potify-link" %>
+      <%= link_to "My garden", "#", class: "navbar-potify-item navbar-potify-link" %>
+      <%= link_to "Add a plant", "#", class: "navbar-potify-item navbar-potify-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-potify-item">
@@ -48,9 +48,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">Discover</a></li>
+        <li><a href="#">My garden</a></li>
+        <li><a href="#">Add a plant</a></li>
       </ul>
     </div>
   </div>
