@@ -9,13 +9,13 @@
       <div class="pot-info">
         <h3> <%= @pot.name %></h3>
         <p>Description: <%= @pot.description %></p>
-        <p>Size: <%= @pot.size %></p>
+        <p>Size: <%= @pot.size %> cm</p>
         <p>Family: <%= @pot.plant.name %></p>
-        <p>Adoption_date: <%= @pot.adoption_date %> </p>
-        <p>Last_watering: <%= @pot.last_watering %></p>
-        <p>Last_potting: <%= @pot.last_potting %></p>
-        <p>Last_fertilizing: <%= @pot.last_fertilizing %></p>
-        <p>Last_cutting: <%= @pot.last_cutting %></p>
+        <p>You adopted <%= @pot.name %> on <%= @pot.adoption_date %> </p>
+<!--          <p>Last_watering: <%#= @pot.last_watering %></p>
+        <p>Last_potting: <%#= @pot.last_potting %></p>
+        <p>Last_fertilizing: <%#= @pot.last_fertilizing %></p>
+        <p>Last_cutting: <%#= @pot.last_cutting %></p> -->
       </div>
     </div>
   </div>
