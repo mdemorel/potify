@@ -1,7 +1,7 @@
 .wrapper-plant {
   height: 100vh;
   width: 100%;
-  background-image: asset-url("palm.jpg");
+  background-image: asset-url("plants.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.8;
@@ -15,36 +15,38 @@
   width: 80%;
   position: relative;
   top: 50px;
-  height: 70vh;
+  height: 80vh;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   // margin: 20px 20px;
   padding: 0px;
-  // border-radius: 20px;
+  border-radius: 10px;
 }
 
 .pot-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   padding: 0px;
-  height: 70vh;
+  height: 80vh;
 }
 
 .pot-image {
-  background-image: url("https://source.unsplash.com/random");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   flex: 0 0 30%;
-  height: 60vh;
+  margin-left: 20px;
 
   img {
-    max-height: 300px;
+    max-height: 75vh;
   }
 
 }
 
 .pot-info {
-  position: relative;
   right: 20px;
+  flex: 0 0 60%;
+
 }
 
 

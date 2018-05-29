@@ -4,12 +4,13 @@
   <div class="container pot">
     <div class="pot-content">
       <div class="pot-image">
+        <%= image_tag @pot.photo %>
       </div>
       <div class="pot-info">
         <h3> <%= @pot.name %></h3>
         <p>Description: <%= @pot.description %></p>
         <p>Size: <%= @pot.size %></p>
-        <p>Family: <%= @pot.plant %></p>
+        <p>Family: <%= @pot.plant.name %></p>
         <p>Adoption_date: <%= @pot.adoption_date %> </p>
         <p>Last_watering: <%= @pot.last_watering %></p>
         <p>Last_potting: <%= @pot.last_potting %></p>

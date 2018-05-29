@@ -1,3 +1,3 @@
 class Plant < ApplicationRecord
-  has_many :pots
+  has_many :pots, dependent: :destroy
 end
