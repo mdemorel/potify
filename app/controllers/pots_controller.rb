@@ -1,19 +1,22 @@
 class PotsController < ApplicationController
 
   def index
-    @pots = Pot.all
+    @pots = policy_scope(Pot)
   end
 
   def show
     @pot = Pot.find(params[:id])
+    authorize @pot
   end
 
   def new
     @pot = Pot.new
+    authorize @pot
   end
 
   def create
     @pot = Pot.new(pot_params)
+    authorize @pot
     if @pot.save
       redirect_to pot_path(@pot)
     else
@@ -23,11 +26,13 @@ class PotsController < ApplicationController
 
   def edit
     @pot = Pot.find(params[:id])
+    authorize @pot
   end
 
   def update
     @pot = Pot.find(params[:id])
     @pot.update(pot_params)
+    authorize @pot
     if @pot.save
       redirect_to pot_path(@pot)
     else
@@ -38,6 +43,7 @@ class PotsController < ApplicationController
   def destroy
     @pot = Pot.find(params[:id])
     @pot.destroy
+    authorize @pot
     redirect_to pots_path
   end
 
