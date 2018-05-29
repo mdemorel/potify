@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <% @pots.each do |pot| %>
+      <div class="col-xs-12 col-md-4">
         <%= render "shared/card", pot: pot %>
+      </div>
     <% end %>
   </div>
 </div>
