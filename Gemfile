@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'nokogiri'
 gem 'pundit'
 
 group :development do
