@@ -38,6 +38,7 @@ class PotsController < ApplicationController
   def destroy
     @pot = Pot.find(params[:id])
     @pot.destroy
+    redirect_to pots_path
   end
 
   private
