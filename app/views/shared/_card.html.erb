@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to pot_path(pot) do %>
+      <div class="image" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.1)), url('<%= image_path(pot.photo) %>');">
+
+        <%#= image_tag(pot.photo, size: "300x300") %>
+        <% if pot.user != current_user %>
+          <div class="avatar">
+            <%= user.photo %>
+          </div>
+        <% end %>
+        <div class="pot-details">
+          <div class="pot-name">
+            <%= pot.name %>
+          </div>
+          <div class="pot-category">
+            <%= pot.plant.name %>
+          </di>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
 
   resources :plants, only: [:index, :show]
-  resources :pots, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :pots
 
 end
