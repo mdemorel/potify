@@ -2,14 +2,27 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-pots">
-        <h1>Add your plant !</h1>
+        <h2>Add your plant !</h2>
         <%= simple_form_for(@pot) do |f| %>
           <div class="form-group">
-            <%= f.input :name %>
-            <%= f.input :description %>
-            <%= f.input :size %>
-            <%= f.association :plant, collection: Plant.all %>
-            <%= f.input :photo %>
+            <div class="row">
+              <div class="col-xs-6">
+                <%= f.input :name, placeholder: "Add a name to your plant" %>
+              </div>
+              <div class="col-xs-6">
+                <%= f.association :plant, collection: Plant.all %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.input :description, placeholder: "Type anything you love about this plant!" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.input :photo %>
+              </div>
+            </div>
             <%= f.input :adoption_date %>
             <%= f.input :last_watering %>
             <%= f.input :last_potting %>
