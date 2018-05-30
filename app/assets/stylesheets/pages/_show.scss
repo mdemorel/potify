@@ -38,7 +38,10 @@
   margin-left: 20px;
 
   img {
-    max-height: 75vh;
+
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
   }
 
 }
