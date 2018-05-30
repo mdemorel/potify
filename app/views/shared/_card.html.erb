@@ -1,0 +1,35 @@
+
+  <div class="frame" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 100%), url('<%= image_path(element.photo) %>');">
+    <%# if pot.user != current_user %>
+      <!-- <div class="avatar"> -->
+        <%#= user.photo %>
+      <!-- </div> -->
+    <%# end %>
+    <% if element.class == Pot %>
+      <div class="status-icons">
+        <i class="fas fa-tint"></i>
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-leaf"></i>
+        <i class="fas fa-cut"></i>
+        <i class="fas fa-snowflake"></i>
+      </div>
+    <% end %>
+    <div class="element-details">
+      <% if element.class == Pot %>
+        <div class="element-name">
+            <%= element.name %>
+        </div>
+        <div class="element-category">
+          <%= element.plant.name %>
+        </div>
+      <% else %>
+        <div id="element-name">
+            <%= element.name %>
+        </div>
+        <div id="element-category">
+          <%= element.category if element.category != nil %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
