@@ -1,9 +1,14 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit my profile<%#= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name, autocomplete: "off", required: false %>
+    <%= f.input :last_name, autocomplete: "off", required: false %>
+    <%= f.input :photo %>
+    <%= f.input :age, autocomplete: "off", required: false, placeholder: "I'd rather not say" %>
+    <%= f.input :location, autocomplete: "off", required: false %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

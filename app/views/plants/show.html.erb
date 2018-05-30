@@ -1,22 +1,23 @@
-<div class="container">
-  <h1>Welcome to @plant#show</h1>
-
-      <div class="col-xs-12 col-md-4">
-        <div class="card">
-          <%= @plant.photo %>
-          <%= @plant.name %>
-          <%= @plant.category %>
-          <%= @plant.description %>
-          <%= @plant.watering_frequency %>
-          <%= @plant.watering_quantity %>
-          <%= @plant.potting_frequency %>
-          <%= @plant.fertilizer_quantity %>
-          <%= @plant.fertilizer_frequency %>
-          <%= @plant.fertilizer_type %>
-          <%= @plant.exposition %>
-          <%= @plant.cutting_frequency %>
-          <%= @plant.temperature %>
-        </div>
+<div class="wrapper wrapper-plant">
+  <div class="container pot">
+    <div class="pot-content">
+      <div class="pot-image" style="background-image: url('<%= @plant.photo %>')">
       </div>
-
+      <div class="pot-info">
+        <h3><%= @plant.name %></h3>
+        <p>Description: <%= @plant.description %></p>
+        <p><%= @plant.category %></p>
+        <p> <%= @plant.watering_frequency %></p>
+          <p><%= @plant.watering_quantity %></p>
+          <p><%= @plant.potting_frequency %></p>
+          <p><%= @plant.fertilizer_quantity %></p>
+          <p><%= @plant.fertilizer_frequency %></p>
+          <p><%= @plant.fertilizer_type %></p>
+          <p><%= @plant.exposition %></p>
+          <p><%= @plant.cutting_frequency %></p>
+          <p><%= @plant.temperature %></p>
+        <%= link_to "Back to plants", plants_path, class: "link-black" %>
+      </div>
+    </div>
+  </div>
 </div>
