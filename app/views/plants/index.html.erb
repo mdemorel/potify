@@ -1,13 +1,11 @@
 <div class="container">
-<h1>Welcome to plants index</h1>
-  <div class="plants">
-    <%= @plants.each do |plant| %>
+  <h1>Welcome to plants index</h1>
+  <%= render "shared/search" %>
+  <div class="row">
+    <% @plants.each do |plant| %>
       <div class="col-xs-12 col-md-4">
-        <div class="card">
-          <%= plant.name %>
-          <%= plant.category %>
-          <%= plant.photo %>
-        </div>
+        <%= render "shared/card", element: plant %>
+        <%= link_to "", plant_path(plant), class: "card-link" %>
       </div>
     <% end %>
   </div>
