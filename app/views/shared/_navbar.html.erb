@@ -1,8 +1,8 @@
 <div class="navbar-potify">
   <!-- Search Bar & Discover button -->
-  <div class="navbar-right">
-    <%= link_to "SEARCH", "#", class: "navbar-potify-item navbar-potify-link" %>
+  <div class="navbar-left hidden-xs">
     <%= link_to "DISCOVER", "#", class: "navbar-potify-item navbar-potify-link" %>
+    <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
   </div>
 
   <!-- Logo -->
@@ -11,9 +11,9 @@
   </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-left">
+  <div class="navbar-right hidden-xs">
     <div class="navbar-potify-item">
-      <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
+      <%= link_to "MY GARDEN", "#", class: "navbar-potify-item navbar-potify-link" %>
     </div>
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->

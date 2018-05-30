@@ -10,20 +10,12 @@
   align-items: center;
 }
 
-
-.navbar-titles {
-  text-align: center;
-  display: flex;
-  justify-content: inherit;
-  align-items: baseline;
-}
-
 /* Logo */
 .navbar-logo {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 300px;
+  flex-grow: 0.2;
   text-decoration: none;
 
   &:hover {
@@ -38,10 +30,6 @@
   }
 }
 
-.navbar-potify-brand {
-  text-decoration: none;
-}
-
 /* User Avatar */
 .navbar-potify .avatar {
   height: 35px;
@@ -54,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-grow: 0.5;
+  flex-grow: 0.4;
 }
 
 /* Left section */
@@ -62,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-grow: 0.5;
+  flex-grow: 0.4;
 }
 
 /* Basic navbar item */
@@ -85,7 +73,8 @@
 /* Navbar link */
 .navbar-potify-link {
   color: #616668;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 100;
 }
 .navbar-potify-link:hover {
   text-decoration: none;
