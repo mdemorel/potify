@@ -1,33 +1,29 @@
 /* Main navbar */
 .navbar-potify {
-  // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  // background: white;
-  transition: all 0.3s ease;
+  // // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  // // background: white;
+  // transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
+
 
 .navbar-titles {
   text-align: center;
   display: flex;
   justify-content: inherit;
   align-items: baseline;
-  #navbar-items-beside-title-left {
-    margin-right: -100px;
-  }
-  #navbar-items-beside-title-right {
-    margin-left: -100px;
-  }
 }
 
 /* Logo */
-.navbar-potify-brand {
+.navbar-logo {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 300px;
 
   &:hover {
     text-decoration: none;
@@ -41,7 +37,6 @@
   }
 }
 
-
 /* User Avatar */
 .navbar-potify .avatar {
   height: 35px;
@@ -50,17 +45,35 @@
 }
 
 /* Right section */
-.navbar-potify {
+.navbar-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-grow: 0.5;
+}
+
+/* Left section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 0.5;
 }
 
 /* Basic navbar item */
 .navbar-potify-item {
   cursor: pointer;
-  &:focus, &:hover {
+  &:hover {
+    color: $gray;
     box-shadow: inset 0em -0.6em $green;
+    opacity: 0.7;
+    text-decoration: none;
+  }
+  &:focus {
+    color: $gray;
+    box-shadow: inset 0em -0.6em $green;
+    opacity: 1;
+    text-decoration: none;
   }
 }
 

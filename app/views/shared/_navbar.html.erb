@@ -1,25 +1,23 @@
 <div class="navbar-potify">
   <!-- Search Bar & Discover button -->
-  <div class="navbar-titles col-xs-6 col-md-4 hidden-xs hidden-sm ">
-
+  <div class="navbar-right">
     <%= link_to "SEARCH", "#", class: "navbar-potify-item navbar-potify-link" %>
-    <%= link_to "DISCOVER", "#", class: "navbar-potify-item navbar-potify-link", id:"navbar-items-beside-title-left"%>
+    <%= link_to "DISCOVER", "#", class: "navbar-potify-item navbar-potify-link" %>
   </div>
 
   <!-- Logo -->
-  <div class="col-offset-12 col-xs-12 col-md-4">
+  <div class="navbar-logo">
     <%= link_to root_path, class: "navbar-potify-brand" do %>
-      <h1 class="navbar-potify-brand">potify</h1>
+      <h1>potify</h1>
     <% end %>
   </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-titles col-xs-6 col-md-4 hidden-xs hidden-sm">
-    <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link", id:"navbar-items-beside-title-right" %>
-
+  <div class="navbar-left">
+    <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-potify-item right">
+      <div class="navbar-potify-item">
         <div class="dropdown">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-potify-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
@@ -52,9 +50,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
-        <li><a href="#">SEARCH</a></li>
-        <li><a href="#">DISCOVER</a></li>
-        <li><a href="#">ADD A PLANT</a></li>
+        <li><%= link_to "#", "SEARCH" %></li>
+        <li><%= link_to "#", "DISCOVER" %></li>
+        <li><%= link_to "#", "ADD A PLANT" %></li>
         <!-- log out link -->
       </ul>
     </div>
