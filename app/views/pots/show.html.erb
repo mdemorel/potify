@@ -9,32 +9,9 @@
         <p>Size: <%= @pot.size %> cm</p>
         <p>Family: <%= @pot.plant.name %></p>
         <p>You adopted <%= @pot.name %> on <%= @pot.adoption_date %> </p>
-        <%= link_to "Back to your pots", pots_path, class: "link-black" %>
-        <div class="pot-tasks">
-          <% if @watering %>
-            <p>You need to water <%= @pot.name %></p>
-            <%= simple_form_for(@watering) do |f| %>
-              <%= f.input :completed %>
-            <% end %>
-          <% end %>
-          <% if @cutting %>
-            <p>You need to cut <%= @pot.name %></p><%= simple_form_for(@cutting) do |f| %>
-              <%= f.input :completed %>
-            <% end %>
-          <% end %>
-          <% if @fertilizing %>
-            <p>You need to fertilize <%= @pot.name %></p><%= simple_form_for(@fertilizing) do |f| %>
-              <%= f.input :completed %>
-            <% end %>
-          <% end %>
-          <% if @potting %>
-            <p>You need to pot <%= @pot.name %></p><%= simple_form_for(@potting) do |f| %>
-              <%= f.input :completed %>
-            <% end %>
-          <% end %>
-        </div>
+        <%= link_to "Back to my dashboard", dashboard_path, class: "link-black" %>
+        <%= render "shared/task", element: @pot %>
       </div>
-
     </div>
   </div>
 </div>

@@ -1,0 +1,23 @@
+<div class="pot-tasks">
+  <% if element.incomplete_task("watering") %>
+    <p>You need to water <%= element.name %></p>
+    <%= simple_form_for(element.incomplete_task("watering")) do |f| %>
+      <%= f.input :completed %>
+    <% end %>
+  <% end %>
+  <% if element.incomplete_task("cutting") %>
+    <p>You need to cut <%= element.name %></p><%= simple_form_for(element.incomplete_task("cutting")) do |f| %>
+      <%= f.input :completed %>
+    <% end %>
+  <% end %>
+  <% if element.incomplete_task("fertilizing") %>
+    <p>You need to fertilize <%= element.name %></p><%= simple_form_for(element.incomplete_task("fertilizing")) do |f| %>
+      <%= f.input :completed %>
+    <% end %>
+  <% end %>
+  <% if element.incomplete_task("potting") %>
+    <p>You need to pot <%= element.name %></p><%= simple_form_for(element.incomplete_task("potting")) do |f| %>
+      <%= f.input :completed %>
+    <% end %>
+  <% end %>
+</div>
