@@ -11,6 +11,7 @@ require 'nokogiri'
 
 puts "Destroying database"
 Plant.destroy_all if Rails.env.development?
+Pot.destroy_all if Rails.env.development?
 
 puts "Scraping data"
 
@@ -62,6 +63,15 @@ Plant.all.each do |plant|
   image = html_doc.search('.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img').first
   plant[:photo] = image.attributes["src"].value
   plant[:description] =  html_doc.search('p').children.first.text
+  plant[:watering_quantity] = 10
+  plant[:watering_frequency] = 1
+  plant[:potting_frequency] = 3
+  plant[:fertilizer_frequency] = 2
+  plant[:fertilizer_quantity] = 3
+  plant[:fertilizer_type] = "indoor fertilizer"
+  plant[:exposition] = 2
+  plant[:cutting_frequency] = 4
+  plant[:temperature] = 18
   plant.save
 end
 

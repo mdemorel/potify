@@ -5,5 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
+    @pots = Pot.all
   end
 end

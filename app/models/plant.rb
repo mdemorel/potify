@@ -1,5 +1,5 @@
 class Plant < ApplicationRecord
-  has_many :pots
+  has_many :pots, dependent: :nullify
 
   include PgSearch
   pg_search_scope :search_by_name_and_category,
