@@ -1,22 +1,22 @@
 <div class="container">
-  <h1>Welcome to plant#show</h1>
-  <%= @plants.each do |plant| %>
+  <h1>Welcome to @plant#show</h1>
+
       <div class="col-xs-12 col-md-4">
         <div class="card">
-          <%= plant.photo %>
-          <%= plant.name %>
-          <%= plant.category %>
-          <%= plant.description %>
-          <%= plant.watering_frequency %>
-          <%= plant.watering_quantity %>
-          <%= plant.potting_frequency %>
-          <%= plant.fertilizer_quantity %>
-          <%= plant.fertilizer_frequency %>
-          <%= plant.fertilizer_type %>
-          <%= plant.exposition %>
-          <%= plant.cutting_frequency %>
-          <%= plant.temperature %>
+          <%= @plant.photo %>
+          <%= @plant.name %>
+          <%= @plant.category %>
+          <%= @plant.description %>
+          <%= @plant.watering_frequency %>
+          <%= @plant.watering_quantity %>
+          <%= @plant.potting_frequency %>
+          <%= @plant.fertilizer_quantity %>
+          <%= @plant.fertilizer_frequency %>
+          <%= @plant.fertilizer_type %>
+          <%= @plant.exposition %>
+          <%= @plant.cutting_frequency %>
+          <%= @plant.temperature %>
         </div>
       </div>
-    <% end %>
+
 </div>
