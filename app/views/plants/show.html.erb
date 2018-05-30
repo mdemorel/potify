@@ -3,20 +3,42 @@
     <div class="pot-content">
       <div class="pot-image" style="background-image: url('<%= @plant.photo %>')">
       </div>
-      <div class="pot-info">
-        <h3><%= @plant.name %></h3>
-        <p>Description: <%= @plant.description %></p>
+      <div class="plant-info">
+        <div class="title">
+          <h3><%= @plant.name %></h3>
+          <%= link_to "Back to plants", plants_path, class: "link-black" %>
+
+        </div>
+
         <p><%= @plant.category %></p>
-        <p> <%= @plant.watering_frequency %></p>
-          <p><%= @plant.watering_quantity %></p>
-          <p><%= @plant.potting_frequency %></p>
-          <p><%= @plant.fertilizer_quantity %></p>
-          <p><%= @plant.fertilizer_frequency %></p>
-          <p><%= @plant.fertilizer_type %></p>
-          <p><%= @plant.exposition %></p>
-          <p><%= @plant.cutting_frequency %></p>
-          <p><%= @plant.temperature %></p>
-        <%= link_to "Back to plants", plants_path, class: "link-black" %>
+        <p>Description: <%= @plant.description %></p>
+        <h4>Watering</h4>
+        <ul class="list-inline">
+          <li><%= @plant.watering_quantity %> cl</li>
+          <li>Every <%= @plant.watering_frequency %> days</li>
+        </ul>
+        <h4>Fertilizing</h4>
+        <ul class="list-inline">
+          <li>Every <%= @plant.fertilizer_frequency %> days</li>
+          <li>Use <%= @plant.fertilizer_type %></li>
+          <li><%= @plant.fertilizer_quantity %> g</li>
+        </ul>
+        <h4>Potting</h4>
+        <ul class="list-inline">
+          <li>Every <%= @plant.potting_frequency %> days</li>
+        </ul>
+        <h4>Exposition</h4>
+        <ul class="list-inline">
+          <li><%= @plant.exposition %><i class="fas fa-sun"></i></li>
+        </ul>
+        <h4>Temperature</h4>
+        <ul class="list-inline">
+          <li><%= @plant.temperature %></li>
+        </ul>
+        <h4>Cutting</h4>
+        <ul class="list-inline">
+          <li><%= @plant.cutting_frequency %></li>
+        </ul>
       </div>
     </div>
   </div>
