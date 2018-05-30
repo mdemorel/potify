@@ -3,7 +3,7 @@
   <div class="navbar-titles col-xs-6 col-md-4 hidden-xs hidden-sm ">
 
     <%= link_to "SEARCH", "#", class: "navbar-potify-item navbar-potify-link" %>
-    <%= link_to "DISCOVER", "#", class: "navbar-potify-item navbar-potify-link"%>
+    <%= link_to "DISCOVER", "#", class: "navbar-potify-item navbar-potify-link", id:"navbar-items-beside-title-left"%>
   </div>
 
   <!-- Logo -->
@@ -14,11 +14,12 @@
   </div>
 
   <!-- Right Navigation -->
-fas fa-search
+  <div class="navbar-titles col-xs-6 col-md-4 hidden-xs hidden-sm">
+    <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link", id:"navbar-items-beside-title-right" %>
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
+      <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link", id:"navbar-items-beside-title" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-potify-item right">

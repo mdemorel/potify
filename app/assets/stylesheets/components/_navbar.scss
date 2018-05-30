@@ -15,6 +15,12 @@
   display: flex;
   justify-content: inherit;
   align-items: baseline;
+  #navbar-items-beside-title-left {
+    margin-right: -100px;
+  }
+  #navbar-items-beside-title-right {
+    margin-left: -100px;
+  }
 }
 
 /* Logo */
