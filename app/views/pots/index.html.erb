@@ -2,7 +2,8 @@
   <div class="row">
     <% @pots.each do |pot| %>
       <div class="col-xs-12 col-md-4">
-        <%= render "shared/card", pot: pot %>
+        <%= render "shared/card", element: pot %>
+        <%= link_to "", pot_path(pot), class: "card-link" %>
       </div>
     <% end %>
   </div>

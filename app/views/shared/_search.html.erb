@@ -1,0 +1,7 @@
+<%= form_tag plants_path, method: :get, remote: true do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a plant"
+  %>
+<% end %>
