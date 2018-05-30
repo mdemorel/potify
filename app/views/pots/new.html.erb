@@ -1,22 +1,25 @@
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <%= simple_form_for(@pot) do |f| %>
-      <div class="form-group">
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :size %>
-        <%= f.association :plant, collection: Plant.all %>
-        <%= f.input :photo %>
-        <%= f.input :adoption_date %>
-        <%= f.input :last_watering %>
-        <%= f.input :last_potting %>
-        <%= f.input :last_fertilizing %>
-        <%= f.input :last_cutting %>
-        <%= f.input :recipient_size, collection: ["small", "medium", "large"] %>
-
-        <%= f.submit %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-pots">
+        <h1>Add your plant !</h1>
+        <%= simple_form_for(@pot) do |f| %>
+          <div class="form-group">
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :size %>
+            <%= f.association :plant, collection: Plant.all %>
+            <%= f.input :photo %>
+            <%= f.input :adoption_date %>
+            <%= f.input :last_watering %>
+            <%= f.input :last_potting %>
+            <%= f.input :last_fertilizing %>
+            <%= f.input :last_cutting %>
+            <%= f.input :recipient_size, collection: ["small", "medium", "large"] %>
+            <%= f.submit %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
-
