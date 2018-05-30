@@ -1,8 +1,10 @@
 <div class="navbar-potify">
   <!-- Search Bar & Discover button -->
   <div class="navbar-left hidden-xs">
-    <%= link_to "DISCOVER", "#", class: "navbar-potify-item navbar-potify-link" %>
-    <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
+    <%= link_to "DISCOVER", "#", class: "navbar-potify-link btn btn-primary" %>
+    <div class="navbar-potify-item">
+      <%= link_to "ADD A PLANT", "#", class: "navbar-potify-link" %>
+    </div>
   </div>
 
   <!-- Logo -->
@@ -39,7 +41,7 @@
         </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-potify-item navbar-potify-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-potify-item navbar-potify-link btn btn-primary" %>
     <% end %>
   </div>
 
