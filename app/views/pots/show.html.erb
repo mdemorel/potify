@@ -1,8 +1,12 @@
 <div class="wrapper wrapper-plant">
   <div class="container pot">
     <div class="pot-content">
-      <div class="pot-image" style="background-image: url('<%= @pot.photo %>')">
-      </div>
+      <% if @pot.photo == nil? %>
+        <div class="pot-image" style="background-image: url('<%= @pot.plant.photo %>')">
+      <% else %>
+        <div class="pot-image" style="background-image: url('<%= @pot.photo %>')">
+        </div>
+      <% end %>
       <div class="pot-info">
         <h3><%= @pot.name %></h3>
         <p>Description: <%= @pot.description %></p>

@@ -16,6 +16,9 @@ class PotsController < ApplicationController
 
   def create
     @pot = Pot.new(pot_params)
+    if @pot.photo.empty?
+      @pot.photo = @pot.plant.photo
+    end
     @pot.user = current_user
     authorize(@pot)
     if @pot.save
