@@ -1,0 +1,59 @@
+.wrapper-plant {
+  height: 100vh;
+  width: 100%;
+  background-image: asset-url("plants.jpg");
+  // opacity: 0.7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background: linear-gradient(#13EA6E, $green);
+  // opacity: 0.8;
+  margin: 0px;
+  position: absolute;
+}
+
+.pot {
+  // background-color: #E7E5DF;
+  background-color: white;
+  width: 95%;
+  position: relative;
+  top: 50px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  padding: 0px;
+  border-radius: 10px;
+}
+
+.pot-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  height: 500px;
+}
+
+.pot-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex: 0 0 40%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-color: solid 2px white;
+  border: solid 20px white;
+
+}
+
+
+.pot-info {
+  flex: 0 0 60%;
+  padding-left: 50px;
+
+  h3 {
+    font-size: 60px;
+    color: $green;
+  }
+
+
+}
+
+
