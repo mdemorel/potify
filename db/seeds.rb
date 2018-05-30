@@ -103,4 +103,12 @@ end
 
 puts "scraping over!"
 
+puts "Seeding recipient size"
 
+# For form boxes
+collections = %w(small medium large)
+collections.each do |collection|
+  Collection.create!(name: collection)
+end
+
+puts "recipient seeded"
