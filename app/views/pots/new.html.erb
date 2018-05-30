@@ -3,10 +3,10 @@
     <%= simple_form_for(@pot) do |f| %>
       <div class="form-group">
         <%= f.input :name %>
-        <%= f.input :photo %>
         <%= f.input :description %>
         <%= f.input :size %>
         <%= f.association :plant, collection: Plant.all %>
+        <%= f.input :photo %>
         <%= f.input :adoption_date %>
         <%= f.input :last_watering %>
         <%= f.input :last_potting %>
