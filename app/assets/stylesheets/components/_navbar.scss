@@ -24,6 +24,7 @@
   justify-content: space-around;
   align-items: center;
   width: 300px;
+  text-decoration: none;
 
   &:hover {
     text-decoration: none;
@@ -35,6 +36,10 @@
     padding-bottom: 9px;
     margin-top: 12px;
   }
+}
+
+.navbar-potify-brand {
+  text-decoration: none;
 }
 
 /* User Avatar */

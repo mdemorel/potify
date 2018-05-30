@@ -7,17 +7,16 @@
 
   <!-- Logo -->
   <div class="navbar-logo">
-    <%= link_to root_path, class: "navbar-potify-brand" do %>
       <h1>potify</h1>
-    <% end %>
   </div>
 
   <!-- Right Navigation -->
   <div class="navbar-left">
-    <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
+    <div class="navbar-potify-item">
+      <%= link_to "ADD A PLANT", "#", class: "navbar-potify-item navbar-potify-link" %>
+    </div>
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-potify-item">
         <div class="dropdown">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-potify-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
@@ -38,7 +37,6 @@
             </li>
           </ul>
         </div>
-      </div>
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-potify-item navbar-potify-link" %>
