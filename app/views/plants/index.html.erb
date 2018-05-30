@@ -4,8 +4,9 @@
   <div class="row">
     <% @plants.each do |plant| %>
       <div class="col-xs-12 col-md-4">
-        <%= render "shared/card", element: plant %>
-        <%= link_to "", plant_path(plant), class: "card-link" %>
+        <%= link_to plant_path(plant) do %>
+          <%= render "shared/card", element: plant %>
+        <% end %>
       </div>
     <% end %>
   </div>
