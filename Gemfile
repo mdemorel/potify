@@ -19,6 +19,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'flatpickr'
 
 gem 'nokogiri'
 gem 'pundit'

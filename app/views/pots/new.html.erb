@@ -20,15 +20,22 @@
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <%= f.input :photo %>
-                <%= f.input :photo_cache, as: :hidden %>
+
+                <%#= f.input :photo %>
+                <%#= f.input :photo_cache, as: :hidden %>
+
+                <!-- to show the uplaoded image -->
+                <input type="file"onchange="previewFile()"><br>
+                <img src="" height="50" alt="Image preview...">
+
                 <!-- <label class="btn btn-primary btn-lg in_page" id='upload-btn'>
                   <span style="display:none;">
                     <#%= f.input :photo, required: true, multiple: true, name: 'photo' %>
                   </span>
                   <#%= f.input :photo_cache, as: :hidden %>
-              </label>
-              </div> -->
+                </label> -->
+
+              </div>
             </div>
             <%= f.input :adoption_date %>
             <%= f.input :last_watering %>
@@ -43,4 +50,4 @@
     </div>
   </div>
 </div>
-<%#= javascript_pack_tag 'uploadbtn' %>
+
