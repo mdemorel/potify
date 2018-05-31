@@ -1,0 +1,40 @@
+.btn-minimal {
+  border-color: $gray;
+  border-radius: 10px;
+  background-color: transparent;
+  color: $gray;
+  padding: 10px 20px;
+
+  &:hover {
+    border-color: $green;
+    color: $green;
+  }
+}
+
+.btn-green {
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: $green;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 18px 35px rgba(50, 50, 93, 0.02), 0 8px 15px rgba(0, 0, 0, 0.05);
+  opacity: 0.8;
+  &:hover {
+    font-weight: bolder;
+    opacity: 1;
+  }
+}
+
+.btn-yellow {
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: $yellow;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 18px 35px rgba(50, 50, 93, 0.02), 0 8px 15px rgba(0, 0, 0, 0.05);
+  opacity: 0.8;
+  &:hover {
+    font-weight: bolder;
+    opacity: 1;
+  }
+}
