@@ -14,23 +14,6 @@ Plant.destroy_all if Rails.env.development?
 
 puts "Scraping data"
 
-# plant = Plant.new(
-#   name: ,
-#   category: ,
-#   description: ,
-#   watering_frequency: ,
-#   watering_quantity: ,
-#   potting_frequency: ,
-#   fertilizer_quantity: ,
-#   fertilizer_frequency: ,
-#   fertilizer_type: ,
-#   exposition: ,
-#   cutting_frequency: ,
-#   temperature: ,
-#   photo:
-#   )
-
-
 puts "scraping url from Houseplantexperts"
 
 url = "https://www.houseplantsexpert.com/a-z-list-of-house-plants.html"
@@ -65,9 +48,9 @@ Plant.all.each do |plant|
   plant[:watering_quantity] = 10
   plant[:watering_frequency] = 1
   plant[:potting_frequency] = 3
-  plant[:fertilizer_frequency] = 2
-  plant[:fertilizer_quantity] = 3
-  plant[:fertilizer_type] = "indoor fertilizer"
+  plant[:fertilizing_frequency] = 2
+  plant[:fertilizing_quantity] = 3
+  plant[:fertilizing_type] = "indoor fertilizer"
   plant[:exposition] = 2
   plant[:cutting_frequency] = 4
   plant[:temperature] = 18
