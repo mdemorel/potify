@@ -9,8 +9,10 @@
         <h3><%= @pot.name %></h3>
         <p><i><%= @pot.description %></i></p>
         <p>Family: <%= @pot.plant.name %></p>
-        <p>You adopted <%= @pot.name %> on <%= @pot.adoption_date.strftime("%b %d, %Y"); %></p>
-
+        <% unless pot.adoption_date.nil? %>
+         <p>You adopted <%= pot.name %> on <%= pot.adoption_date.strftime(“%b %d, %Y”); %></p>
+       <% end %>
+      </div>
         <div class="pot-tasks">
           <%= render "shared/task", element: @pot %>
         </div>
