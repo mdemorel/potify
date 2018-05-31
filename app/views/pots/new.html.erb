@@ -1,22 +1,56 @@
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <%= simple_form_for(@pot) do |f| %>
-      <div class="form-group">
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :size %>
-        <%= f.association :plant, collection: Plant.all %>
-        <%= f.input :photo %>
-        <%= f.input :adoption_date %>
-        <%= f.input :last_watering %>
-        <%= f.input :last_potting %>
-        <%= f.input :last_fertilizing %>
-        <%= f.input :last_cutting %>
-        <%= f.input :recipient_size, collection: ["small", "medium", "large"] %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-pots">
+        <h3>Add your plant !</h3>
+        <%= simple_form_for(@pot) do |f| %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-6">
+                <%= f.input :name, placeholder: "Add a name to your plant" %>
+              </div>
+              <div class="col-xs-6">
+                <%= f.association :plant, collection: Plant.all %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.input :description, placeholder: "Type anything you love about this plant!" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="form-control-label string optional" for="pot_photo">Add a photo</label>
+                <input type="file">
+                <img width="100%">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= simple_form_for :search, method: "get" do |f| %>
+                  <%= f.input :owned_since, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <% end %>
 
-        <%= f.submit %>
+              </div>
+            </div>
+            <%#= f.input :last_watering %>
+            <%#= f.input :last_potting %>
+            <%#= f.input :last_fertilizing %>
+            <%#= f.input :last_cutting %>
+            <label class="form-control-label string optional" for="pot_photo">Select your pot's size</label>
+            <div class="flex">
+              <%= f.input :recipient_size, :as => :hidden %>
+              <div class="select-size" data-size="1"><i class="fa fa-leaf" aria-hidden="true" id="small-leaf"></i> Small</div>
+              <div class="select-size" data-size="2"><i class="fa fa-leaf" aria-hidden="true" id="medium-leaf"></i> Medium</div>
+              <div class="select-size" data-size="3"><i class="fa fa-leaf" aria-hidden="true" id="large-leaf"></i> Large</div>
+            </div>
+            <div class="flexbutton">
+              <%= f.submit "Save", class: "btn btn-primary"  %>
+            </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
 

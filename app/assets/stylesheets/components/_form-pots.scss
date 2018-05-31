@@ -1,0 +1,78 @@
+.form-pots {
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+
+  h3 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexbutton {
+  display: flex;
+  justify-content: center;
+
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 8px 15px;
+}
+
+.select-size {
+  flex-grow: 1;
+  padding: 7px 20px;
+  margin: 10px 0 30px 0;
+  border: 1px solid;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: $green;
+  text-align: center;
+  color: white;
+  border: none;
+  box-shadow: 0 18px 35px rgba(50, 50, 93, 0.02), 0 8px 15px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: $light-gray;
+    color: $gray;
+  }
+
+  &.active {
+    background-color: $light-gray;
+    color: $gray;
+  }
+
+  .fa fa-leaf {
+    color: white;
+    &:hover {
+      color: $gray;
+    }
+    &.active {
+      color: $gray
+    }
+  }
+
+  #small-leaf {
+    font-size: 10px;
+  }
+
+  #medium-leaf {
+    font-size: 15px;
+  }
+
+  #large-leaf {
+    font-size: 20px;
+  }
+}
+
