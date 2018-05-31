@@ -8,10 +8,32 @@
   }
 }
 
+.flex {
+  display: flex;
+}
+
 .select-size {
+  flex-grow: 1;
+  color: white;
   padding: 7px 20px;
   margin: 10px 0;
   border: 1px solid;
   margin-right: 5px;
   cursor: pointer;
+  border-radius: 6px;
+  background-color: $green;
+  border: none;
+  #small-leaf {
+    font-size: 10px;
+    color: $gray;
+  }
+  #medium-leaf {
+    font-size: 15px;
+    color: $gray;
+  }
+  #large-leaf {
+    font-size: 20px;
+    color: $gray;
+  }
 }
+
