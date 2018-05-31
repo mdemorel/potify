@@ -1,4 +1,3 @@
-
 // get value of query
 // query = document.getElementById("query")
 // console.log(plants)
