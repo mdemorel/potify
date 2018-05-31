@@ -6,7 +6,6 @@ class PotsController < ApplicationController
   def show
     @pot = Pot.find(params[:id])
     @pot.generate_tasks
-
     authorize(@pot)
   end
 
@@ -18,9 +17,7 @@ class PotsController < ApplicationController
   def create
     @pot = Pot.new(pot_params)
     @pot.user = current_user
-    if @pot.photo.nil?
-      @pot.photo = @pot.plant.photo
-    end
+    @pot.photo = @pot.plant.photo if @pot.photo.nil?
     @pot.last_watering = Date.today - 2.weeks
     @pot.last_cutting = Date.today - 2.weeks
     @pot.last_potting = Date.today - 2.weeks
