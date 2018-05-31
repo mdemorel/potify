@@ -3,7 +3,15 @@
   margin-top: 50px;
   padding: 20px;
   border-radius: 5px;
+
   h2 {
+    text-align: center;
+  }
+
+   .btn {
+    width: 60%;
+    padding: 10px;
+    font-weight: bold;
     text-align: center;
   }
 }
@@ -14,7 +22,6 @@
 
 .select-size {
   flex-grow: 1;
-  color: white;
   padding: 7px 20px;
   margin: 10px 0;
   border: 1px solid;
@@ -22,18 +29,41 @@
   cursor: pointer;
   border-radius: 6px;
   background-color: $green;
+  text-align: center;
+  color: white;
   border: none;
+  box-shadow: 0 18px 35px rgba(50, 50, 93, 0.02), 0 8px 15px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: $light-gray;
+    color: $gray;
+  }
+
+  &.active {
+    background-color: $light-gray;
+    color: $gray;
+  }
+
+  .fa fa-leaf {
+    color: white;
+    &:hover {
+      color: $gray;
+    }
+    &.active {
+      color: $gray
+    }
+  }
+
   #small-leaf {
     font-size: 10px;
-    color: $gray;
   }
+
   #medium-leaf {
     font-size: 15px;
-    color: $gray;
   }
+
   #large-leaf {
     font-size: 20px;
-    color: $gray;
   }
 }
 

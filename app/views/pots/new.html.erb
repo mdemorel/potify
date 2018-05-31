@@ -21,7 +21,7 @@
             <div class="row">
               <div class="col-xs-12">
                 <input type="file">
-                <img width="100%" class="image-preview" alt="Image preview...">
+                <img width="100%">
               </div>
             </div>
             <div class="row">
@@ -43,7 +43,7 @@
               <div class="select-size" data-size="2"><i class="fa fa-leaf" aria-hidden="true" id="medium-leaf"></i> Medium</div>
               <div class="select-size" data-size="3"><i class="fa fa-leaf" aria-hidden="true" id="large-leaf"></i> Large</div>
             </div>
-            <%= f.submit %>
+            <%= f.submit "Save", class: "btn btn-primary"  %>
           </div>
         <% end %>
       </div>
