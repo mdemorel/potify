@@ -1,6 +1,6 @@
 import swal from 'sweetalert';
 
-function bindSweetAlertButtonDemo(pot_id) {
+function bindSweetAlertButtonDemo() {
   const swalButton = document.querySelectorAll('.sweet-alert-demo');
   if (swalButton) {
     swalButton.forEach(function(button) {
