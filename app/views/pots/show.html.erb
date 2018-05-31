@@ -1,7 +1,9 @@
 <div class="wrapper wrapper-color">
   <div class="container pot">
     <div class="pot-content">
-      <div class="pot-image" style="background-image: url('<%= @pot.photo %>')">
+      <div class="pot-image"
+        style="background-image:
+        url('<%= cl_image_path @pot.photo %>')">
       </div>
       <div class="pot-info">
         <h3><%= @pot.name %></h3>

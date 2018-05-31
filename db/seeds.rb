@@ -85,5 +85,3 @@ end
 
 
 puts "scraping over!"
-
-

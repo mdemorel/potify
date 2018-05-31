@@ -17,10 +17,14 @@ class PotsController < ApplicationController
 
   def create
     @pot = Pot.new(pot_params)
-    if @pot.photo.empty?
+    @pot.user = current_user
+    if @pot.photo.nil?
       @pot.photo = @pot.plant.photo
     end
-    @pot.user = current_user
+    @pot.last_watering = Date.today - 2.weeks
+    @pot.last_cutting = Date.today - 2.weeks
+    @pot.last_potting = Date.today - 2.weeks
+    @pot.last_fertilizing = Date.today - 2.weeks
     authorize(@pot)
     if @pot.save
       redirect_to pot_path(@pot)
