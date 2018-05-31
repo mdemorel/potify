@@ -16,4 +16,15 @@
 // };
 // refreshCounterPoint();
 
-document.querySelector('.wrapper-dashboard').innerHTML = '<%= j render "./pages/dashboard-container", user: @user, pots: @pots %>';
+var dashboard = document.querySelector('.wrapper-dashboard');
+var potShow = document.querySelector('#container-pot-show');
+
+if (dashboard) {
+  dashboard.innerHTML = '<%= j render "./pages/dashboard-container", user: @user, pots: @pots %>';
+};
+if (potShow){
+  potShow.innerHTML = '<%= j render "./pots/pot_content", pot: @pot %>';
+}
+
+bindSweetAlertButtonDemo();
+
