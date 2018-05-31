@@ -4,9 +4,12 @@ import "../components/select_size";
 import { sizeChoice } from "../components/size_choice";
 sizeChoice();
 
-import { updateTaskStatus } from "../components/tasks_manager";
+import { updateTaskStatus, updateTaskStatusOnShow } from "../components/tasks_manager";
 updateTaskStatus();
+updateTaskStatusOnShow();
 
 import { bindSweetAlertButtonDemo } from '../components/banner';
 bindSweetAlertButtonDemo();
+
+global.bindSweetAlertButtonDemo = bindSweetAlertButtonDemo;
 

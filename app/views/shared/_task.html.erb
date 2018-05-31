@@ -5,7 +5,7 @@
       <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
         <div class="task-content">
           <% if params["action"] == "dashboard" %>
-            <%= image_tag element.photo, size: "40x40" %>
+            <%= cl_image_tag(element.photo, size: "40x40") %>
           <% end %>
           <p class="task-reminder"><%= element.name %> needs <%= task.name %></p>
         </div>
