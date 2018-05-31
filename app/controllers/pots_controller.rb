@@ -6,7 +6,6 @@ class PotsController < ApplicationController
   def show
     @pot = Pot.find(params[:id])
     @pot.generate_tasks
-
     authorize(@pot)
   end
 
@@ -17,9 +16,7 @@ class PotsController < ApplicationController
 
   def create
     @pot = Pot.new(pot_params)
-    if @pot.photo.empty?
-      @pot.photo = @pot.plant.photo
-    end
+    @pot.photo = @pot.plant.photo if @pot.photo.empty?
     @pot.user = current_user
     authorize(@pot)
     if @pot.save

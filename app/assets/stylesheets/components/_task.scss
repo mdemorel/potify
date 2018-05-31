@@ -1,0 +1,21 @@
+.task-reminder {
+  font-weight: lighter;
+  color: black;
+  margin-left: 20px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.pot-tasks {
+  img {
+    border-radius: 50%;
+  }
+
+  .task-content {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+  }
+}

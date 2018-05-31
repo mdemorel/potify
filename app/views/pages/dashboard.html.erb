@@ -1,35 +1,3 @@
-<div class="container">
-  <h3 class="welcome-title">Welcome <%= @user.first_name %> !</h3>
-  <div class="user-frame">
-    <div class="welcome-frame">
-      <%=  image_tag("mamie.jpg", class: "welcome-icon")%>
-      <div class="welcome-message">
-        <p>Today's tip : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorem, asperiores est natus aperiam animi, sed id facilis, repudiandae eveniet laborum aut! Libero quibusdam dicta, at a neque dolores vero?</p>
-      </div>
-    </div>
-    <div class="points">
-      <% if current_user.count_points == 0 %>
-        <p>You have no points yet</p>
-      <% else %>
-        <p>Congratulations ! You have <%= current_user.count_points %> points</p>
-      <% end %>
-    </div>
-  </div>
-  <div class="user-tasks">
-    <h3>My tasks</h3>
-    <% @pots.each do |pot|%>
-      <%= link_to pot_path(pot) do %>
-        <%= render "shared/task", element: pot %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="user-garden">
-    <h3>My garden</h3>
-    <%= link_to "Add a plant", new_pot_path %>
-    <% @pots.each do |pot|%>
-      <%= link_to pot_path(pot) do %>
-        <%= render "shared/card", element: pot %>
-      <% end %>
-    <% end %>
-  </div>
+<div id="dashboard-content" class="wrapper-dashboard">
+  <%= render "dashboard-container", user: @user, pots: @pots %>
 </div>

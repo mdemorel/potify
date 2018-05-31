@@ -15,15 +15,15 @@
     <% end %>
     <div class="element-details">
       <% if element.class == Pot %>
-        <div class="element-name">
-            <%= element.name %>
+        <div class="element-name uppercase">
+          <h4><%= element.name %></h4>
         </div>
         <div class="element-category">
           <%= element.plant.name %>
         </div>
       <% else %>
-        <div id="element-name">
-            <%= element.name %>
+        <div id="element-name uppercase">
+            <h4><%= element.name %></h4>
         </div>
         <div id="element-category">
           <%= element.category if element.category != nil %>
