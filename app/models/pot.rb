@@ -2,6 +2,7 @@ class Pot < ApplicationRecord
   belongs_to :user
   belongs_to :plant
   has_many :tasks, dependent: :destroy
+  mount_uploader :photo, PhotoUploader
 
   def needs?(task_name)
     Date.today - send("last_#{task_name}") >= plant.send("#{task_name}_frequency")
