@@ -8,8 +8,11 @@
       </div>
     </div>
     <div class="points">
-      <% if user.tasks. %>
-      <p>You have no points yet</p>
+      <% if current_user.count_points == 0 %>
+        <p>You have no points yet</p>
+      <% else %>
+        <p>Congratulations ! You have <%= current_user.count_points %> points</p>
+      <% end %>
     </div>
   </div>
   <div class="user-tasks">
