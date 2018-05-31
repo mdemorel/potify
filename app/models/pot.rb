@@ -13,4 +13,12 @@ class Pot < ApplicationRecord
     task = Task.create(pot: self, name: task_name) if task.nil?
     return task
   end
+
+  def sum_points
+    pot_points = 0
+    self.tasks.each do |task|
+      pot_points += task.points unless task.points.nil?
+    end
+    return pot_points
+  end
 end
