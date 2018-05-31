@@ -1,3 +1,10 @@
-// écouter le click sur .select-size
-  // récupérer la valeur 1,2,3 via le dataset de event.currentTarget
-  // la mettre dans l'input
+const potsSize = document.querySelectorAll('.select-size');
+potsSize.forEach(function(pot) {
+  pot.addEventListener("click", (event) => {
+    const recipientSize = document.getElementById('pot_recipient_size');
+    recipientSize.value = event.currentTarget.dataset.size;
+  });
+});
+
+// exporter function
+// export { selectSize };
