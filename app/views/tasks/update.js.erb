@@ -1,9 +1,19 @@
-function removeForm() {
-  document.getElementById("edit_task_<%= @task.id %>").remove();
-}
+// function removeForm() {
+//   document.getElementById("edit_task_<%= @task.id %>").remove();
+// }
 
-removeForm();
+// removeForm();
 
+// function refreshCounterTask() {
+//   const counterTask = document.getElementById("counter_tasks");
+//   counterTask.innerHTML = '<%= pluralize current_user.count_tasks, "task"%>';
+// };
+// refreshCounterTask();
 
+// function refreshCounterPoint() {
+//   const counterPoint = document.getElementById("counter_points");
+//   counterPoint.innerHTML = '<%= pluralize current_user.count_points, "point" %>';
+// };
+// refreshCounterPoint();
 
-
+document.querySelector('.wrapper-dashboard').innerHTML = '<%= j render "./pages/dashboard-container", user: @user, pots: @pots %>';

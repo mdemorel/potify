@@ -12,6 +12,10 @@
   }
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .status-icons {
   margin-left: 55%;
   margin-top: 5px;
@@ -45,7 +49,7 @@
   text-align: center;
   width: 80%;
 
-  #element-name {
+  #element-name h4 {
     color: black;
     font-family: "Paytone One", "sans-serif";
   }
@@ -56,6 +60,8 @@
     font-family: "Source Sans Pro", "sans-serif";
   }
 }
+
+
 
 .card-link {
   position: absolute;
