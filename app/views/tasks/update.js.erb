@@ -1,9 +1,30 @@
-function removeForm() {
-  document.getElementById("edit_task_<%= @task.id %>").remove();
+// function removeForm() {
+//   document.getElementById("edit_task_<%= @task.id %>").remove();
+// }
+
+// removeForm();
+
+// function refreshCounterTask() {
+//   const counterTask = document.getElementById("counter_tasks");
+//   counterTask.innerHTML = '<%= pluralize current_user.count_tasks, "task"%>';
+// };
+// refreshCounterTask();
+
+// function refreshCounterPoint() {
+//   const counterPoint = document.getElementById("counter_points");
+//   counterPoint.innerHTML = '<%= pluralize current_user.count_points, "point" %>';
+// };
+// refreshCounterPoint();
+
+var dashboard = document.querySelector('.wrapper-dashboard');
+var potShow = document.querySelector('#container-pot-show');
+
+if (dashboard) {
+  dashboard.innerHTML = '<%= j render "./pages/dashboard-container", user: @user, pots: @pots %>';
+};
+if (potShow){
+  potShow.innerHTML = '<%= j render "./pots/pot_content", pot: @pot %>';
 }
 
-removeForm();
-
-
-
+bindSweetAlertButtonDemo();
 

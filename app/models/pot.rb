@@ -29,4 +29,8 @@ class Pot < ApplicationRecord
     end
     return pot_points
   end
+
+  # def adoption_date=(val)
+  #   Date.strptime(val, "%A/%b/%d") if val.present?
+  # end
 end

@@ -11,6 +11,9 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     authorize(@task)
     @task.mark_as_completed!
+    @user = current_user
+    @pots = Pot.all
+    @pot = @task.pot
     if @task.save
       respond_to do |format|
         format.html { redirect_to pot_path(@task.pot_id)}

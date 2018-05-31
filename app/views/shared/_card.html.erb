@@ -1,9 +1,4 @@
-  <div class="frame" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 100%), url('<%= image_path(element.photo) %>');">
-    <%# if pot.user != current_user %>
-      <!-- <div class="avatar"> -->
-        <%#= user.photo %>
-      <!-- </div> -->
-    <%# end %>
+  <div class="frame" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 100%), url('<%= cl_image_path(element.photo) %>');">
     <% if element.class == Pot %>
       <div class="status-icons">
         <i class="fas fa-tint"></i>
@@ -15,15 +10,15 @@
     <% end %>
     <div class="element-details">
       <% if element.class == Pot %>
-        <div class="element-name">
-            <%= element.name %>
+        <div class="element-name uppercase">
+          <h4><%= element.name %></h4>
         </div>
         <div class="element-category">
           <%= element.plant.name %>
         </div>
       <% else %>
-        <div id="element-name">
-            <%= element.name %>
+        <div id="element-name uppercase">
+            <h4><%= element.name %></h4>
         </div>
         <div id="element-category">
           <%= element.category if element.category != nil %>

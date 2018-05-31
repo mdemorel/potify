@@ -48,10 +48,19 @@
     color: $gray;
   }
 
+  &:hover .fa-leaf{
+    color: $gray;
+  }
+
   &.active {
     background-color: $light-gray;
     color: $gray;
   }
+
+  &.active .fa-leaf {
+    color: $gray;
+  }
+
 
   .fa-leaf {
     color: white;
