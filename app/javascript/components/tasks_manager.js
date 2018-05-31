@@ -1,10 +1,12 @@
 function updateTaskStatus() {
-  const selector = document.querySelector(".pot-tasks form input[type=checkbox]")
+  const selector = document.querySelectorAll(".pot-tasks form input[type=checkbox]")
 
   if (selector) {
-    selector.addEventListener("change", function(e) {
+    selector.forEach(function(selector) {
+      selector.addEventListener("change", function(e) {
       e.currentTarget.parentElement.parentElement.parentElement.submit();
     });
+   });
   }
 }
 
