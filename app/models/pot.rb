@@ -7,6 +7,13 @@ class Pot < ApplicationRecord
     Date.today - send("last_#{task_name}") >= plant.send("#{task_name}_frequency")
   end
 
+  def generate_tasks
+    self.incomplete_task("watering")
+    self.incomplete_task("potting")
+    self.incomplete_task("fertilizing")
+    self.incomplete_task("cutting")
+  end
+
   def incomplete_task(task_name)
     return nil unless needs?(task_name)
     task = tasks.find_by(completed: false, name: task_name)

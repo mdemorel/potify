@@ -1,14 +1,9 @@
-function refreshForm(newForm) {
-  const innerForm = document.getElementById("task_completed");
-  innerForm.innerHTML = newForm;
+function removeForm() {
+  document.getElementById("edit_task_<%= @task.id %>").remove();
 }
-<%if @task.name === "watering" %>
-  <% if @task.errors.any? %>
-    refreshForm('<%= j render "pots/form", watering: @watering %>');
-  <% else %>
-    bindSweetAlertButtonDemo('<%= @pot.task.name %>');
-  <% end %>
-<% end %>
+
+removeForm();
+
 
 
 

@@ -5,6 +5,8 @@ class PotsController < ApplicationController
 
   def show
     @pot = Pot.find(params[:id])
+    @pot.generate_tasks
+
     authorize(@pot)
   end
 
