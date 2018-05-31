@@ -21,8 +21,12 @@
             <div class="row">
               <div class="col-xs-12">
                 <label class="form-control-label string optional" for="pot_photo">Add a photo</label>
-                <input type="file">
-                <img width="100%" class="image-preview" alt="Image preview...">
+               <!--  <input type="file">
+                <img width="100%" class="image-preview" alt="Image preview..."> -->
+
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+
               </div>
             </div>
             <div class="row">

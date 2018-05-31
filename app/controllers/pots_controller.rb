@@ -18,7 +18,7 @@ class PotsController < ApplicationController
   def create
     @pot = Pot.new(pot_params)
     @pot.user = current_user
-    if @pot.photo?
+    if @pot.photo.nil?
       @pot.photo = @pot.plant.photo
     end
     @pot.last_watering = Date.today - 2.weeks
