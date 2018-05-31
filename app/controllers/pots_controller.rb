@@ -17,7 +17,6 @@ class PotsController < ApplicationController
   def create
     @pot = Pot.new(pot_params)
     @pot.user = current_user
-    # @pot.photo = @pot.plant.photo if @pot.photo.nil?
     @pot.last_watering = Date.today - 2.weeks
     @pot.last_cutting = Date.today - 2.weeks
     @pot.last_potting = Date.today - 2.weeks
@@ -50,7 +49,7 @@ class PotsController < ApplicationController
     @pot = Pot.find(params[:id])
     @pot.destroy
     authorize(@pot)
-    redirect_to pots_path
+    redirect_to dashboard_path
   end
 
 
