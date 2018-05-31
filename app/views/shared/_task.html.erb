@@ -1,22 +1,30 @@
 <div class="pot-tasks">
   <% if element.incomplete_task("watering") %>
     <p>You need to water <%= element.name %></p>
-    <%= simple_form_for(element.incomplete_task("watering")) do |f| %>
+    <%#= simple_form_for(element.incomplete_task("watering")) do |f| %>
+    <%= simple_form_for(element.incomplete_task("watering"), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
+              <%= f.input :completed %>
       <%= f.input :completed %>
     <% end %>
   <% end %>
   <% if element.incomplete_task("cutting") %>
-    <p>You need to cut <%= element.name %></p><%= simple_form_for(element.incomplete_task("cutting")) do |f| %>
+    <p>You need to cut <%= element.name %></p>
+    <%#= simple_form_for(element.incomplete_task("cutting")) do |f| %>
+    <%= simple_form_for(element.incomplete_task("cutting"), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
       <%= f.input :completed %>
     <% end %>
   <% end %>
   <% if element.incomplete_task("fertilizing") %>
-    <p>You need to fertilize <%= element.name %></p><%= simple_form_for(element.incomplete_task("fertilizing")) do |f| %>
+    <p>You need to fertilize <%= element.name %></p>
+    <%#= simple_form_for(element.incomplete_task("fertilizing")) do |f| %>
+    <%= simple_form_for(element.incomplete_task("fertilizing"), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
       <%= f.input :completed %>
     <% end %>
   <% end %>
   <% if element.incomplete_task("potting") %>
-    <p>You need to pot <%= element.name %></p><%= simple_form_for(element.incomplete_task("potting")) do |f| %>
+    <p>You need to pot <%= element.name %></p>
+    <%#= simple_form_for(element.incomplete_task("potting")) do |f| %>
+    <%= simple_form_for(element.incomplete_task("potting"), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
       <%= f.input :completed %>
     <% end %>
   <% end %>
