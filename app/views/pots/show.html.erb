@@ -13,22 +13,25 @@
         <div class="pot-tasks">
           <% if @watering %>
             <p>You need to water <%= @pot.name %></p>
-            <%= simple_form_for(@watering) do |f| %>
+            <%= simple_form_for(@watering, :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
               <%= f.input :completed %>
             <% end %>
           <% end %>
           <% if @cutting %>
-            <p>You need to cut <%= @pot.name %></p><%= simple_form_for(@cutting) do |f| %>
+            <p>You need to cut <%= @pot.name %></p>
+            <%= simple_form_for(@cutting, :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
               <%= f.input :completed %>
             <% end %>
           <% end %>
           <% if @fertilizing %>
-            <p>You need to fertilize <%= @pot.name %></p><%= simple_form_for(@fertilizing) do |f| %>
+            <p>You need to fertilize <%= @pot.name %></p>
+            <%= simple_form_for(@fertilizing, :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
               <%= f.input :completed %>
             <% end %>
           <% end %>
           <% if @potting %>
-            <p>You need to pot <%= @pot.name %></p><%= simple_form_for(@potting) do |f| %>
+            <p>You need to pot <%= @pot.name %></p>
+            <%= simple_form_for(@potting, :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
               <%= f.input :completed %>
             <% end %>
           <% end %>

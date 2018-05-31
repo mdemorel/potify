@@ -10,17 +10,19 @@ class PotsController < ApplicationController
 
     if Date.today - @pot.last_watering >= @pot.plant.watering_frequency
       @watering = @pot.tasks.find_by(completed: false, name: "watering")
-      @watering = Task.create(pot: @pot, name: "watering") if @watering.nil?
+      Task.create(pot: @pot, name: "watering")if @watering.nil?
     end
 
     if Date.today - @pot.last_cutting >= @pot.plant.cutting_frequency
       @cutting = @pot.tasks.find_by(completed: false, name: "cutting")
       @cutting = Task.create(pot: @pot, name: "cutting") if @cutting.nil?
     end
+
     if Date.today - @pot.last_potting >= @pot.plant.potting_frequency
       @potting = @pot.tasks.find_by(completed: false, name: "potting")
       @potting = Task.create(pot: @pot, name: "potting") if @potting.nil?
     end
+
     if Date.today - @pot.last_fertilizing >= @pot.plant.fertilizer_frequency
       @fertilizing = @pot.tasks.find_by(completed: false, name: "fertilizing")
       @fertilizing = Task.create(pot: @pot, name: "fertilizing") if @fertilizing.nil?

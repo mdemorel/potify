@@ -15,24 +15,64 @@ class TasksController < ApplicationController
     if @task.name == "watering"
       @task.pot.update(last_watering: Date.today)
       @task.points = 100
-      @task.save
+      if @task.save
+          respond_to do |format|
+          format.html { redirect_to pot_path(@task.pot_id)}
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html {render 'pots/show'}
+          format.js
+        end
+      end
     end
+
     if @task.name == "fertilizing"
       @task.pot.update(last_fertilizing: Date.today)
       @task.points = 50
-      @task.save
+      if @task.save
+        respond_to do |format|
+          format.html { redirect_to pot_path(@task.pot_id)}
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html {render 'pots/show'}
+          format.js
+        end
+      end
     end
     if @task.name == "cutting"
       @task.pot.update(last_cutting: Date.today)
       @task.points = 200
-      @task.save
+      if @task.save
+        respond_to do |format|
+          format.html { redirect_to pot_path(@task.pot_id)}
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html {render 'pots/show'}
+          format.js
+        end
+      end
     end
     if @task.name == "potting"
       @task.pot.update(last_potting: Date.today)
       @task.points = 300
-      @task.save
+      if @task.save
+        respond_to do |format|
+          format.html { redirect_to pot_path(@task.pot_id)}
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html {render 'pots/show'}
+          format.js
+        end
+      end
     end
-    redirect_to pot_path(@task.pot)
   end
 
   def destroy
