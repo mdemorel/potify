@@ -17,4 +17,5 @@ class Task < ApplicationRecord
     self.completed = true
     save
   end
+
 end
