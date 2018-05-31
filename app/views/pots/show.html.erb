@@ -9,6 +9,7 @@
         <p>Size: <%= @pot.size %> cm</p>
         <p>Family: <%= @pot.plant.name %></p>
         <p>You adopted <%= @pot.name %> on <%= @pot.adoption_date %> </p>
+        
         <%= link_to "Back to your pots", pots_path, class: "link-black" %>
         <div class="pot-tasks">
           <% if @watering %>
@@ -36,8 +37,11 @@
             <% end %>
           <% end %>
         </div>
-      </div>
+        
+        <%= link_to "Back to my dashboard", dashboard_path, class: "link-black" %>
+        <%= render "shared/task", element: @pot %>
 
+      </div>
     </div>
   </div>
 </div>

@@ -5,7 +5,6 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-
   end
 
   def update
@@ -73,6 +72,9 @@ class TasksController < ApplicationController
         end
       end
     end
+
+    @task.mark_as_completed!
+
   end
 
   def destroy

@@ -14,7 +14,9 @@
   <div class="user-tasks">
     <h3>My tasks</h3>
     <% @pots.each do |pot|%>
-      <%= render "shared/card", element: pot %>
+      <%= link_to pot_path(pot) do %>
+        <%= render "shared/task", element: pot %>
+      <% end %>
     <% end %>
   </div>
   <div class="user-garden">
