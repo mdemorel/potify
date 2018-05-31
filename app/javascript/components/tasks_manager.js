@@ -22,4 +22,18 @@ function updateTaskStatus() {
   // }
 }
 
+function updateTaskStatusOnShow() {
+
+  const content = document.querySelector("#container-pot-show");
+  if (content) {
+    content.addEventListener("click", function (e) {
+      if (e.target.classList.value.includes("form-check-input")) {
+        e.target.parentElement.parentElement.parentElement.querySelector('.submit-task').click();
+      }
+    })
+  }
+}
+
 export { updateTaskStatus };
+
+export { updateTaskStatusOnShow };

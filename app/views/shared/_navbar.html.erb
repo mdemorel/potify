@@ -24,7 +24,7 @@
       <% if user_signed_in? %>
         <!-- Avatar with dropdown menu -->
           <div class="dropdown">
-            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-potify-menu", "data-toggle" => "dropdown" %>
+            <%= cl_image_tag(current_user.photo, class: "avatar dropdown-toggle", id: "navbar-potify-menu", "data-toggle" => "dropdown") %>
             <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
               <li>
                 <%= link_to "#" do %>

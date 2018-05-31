@@ -1,24 +1,6 @@
 <div class="wrapper wrapper-color">
-  <div class="container pot">
-    <div class="pot-content">
-      <div class="pot-image"
-        style="background-image:
-        url('<%= cl_image_path @pot.photo %>')">
-      </div>
-      <div class="pot-info">
-        <h3><%= @pot.name %></h3>
-        <p><i><%= @pot.description %></i></p>
-        <p>Family: <%= @pot.plant.name %></p>
-        <p>You adopted <%= @pot.name %> on <%= @pot.adoption_date.strftime("%b %d, %Y"); %></p>
-
-        <div class="pot-tasks">
-          <%= render "shared/task", element: @pot %>
-        </div>
-
-        <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green item-border-green" %>
-      </div>
-
-    </div>
+  <div class="container pot" id="container-pot-show">
+    <%= render "pot_content", pot: @pot %>
   </div>
 </div>
 

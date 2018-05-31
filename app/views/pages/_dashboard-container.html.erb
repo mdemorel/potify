@@ -4,8 +4,6 @@
       <h3 class="welcome-title">Welcome <%= user.first_name %> !</h3>
     <%= render "shared/points", user: current_user %>
     </div>
-      <%#=  image_tag("mamie.jpg", class: "welcome-icon")%>
-          <%#= image_tag "medal.png", size: "100" %>
     <div class="task-message">
       <% if current_user.count_tasks > 0 %>
         <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
