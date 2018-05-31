@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_103914) do
+ActiveRecord::Schema.define(version: 2018_05_30_171832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2018_05_30_103914) do
     t.integer "watering_frequency"
     t.integer "watering_quantity"
     t.integer "potting_frequency"
-    t.integer "fertilizer_quantity"
-    t.integer "fertilizer_frequency"
-    t.string "fertilizer_type"
+    t.integer "fertilizing_quantity"
+    t.integer "fertilizing_frequency"
+    t.string "fertilizing_type"
     t.integer "exposition"
     t.integer "cutting_frequency"
     t.integer "temperature"

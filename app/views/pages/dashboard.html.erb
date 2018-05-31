@@ -8,20 +8,28 @@
       </div>
     </div>
     <div class="points">
-      <p>You have no points yet</p>
+      <% if current_user.count_points == 0 %>
+        <p>You have no points yet</p>
+      <% else %>
+        <p>Congratulations ! You have <%= current_user.count_points %> points</p>
+      <% end %>
     </div>
   </div>
   <div class="user-tasks">
     <h3>My tasks</h3>
     <% @pots.each do |pot|%>
-      <%= render "shared/card", element: pot %>
+      <%= link_to pot_path(pot) do %>
+        <%= render "shared/task", element: pot %>
+      <% end %>
     <% end %>
   </div>
   <div class="user-garden">
     <h3>My garden</h3>
     <%= link_to "Add a plant", new_pot_path %>
     <% @pots.each do |pot|%>
-      <%= render "shared/card", element: pot %>
+      <%= link_to pot_path(pot) do %>
+        <%= render "shared/card", element: pot %>
+      <% end %>
     <% end %>
   </div>
 </div>
