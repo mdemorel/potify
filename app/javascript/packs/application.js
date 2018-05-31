@@ -10,4 +10,3 @@ updateTaskStatus();
 import { bindSweetAlertButtonDemo } from '../components/banner';
 bindSweetAlertButtonDemo();
 
-
