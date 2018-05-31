@@ -29,9 +29,7 @@
               </div>
               <div class="row">
                 <div class="col-xs-12">
-                  <%= simple_form_for :search, method: "get" do |f| %>
-                    <%= f.input :age_plant, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "When did you adopted your plant?" %>
-                  <% end %>
+                <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?" %>
                 </div>
               </div>
               <label class="form-control-label string optional" for="pot_photo">Select your pot's size</label>
