@@ -7,7 +7,8 @@ function bindSweetAlertButtonDemo() {
       button.addEventListener('click', () => {
         swal({
           title: "Youhou, you did great!",
-          icon: "success"
+          icon: "success",
+          timer: 30000,
         });
       });
     }) // protect other pages
