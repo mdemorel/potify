@@ -9,23 +9,14 @@
         <p>Size: <%= @pot.size %> cm</p>
         <p>Family: <%= @pot.plant.name %></p>
         <p>You adopted <%= @pot.name %> on <%= @pot.adoption_date %> </p>
+
         <%= link_to "Back to your pots", pots_path, class: "link-black" %>
         <div class="pot-tasks">
-          <% if @watering %>
-            <p>You need to water <%= @pot.name %></p>
-          <% end %>
-          <% if @cutting %>
-            <p>You need to cut <%= @pot.name %></p>
-          <% end %>
-          <% if @fertilizing %>
-            <p>You need to fertilize <%= @pot.name %></p>
-          <% end %>
-          <% if @potting %>
-            <p>You need to pot <%= @pot.name %></p>
-          <% end %>
+          <%= render "shared/task", element: @pot %>
         </div>
-      </div>
 
+        <%= link_to "Back to my dashboard", dashboard_path, class: "link-black" %>
+      </div>
     </div>
   </div>
 </div>

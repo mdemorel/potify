@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Potify
   class Application < Rails::Application
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+
     config.generators do |generate|
           generate.assets false
           generate.helper false

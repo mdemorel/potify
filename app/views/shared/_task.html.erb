@@ -1,0 +1,13 @@
+<div class="pot-tasks">
+  <% element.tasks.each do |task| %>
+    <% if element.incomplete_task(task.name) %>
+      <%#= simple_form_for(element.incomplete_task("watering")) do |f| %>
+      <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
+        <p><%= element.name %> needs <%= task.name %></p>
+
+        <%= f.input :completed %>
+        <%= f.submit :update, class: "hidden submit-task" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
