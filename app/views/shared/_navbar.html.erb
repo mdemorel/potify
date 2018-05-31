@@ -1,61 +1,65 @@
 <div class="navbar-potify">
-  <!-- Search Bar & Discover button -->
-  <div class="navbar-left hidden-xs">
-    <%= link_to "DISCOVER", "#", class: "navbar-potify-link btn btn-primary" %>
-    <div class="navbar-potify-item">
-      <%= link_to "ADD A PLANT", "#", class: "navbar-potify-link" %>
-    </div>
-  </div>
 
-  <!-- Logo -->
-  <div class="navbar-logo">
-      <h1>potify</h1>
-  </div>
-
-  <!-- Right Navigation -->
-  <div class="navbar-right hidden-xs">
-    <div class="navbar-potify-item">
-      <%= link_to "MY GARDEN", "#", class: "navbar-potify-item navbar-potify-link" %>
+    <!-- Search Bar & Discover button -->
+    <div class="navbar-left hidden-xs">
+      <%= link_to "DISCOVER", plants_path, class: "navbar-potify-link btn btn-primary" %>
+      <div class="item-border-green">
+        <%= link_to "ADD A PLANT", new_pot_path, class: "link-border-green" %>
+      </div>
     </div>
-    <% if user_signed_in? %>
-      <!-- Avatar with dropdown menu -->
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-potify-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-potify-link btn btn-danger" %>
-    <% end %>
-  </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-potify-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
-        <li><%= link_to "#", "SEARCH" %></li>
-        <li><%= link_to "#", "DISCOVER" %></li>
-        <li><%= link_to "#", "ADD A PLANT" %></li>
-        <!-- log out link -->
-      </ul>
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <%= link_to root_path do %>
+  <!--     <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-object/512/potted_plant-512.png" alt="logo">
+   -->   <h1>potify</h1>
+   <% end %>
     </div>
-  </div>
+
+    <!-- Right Navigation -->
+    <div class="navbar-right hidden-xs">
+      <div class="item-border-green">
+        <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green" %>
+      </div>
+      <% if user_signed_in? %>
+        <!-- Avatar with dropdown menu -->
+          <div class="dropdown">
+            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-potify-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+      <% else %>
+        <!-- Login link (when logged out) -->
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-potify-link btn btn-danger" %>
+      <% end %>
+    </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-potify-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-potify-dropdown-menu">
+          <li><%= link_to "#", "SEARCH" %></li>
+          <li><%= link_to "#", "DISCOVER" %></li>
+          <li><%= link_to "#", "ADD A PLANT" %></li>
+          <!-- log out link -->
+        </ul>
+      </div>
+    </div>
 </div>
 
