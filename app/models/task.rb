@@ -14,7 +14,7 @@ class Task < ApplicationRecord
     pot.send("last_#{name}=".to_sym, Date.today)
     pot.save
     self.points = POINTS[name]
-    self.completed =
+    self.completed = true
     save
   end
 end
