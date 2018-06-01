@@ -3,7 +3,7 @@
     <% if element.incomplete_task(task.name) %>
       <%#= simple_form_for(element.incomplete_task("watering")) do |f| %>
       <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
-        <div class="task-content">
+        <div class="task-content" data-points="<%= task.points %>">
           <% if params["action"] == "dashboard" %>
             <%= cl_image_tag(element.photo, size: "40x40") %>
           <% end %>
