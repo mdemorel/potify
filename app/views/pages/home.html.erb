@@ -1,11 +1,41 @@
 <div class="wrapper wrapper-color">
   <div class="container container-gray">
-    <div class="big-header">
-      <h1>NEVER SAY GOODBUY TO YOUR PLANT</h1>
+    <div class="banner">
+      <div class="big-header">
+        <h1>NEVER SAY GOODBYE TO YOUR PLANT AGAIN</h1>
+      </div>
+      <div class="home-image">
+        <img src="https://www.ourhouseplants.com/imgs-site/houseplant-pot-footer.png" alt="cactus">
+      </div>
+
+      <%= link_to "Pamper me please!", dashboard_path, class: "btn-yellow" %>
     </div>
-    <div class="home-image">
-      <img src="https://www.ourhouseplants.com/imgs-site/houseplant-pot-footer.png" alt="cactus">
+    <div class="presentation">
+      <h2>WHAT WE DO</h2>
+      <p class="source-font">Potify helps you to enjoy taking care of your plants </p>
+      <div class="key-learning">
+        <div class="reminder">
+          <%= image_tag("tools.png", size: 60) %>
+          Automatic reminders to never forget when to take care of it
+        </div>
+        <div class="reminder">
+          <%= image_tag("tips.png", size: 60) %>
+        All the information you need for your plant
+        </div>
+        <div class="reminder">
+          <%= image_tag("reward.png", size: 60) %>
+          Rewards for each task you complete
+        </div>
+      </div>
     </div>
+    <div class="cards-content">
+      <h2>CURIOUS ABOUT OUR PLANTS?</h2>
+      <%= render "shared/home_cards", elements: @plants %>
+      <%= link_to "DISCOVER", plants_path, class: "navbar-potify-link btn btn-minimal in-banner" %>
+    </div>
+
   </div>
+
+  <%= render "shared/footer" %>
 
 </div>

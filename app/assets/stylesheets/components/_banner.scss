@@ -1,18 +1,20 @@
 .wrapper-color {
   background: linear-gradient($flash-green, $green);
-  height: 100vh;
   width: 100%;
-  position: absolute;
+  // position: absolute;
 }
 
 .big-header {
-  width: 900px;
-  text-align: center;
-  margin: auto;
+    width: 900px;
+    text-align: center;
+    margin: auto;
 
 
   h1 {
-    font-size: 110px;
+    overflow-wrap: break-word;
+    text-align: center;
+    width: 80%;
+    font-size: 70px;;
     background: -webkit-linear-gradient(right, $flash-green, $green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -20,19 +22,79 @@
   }
 }
 
+.source-font {
+  font-family: "Source Sans Pro", "sans-serif";
+}
+
 .home-image {
     margin-top: -90px;
     text-align: center;
   img {
-    height: 450px;
+    height: 350px;
+    margin-top: 20px;
   }
 }
 
 .container-gray {
   background-color: white;
   width: 95%;
-  position: relative;
-  top: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 10px;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+.banner {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+
+  .btn-yellow {
+    margin: auto;
+    margin-top: -50px;
+    margin-left: 285px;
+
+    &:hover a {
+      color: white;
+      font-weight: bolder;
+      text-decoration: none;
+      // opacity: 1;
+    }
+  }
+}
+
+.presentation {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    background-color: rgba(0,0,0,0.04);
+    margin-left: -15px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    height: 400px;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+
+    .key-learning {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .reminder {
+      flex: 0 0 30%;
+      text-align: center;
+          padding: 20px 50px;
+          display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+}
+
+.in-banner {
+  width: 100px;
+      margin: auto;
 }

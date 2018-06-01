@@ -1,0 +1,8 @@
+.wrapper {
+  background: linear-gradient($flash-green, $green);
+  // height: 100vh;
+  width: 100%;
+  height: auto;       /* These two lines were the key. */
+    min-height: 100%;
+
+}
