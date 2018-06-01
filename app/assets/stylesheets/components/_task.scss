@@ -26,12 +26,20 @@
     bottom: 20px;
     left: 30px;
   }
+
+  .status {
+    color: $gray;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .description {
-  position: absolute;
-  top: 30px;
-  right: 50px;
+  // position: absolute;
+  // top: 30px;
+  // right: 50px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: light;
   font-size: 16px;

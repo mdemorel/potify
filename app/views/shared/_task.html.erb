@@ -10,13 +10,21 @@
             <% if params["action"] == "dashboard" %>
               <%= cl_image_tag(element.photo, size: "100x100") %>
             <% end %>
-            <div class="description">
-              <p>By <%= task.name %> you take care of your plant</p>
-            </div>
-            <div class="status">
-              <%= f.input :completed %>
-              <%= f.submit :update, class: "hidden submit-task" %>
-            </div>
+            <table class="task-position">
+              <tr>
+                <td>
+                  <div class="description">
+                    <p>By <%= task.name %> you take care of your plant</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="status">
+                    <%= f.input :completed, label: "  I did it" %>
+                    <%= f.submit :update, class: "hidden submit-task" %>
+                  </div>
+                </td>
+              </tr>
+            </table>
           </div>
         <% end %>
       <% end %>
