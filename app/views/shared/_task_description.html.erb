@@ -1,0 +1,27 @@
+<div class="task-description">
+  <% element.tasks.each do |task| %>
+    <% if element.incomplete_task(task.name) %>
+      <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
+      <div class="task-content">
+        <% if params["action"] == "dashboard" %>
+        <% end %>
+        <table class="task-position">
+          <tr>
+            <td>
+              <div class="description">
+                <p>By <%= task.name %> you take care of your plant</p>
+              </div>
+            </td>
+            <td>
+              <div class="status">
+                <%= f.input :completed, label: "  I did it" %>
+                <%= f.submit :update, class: "hidden submit-task" %>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <% end %>
+    <% end%>
+  <% end %>
+</div>
