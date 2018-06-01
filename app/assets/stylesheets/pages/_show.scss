@@ -60,8 +60,8 @@
   padding-left: 50px;
 
   h3 {
-    font-size: 60px;
-    color: $green;
+    font-size: 80px;
+    color: $yellow;
   }
 }
 
@@ -85,5 +85,10 @@
     font-size: 20px;
   }
 }
+
+.fa-trash {
+  color: $gray;
+}
+
 
 

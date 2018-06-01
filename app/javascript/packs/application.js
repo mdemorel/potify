@@ -8,7 +8,7 @@ import { updateTaskStatus, updateTaskStatusOnShow } from "../components/tasks_ma
 updateTaskStatus();
 updateTaskStatusOnShow();
 
-import { bindSweetAlertButtonDemo } from '../components/banner';
+import { bindSweetAlertButtonDemo } from '../components/sweet_alert';
 bindSweetAlertButtonDemo();
 
 global.bindSweetAlertButtonDemo = bindSweetAlertButtonDemo;
