@@ -1,3 +1,6 @@
+
+<% element.tasks.each do |task| %>
+ <% if element.incomplete_task(task.name) %>                   
   <div class="task-card">
     <div class="title">
       <h2> 😘 Hey your <span id="plant-color-name"><%= element.name %></span> needs love !</h2>
@@ -8,8 +11,7 @@
           {:height=>130,:crop=>"fit"}]) %>
       </div>
       <div class="task-description">
-        <% element.tasks.each do |task| %>
-          <% if element.incomplete_task(task.name) %>
+        
             <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
             <div class="task-content">
               <% if params["action"] == "dashboard" %>
@@ -30,11 +32,9 @@
                 </tr>
               </table>
             </div>
-            <% end %>
-          <% end%>
-        <% end %>
+           <% end %>
       </div>
     </div>
   </div>
-
-
+ <% end%>
+<% end %>
