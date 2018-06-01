@@ -1,21 +1,55 @@
-.task-reminder {
-  font-weight: lighter;
-  color: black;
+.task-flex {
+  display: flex;
+}
+
+.task-card {
+  margin: 30px 0px 30px;
+  position: relative;
+  border-radius: 10px;
+  border: solid 4px $green;
+  width: 500px;
+  height: 230px;
+  box-shadow: 0 18px 35px rgba(50, 50, 93, 0.02), 0 8px 15px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    font-size: 25px;
+    color: $gray;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+}
+
+.task-content {
+  img {
+    position: absolute;
+    border-radius: 50%;
+    bottom: 20px;
+    left: 30px;
+  }
+}
+
+.description {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: light;
+  font-size: 16px;
+  color: $gray;
   margin-left: 20px;
+  padding: 15px;
+
+  .status {
+    color: $light-gray;
+  }
 }
 
 a {
   text-decoration: none !important;
 }
 
-.pot-tasks {
-  img {
-    border-radius: 50%;
-  }
-
-  .task-content {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 5px;
-  }
+#plant-color-name {
+  color: $yellow;
 }
+
+
