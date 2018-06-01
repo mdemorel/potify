@@ -3,7 +3,10 @@
   <div class="row">
     <% elements.sample(3).each do |element| %>
       <div class="col-xs-12 col-md-4">
-        <%= render "shared/card", element: element %>
+        <!-- be careful with the path -->
+        <%= link_to plant_path(element) do %>
+          <%= render "shared/card", element: element %>
+        <% end %>
       </div>
     <% end %>
   </div>
