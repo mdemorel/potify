@@ -1,0 +1,11 @@
+
+<div class="cards-selection">
+  <div class="row">
+    <% elements.sample(3).each do |element| %>
+      <div class="col-xs-12 col-md-4">
+        <%= render "shared/card", element: element %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

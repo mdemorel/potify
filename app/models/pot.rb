@@ -4,6 +4,8 @@ class Pot < ApplicationRecord
   has_many :tasks, dependent: :destroy
   mount_uploader :photo, PhotoUploader
 
+  validates :name, presence: true
+
   def needs?(task_name)
     Date.today - send("last_#{task_name}") >= plant.send("#{task_name}_frequency")
   end
