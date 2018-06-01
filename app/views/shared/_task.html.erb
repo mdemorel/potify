@@ -1,34 +1,33 @@
-<div class="task-flex">
-  <% element.tasks.each do |task| %>
-    <% if element.incomplete_task(task.name) %>
-      <div class="task-card">
-        <div class="title">
-          <h2>🤟 Hey your <span id="plant-color-name"><%= element.name %></span> needs love !</h2>
-        </div>
+  <div class="task-card">
+    <div class="title">
+      <h2> 😘 Hey your <span id="plant-color-name"><%= element.name %></span> needs love !</h2>
+    </div>
+    <% element.tasks.each do |task| %>
+      <% if element.incomplete_task(task.name) %>
         <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
-          <div class="task-content">
-            <% if params["action"] == "dashboard" %>
-              <%= cl_image_tag(element.photo, size: "100x100") %>
-            <% end %>
-            <table class="task-position">
-              <tr>
-                <td>
-                  <div class="description">
-                    <p>By <%= task.name %> you take care of your plant</p>
-                  </div>
-                </td>
-                <td>
-                  <div class="status">
-                    <%= f.input :completed, label: "  I did it" %>
-                    <%= f.submit :update, class: "hidden submit-task" %>
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
+        <div class="task-content">
+          <% if params["action"] == "dashboard" %>
+            <%= cl_image_tag(element.photo, size: "100x100") %>
+          <% end %>
+          <table class="task-position">
+            <tr>
+              <td>
+                <div class="description">
+                  <p>By <%= task.name %> you take care of your plant</p>
+                </div>
+              </td>
+              <td>
+                <div class="status">
+                  <%= f.input :completed, label: "  I did it" %>
+                  <%= f.submit :update, class: "hidden submit-task" %>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
         <% end %>
-      </div>
-    <% end%>
-  <% end %>
-</div>
+      <% end%>
+    <% end %>
+  </div>
+
 
