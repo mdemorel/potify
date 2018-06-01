@@ -6,11 +6,11 @@
  <% if element.incomplete_task(task.name) %>
     </div>
     <div class="task-elements">
-      <div class="image">
-        <%= cl_image_tag(element.photo, :transformation=>[
-          {:height=>130,:crop=>"fit"}]) %>
-      </div>
       <div class="task-description">
+      <!-- <div class="image">
+        <%#= cl_image_tag(element.photo, :transformation=>[
+          {:height=>130,:crop=>"fit"}]) %>
+      </div> -->
 
             <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
             <div class="task-content" data-points="<%= task.points %>">
