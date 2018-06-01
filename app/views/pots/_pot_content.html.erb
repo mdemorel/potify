@@ -10,9 +10,11 @@
     <% unless pot.adoption_date.nil? %>
     <p><i class="fa fa-heart"></i> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
     <% end %>
-    <div class="pot-tasks">
-      <%= render "shared/task", element: pot %>
-    </div>
+    <% if pot.tasks.where(completed: false).size > 0 %>
+      <div class="pot-tasks">
+        <%= render "shared/task", element: pot %>
+      </div>
+    <% end %>
   </div>
   <div class="item-border-green">
     <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end" %>
