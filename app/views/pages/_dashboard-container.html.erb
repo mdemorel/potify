@@ -16,12 +16,16 @@
     </div> -->
   </div>
   <div class="user-tasks inner-padding">
-    <h3>My tasks</h3>
-    <% pots.each do |pot|%>
-      <%= link_to pot_path(pot) do %>
-        <%= render "shared/task", element: pot %>
+    <div class="row">
+      <h3>My tasks</h3>
+    </div>
+    <div class="row">
+      <% pots.each do |pot|%>
+        <%= link_to pot_path(pot) do %>
+          <%= render "shared/task", element: pot %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 
   <div class="user-garden inner-padding">
