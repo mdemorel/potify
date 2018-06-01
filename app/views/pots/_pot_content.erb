@@ -10,16 +10,16 @@
     <% unless pot.adoption_date.nil? %>
     <p><i class="fa fa-heart"></i> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
     <% end %>
-   <!--  <div class="pot-tasks">
-      <%#= render "shared/task", element: pot %>
-    </div> -->
-
-    <div class="item-border-green">
-      <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green" %>
+    <div class="pot-tasks">
+      <%= render "shared/task", element: pot %>
     </div>
-    <div>
-      <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-trash"></i>
-      <% end %>
-    </div>
+  </div>
+  <div class="item-border-green">
+    <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end" %>
+  </div>
+   <div>
+    <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </div>
 </div>

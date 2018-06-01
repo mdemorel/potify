@@ -1,16 +1,21 @@
 <div class="navbar-potify">
 
+    <!-- Search Bar & Discover button -->
+
   <div class="navbar-logo">
-    <%= link_to root_path do %>
-      <h1>potify</h1>
-    <% end %>
-  </div>
+      <%= link_to root_path do %>
+  <!--     <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-object/512/potted_plant-512.png" alt="logo">
+   -->   <h1>potify</h1>
+   <% end %>
+    </div>
 
   <!-- Right Navigation -->
   <div class="navbar-right">
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <div class="links">
-        <%= link_to "ADD A PLANT", new_pot_path, class: "link-border-green item-border-green" %>
+        <div class="item-border-green">
+          <%= link_to "ADD A PLANT", new_pot_path, class: "link-border-green item-border-green" %>
+        </div>
         <div class="item-border-green">
           <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green item-border-green" %>
         </div>
