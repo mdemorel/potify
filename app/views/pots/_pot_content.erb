@@ -1,8 +1,7 @@
 <div class="pot-content">
   <% pot_picture = pot.photo.url.nil? ? pot.plant.photo : pot.photo %>
   <div class="pot-image"
-    style="background-image:
-    url('<%= cl_image_path(pot_picture) %>')">
+    style="background-image: url('<%= cl_image_path(pot_picture) %>')">
   </div>
   <div class="pot-info">
     <h3><%= pot.name %></h3>
