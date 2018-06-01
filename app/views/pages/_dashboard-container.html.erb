@@ -2,35 +2,40 @@
   <div class="user-frame inner-padding">
     <div class="welcome-heading">
       <h3 class="welcome-title">Welcome <%= user.first_name %> !</h3>
-    <%= render "shared/points", user: current_user %>
+      <div class="points-circle">
+        <%= render "shared/points", user: current_user %>
+      </div>
     </div>
-    <div class="task-message">
-      <% if current_user.count_tasks > 0 %>
+    <% if current_user.count_tasks > 0 %>
+      <div class="task-message">
         <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
     <!-- <div class="welcome-frame">
       <div class="welcome-message">
         <p>Today's tip : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorem, asperiores est natus aperiam animi, sed id facilis, repudiandae eveniet laborum aut! Libero quibusdam dicta, at a neque dolores vero?</p>
       </div>
     </div> -->
   </div>
-  <div class="user-tasks inner-padding">
-    <div class="row">
+
+  <% if current_user.count_tasks > 0 %>
+    <div class="user-tasks inner-padding">
       <h3>My tasks</h3>
-    </div>
-    <div class="row">
-      <% pots.each do |pot|%>
-        <%= link_to pot_path(pot) do %>
-          <%= render "shared/task", element: pot %>
+      <div class="row">
+        <% pots.each do |pot|%>
+          <%= link_to pot_path(pot) do %>
+            <%= render "shared/task", element: pot %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="user-garden inner-padding">
     <h3>My garden</h3>
-    <%= link_to "Add a plant", new_pot_path %>
+      <div class="item-border-green">
+        <%= link_to "ADD A PLANT", new_pot_path, class: "link-border-green item-border-green" %>
+      </div>
     <div class="row">
       <% pots.each do |pot|%>
         <div class="col-xs-12 col-md-4">
