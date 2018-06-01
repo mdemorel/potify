@@ -18,14 +18,15 @@ class Pot < ApplicationRecord
   def incomplete_task(task_name)
     return nil unless needs?(task_name)
     task = tasks.find_by(completed: false, name: task_name)
-    task = Task.create(pot: self, name: task_name) if task.nil?
+    points = Task::POINTS[task_name]
+    task = Task.create(pot: self, name: task_name, points: points) if task.nil?
     return task
   end
 
   def sum_points
     pot_points = 0
     self.tasks.each do |task|
-      pot_points += task.points unless task.points.nil?
+      pot_points += task.points if task.points && task.completed
     end
     return pot_points
   end
