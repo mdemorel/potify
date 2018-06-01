@@ -8,13 +8,18 @@
     <p><i><%= pot.description %></i></p>
     <p>Family: <%= pot.plant.name %></p>
     <% unless pot.adoption_date.nil? %>
-      <p>You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
+    <p><i class="fa fa-heart"></i> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
     <% end %>
-    <div class="pot-tasks">
-      <%= render "shared/task", element: pot %>
-    </div>
+   <!--  <div class="pot-tasks">
+      <%#= render "shared/task", element: pot %>
+    </div> -->
 
-    <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green item-border-green" %>
-    <%= link_to "My plant is dead", pot_path(pot), method: :delete, data: { confirm: "Are you sure?" }, class: "link-border-green item-border-green" %>
-  </div>
+    <div class="item-border-green">
+      <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green" %>
+    </div>
+    <div>
+      <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
 </div>
