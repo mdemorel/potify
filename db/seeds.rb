@@ -11,6 +11,7 @@ require 'nokogiri'
 
 puts "Destroying database"
 Plant.destroy_all if Rails.env.development?
+Pot.destroy_all if Rails.env.development?
 
 puts "Scraping data"
 
