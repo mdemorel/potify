@@ -60,10 +60,20 @@
       color: white;
       font-weight: bolder;
       text-decoration: none;
-      // opacity: 1;
+      opacity: 1;
     }
   }
 }
+
+.banner {
+  a:hover {
+  text-decoration: none;
+  color: white;
+  }
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
 
 .presentation {
     margin-left: -15px !important;
