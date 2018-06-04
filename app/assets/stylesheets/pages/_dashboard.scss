@@ -55,17 +55,22 @@
   // display: flex;
 
   .card-task {
+    padding-top: 15px;
 
     .card-task-items {
       display: flex;
       flex-wrap: wrap;
-
       .card-item {
         border: 1px solid red;
         padding: 2px;
         width: 48%;
         margin: 1%;
       }
+    }
+    .card-mesage {
+      background-color: green;
+      width: 100%;
+      height: 20px;
     }
   }
 }
