@@ -1,43 +1,56 @@
 <div class="pot-content">
   <% pot_picture = pot.photo.url.nil? ? pot.plant.photo : pot.photo %>
 
-  <div class="pot-image"
-    style="background-image: url('<%= cl_image_path(pot_picture) %>')">
-  </div>
+    <div class="pot-image"
+      style="background-image: url('<%= cl_image_path(pot_picture) %>')">
+      <!-- <div class="item-border-green">
+        <%#= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end item-border-green" %>
+      </div> -->
+      <div class="image-links">
+        <% if current_user == pot.user %>
+          <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+          <%= link_to edit_pot_path(pot) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
 
   <div class="pot-info">
-    <h3><%= pot.name %></h3>
-    <p><i><%= pot.description %></i></p>
-    <p>Family: <%= pot.plant.name %></p>
-    <% unless pot.adoption_date.nil? %>
-    <p><i class="fa fa-heart"></i> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
-    <% end %>
-
-    <% if pot.tasks.where(completed: false).size > 0 %>
-      <div class="pot-tasks">
-        <%= render "shared/task", element: pot %>
+    <div class="pot-user-info">
+      <div class="header">
+        <h3><%= pot.name %></h3>
+        <div class="item-border-green">
+          <% plant_name = pot.plant.name %>
+          <%= link_to "Family: #{plant_name}", plant_path(pot.plant), class: "link-border-green link-flex-end" %>
+        </div>
       </div>
-    <% end %>
+      <div class="adoption-info">
+        <% unless pot.adoption_date.nil? %>
+          <p>❤️ You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
+        <% end %>
+      </div>
+      <div class="about_the_pot">
+        <p><i><%= pot.description %></i></p>
+       </div>
+    </div>
 
+    <%# if pot.tasks.where(completed: false).size > 0 %>
+     <!--  <div class="pot-tasks"> -->
+        <%#= render "shared/task", element: pot %>
+      <!-- </div> -->
+    <%# end %>
     <% unless pot.tasks.empty? %>
-      <div>
+      <div class="pot-statistics">
         <%= render "shared/follow_up", pot: pot %>
       </div>
-
     <% end %>
-  </div>
 
-  <div class="item-border-green">
-    <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end" %>
-  </div>
-   <div>
 
-    <% if current_user == pot.user %>
-      <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-trash"></i>
-      <% end %><%= link_to edit_pot_path(pot) do %>
-        <i class="fas fa-edit"></i>
-      <% end %>
-    <% end %>
+
+
   </div>
 </div>
