@@ -3,7 +3,10 @@
     <div class="task-card">
       <% element.tasks.each do |task| %>
        <% if element.incomplete_task(task.name) %>
+       <div class="title">
         <h2><%= task.name.upcase %></h2>
+        <%= render "shared/badge" %>
+       </div>
         <div class="task-card-by-plant">
           <div class="task-instruction">
             <p>🤟 Hey, give <span="plant-integer"><%= task.pot.plant.watering_quantity %></span> cl to <span="plant-name"><%= element.name%></span></p>
