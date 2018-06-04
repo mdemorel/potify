@@ -5,11 +5,14 @@
   </div> -->
   <% element.tasks.each do |task| %>
     <% if element.incomplete_task(task.name) %>
+    <!-- <p>🤟 Hey, give <span="plant-integer"><%#= task.pot.plant.watering_quantity %></span> cl to <span="plant-name"><%#= element.name%></span></p> -->
       <div class="task-elements">
         <div class="task-description">
           <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
             <div class="task-content" data-points="<%= task.points %>">
               <table class="task-position">
+    
+     
                 <tr>
                   <td>
                     <div class="status">
@@ -22,6 +25,7 @@
             </div>
           <% end %>
         </div>
+
       </div>
     <% end%>
   <% end %>

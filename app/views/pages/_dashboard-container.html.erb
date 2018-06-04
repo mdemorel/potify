@@ -6,16 +6,12 @@
         <%= render "shared/points", user: current_user %>
       </div>
     </div>
-    <% if current_user.count_tasks > 0 %>
-      <div class="task-message">
-        <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
-      </div>
-    <% end %>
   </div>
 
   <% if current_user.count_tasks > 0 %>
     <div class="user-tasks inner-padding">
       <h3>My tasks</h3>
+      <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
       <!-- iterate on each type of task -->
       <% Task::TASKS.each do |task_name| %>
       <!-- if the pot needs the task -->
@@ -33,14 +29,14 @@
     </div>
   <% end %>
 
-  <div class="user-garden inner-padding">
+  <div class="my-garden">
     <h3>My garden</h3>
-      <div class="item-border-green">
-        <%= link_to "ADD A PLANT", new_pot_path, class: "link-border-green item-border-green" %>
-      </div>
+    <div class="item-border-green">
+      <%= link_to "+ add a plant", new_pot_path, class: "link-border-green item-border-green" %>
+    </div>
     <div class="row">
       <% pots.each do |pot|%>
-        <div class="col-xs-12 col-md-4">
+        <div class="col-xs-6 col-md-3">
           <%= link_to pot_path(pot) do %>
             <%= render "shared/card", element: pot %>
           <% end %>
@@ -48,5 +44,4 @@
       <% end %>
     </div>
   </div>
-
 </div>
