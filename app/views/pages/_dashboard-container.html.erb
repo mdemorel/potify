@@ -1,52 +1,54 @@
 <div class="container-dashboard">
 
-  <div class="welcome-heading">
-    <h3 class="welcome-title">Welcome <%= user.first_name %> !</h3>
-    <div class="points-circle">
-      <%= render "shared/points", user: current_user %>
-  </div>
-
-  <div class="top-dashboard">
-    <% if current_user.count_tasks > 0 %>
-      <div class="user-tasks inner-padding">
-        </div>
-        <h3>My tasks</h3>
-        <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
-        <!-- iterate on each type of task -->
-        <% Task::TASKS.each do |task_name| %>
-        <!-- if the pot needs the task -->
-          <div class="task-title">
-            <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
-          </div>
-        <% end %>
-        <!-- <div class="row">
-          <%# pots.each do |pot|%>
-            <%# if pot.tasks.where(completed: false).size > 0 %>
-              <%#= link_to pot_path(pot) do %>
-                <%#= render "shared/task", element: pot %>
-              <%# end %>
-            <%# end %>
-          <%# end %>
-        </div> -->
-      </div>
-    <% end %>
-
-    <div class="user-ranking">
-      <div class="user-gained-points">
-
-      </div>
-      <div class="ranking-table">
-
+  <div class="row">
+    <div class="welcome-heading">
+      <h3 class="welcome-title">Welcome <%= user.first_name %> !</h3>
+      <div class="points-circle">
+        <%= render "shared/points", user: current_user %>
       </div>
     </div>
+  </div>
 
+  <div class="row">
+    <div class="top-dashboard">
+      <% if current_user.count_tasks > 0 %>
+        <div class="user-tasks inner-padding">
+          <h3>My tasks</h3>
+          <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
+          <!-- iterate on each type of task -->
+          <% Task::TASKS.each do |task_name| %>
+          <!-- if the pot needs the task -->
+            <div class="task-title">
+              <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
+            </div>
+          <% end %>
+          <!-- <div class="row">
+            <%# pots.each do |pot|%>
+              <%# if pot.tasks.where(completed: false).size > 0 %>
+                <%#= link_to pot_path(pot) do %>
+                  <%#= render "shared/task", element: pot %>
+                <%# end %>
+              <%# end %>
+            <%# end %>
+          </div> -->
+        </div>
+      <% end %>
+
+      <div class="user-ranking">
+        <div class="user-gained-points">
+
+        </div>
+        <div class="ranking-table">
+
+        </div>
+      </div>
+    </div>
   </div>
 
 
   <div class="user-garden">
-    <h3>My garden</h3>
-    <div class="item-border-green">
-      <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
+    <div class="row">
+      <h3>My garden</h3>
     </div>
     <div class="row">
       <% pots.each do |pot|%>
@@ -56,6 +58,9 @@
           <% end %>
         </div>
       <% end %>
+    </div>
+    <div class="item-border-green">
+      <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
     </div>
   </div>
 </div>

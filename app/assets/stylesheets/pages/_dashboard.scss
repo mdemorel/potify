@@ -1,7 +1,6 @@
-
+/* Big divs */
 
 .container-dashboard {
-  display: flex;
   margin: auto 100px;
   background: white;
 
@@ -15,41 +14,62 @@
   align-items: center;
   vertical-align: middle;
   justify-content: space-between;
-}
 
-.points-circle {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background: linear-gradient($flash-green, $green);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  padding-left: 30px;
-  text-align: center;
-  padding-top: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 6px rgba(130, 130, 130, 0.3);
-}
-
-.points {
+  .points {
    color: white;
   padding: 0px 30px;
   position: relative;
   margin-top: 30px;
 
 
-  #counter_points {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    position: absolute;
-    bottom: 30%;
-    right: 20%;
-    font-size: 25px;
+    #counter_points {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      position: absolute;
+      bottom: 30%;
+      right: 20%;
+      font-size: 25px;
+    }
+  }
+
+  .points-circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: linear-gradient($flash-green, $green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 30px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 6px rgba(130, 130, 130, 0.3);
+  }
+
+}
+
+.top-dashboard {
+  display: flex;
+}
+
+.user-ranking {
+  display: flex;
+}
+
+.user-garden {
+  display: block;
+  .item-border-green {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 100px;
   }
 }
+
+
+
 
 a {
   text-decoration: none;
