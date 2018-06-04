@@ -85,3 +85,41 @@
   }
 }
 
+input {
+  width: 100%;
+}
+
+label {
+  width: 100%;
+  cursor: pointer;
+}
+
+
+.selected-plant {
+  transition: all .2s ease-in-out;
+  &.active {
+    transform: scale(1.1);
+
+  }
+
+}
+
+.plant-choice-image {
+  cursor: pointer;
+  padding-bottom: 20px;
+
+  img {
+    height: 200px;
+    // opacity: 0.2;
+
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+span {
+  padding-left: 20px;
+}
+
