@@ -1,22 +1,22 @@
 <div class="pot-content">
   <% pot_picture = pot.photo.url.nil? ? pot.plant.photo : pot.photo %>
 
-    <div class="pot-image"
-      style="background-image: url('<%= cl_image_path(pot_picture) %>')">
-      <!-- <div class="item-border-green">
-        <%#= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end item-border-green" %>
-      </div> -->
-      <div class="image-links">
-        <% if current_user == pot.user %>
-          <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fa fa-trash"></i>
-          <% end %>
-          <%= link_to edit_pot_path(pot) do %>
-            <i class="fas fa-edit"></i>
-          <% end %>
+  <div class="pot-image"
+    style="background-image: url('<%= cl_image_path(pot_picture) %>')">
+    <!-- <div class="item-border-green">
+      <%#= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end item-border-green" %>
+    </div> -->
+    <div class="image-links">
+      <% if current_user == pot.user %>
+        <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash"></i>
         <% end %>
-      </div>
+        <%= link_to edit_pot_path(pot) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      <% end %>
     </div>
+  </div>
 
 
   <div class="pot-info">
