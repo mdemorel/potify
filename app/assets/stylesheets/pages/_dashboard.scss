@@ -52,7 +52,22 @@
 }
 
 .top-dashboard {
-  display: flex;
+  // display: flex;
+
+  .card-task {
+
+    .card-task-items {
+      display: flex;
+      flex-wrap: wrap;
+
+      .card-item {
+        border: 1px solid red;
+        padding: 2px;
+        width: 48%;
+        margin: 1%;
+      }
+    }
+  }
 }
 
 .user-ranking {
