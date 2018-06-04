@@ -6,7 +6,6 @@
 }
 
 .big-header {
-
     text-align: center;
     margin: auto;
 
@@ -47,11 +46,12 @@
   box-shadow: 25px 25px 100px rgba(56, 62, 65, 0.35), 25px 0px 200px rgba(255, 255, 255,0.1);
 }
 .banner {
-  width: 60%;
+  width: 75%;
   margin: auto;
   display: flex;
   flex-direction: column;
   margin-bottom: 60px;
+  height: calc(100vh - 120px);
 
   .btn-yellow {
     margin: auto;

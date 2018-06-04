@@ -5,58 +5,91 @@
   position: absolute;
 }
 
-
 .pot {
   // background-color: #E7E5DF;
   background-color: white;
-  width: 95%;
+  // width: 95%;
   // position: relative;
-  top: 50px;
+  // top: 50px;
   margin: 50px;
-
+  // height: calc(90vh - 120px);
   // box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
-  // box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   padding: 0px;
   border-radius: 10px;
 }
 
-.link-flex-end {
-  position: relative;
-  bottom: 300px;
-  left: 30px;
-}
+
 .pot-content {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
   padding: 0px;
   height: 700px;
+
+  .link-flex-end {
+  // position: relative;
+  bottom: 300px;
+  left: 30px;
+  }
 }
 
 .pot-image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  flex: 0 0 40%;
-  height: 100%;
+  flex: 0 0 30%;
+  height: 50%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-color: solid 2px white;
   border: solid 20px white;
+  margin-bottom: 20%;
   // border-radius: 50%;
 
-
+  .image-links {
+    display: flex;
+  }
 }
 
 
 .pot-info {
-  flex: 0 0 40%;
-  padding-left: 50px;
+    flex: 1 0 50%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+  .header {
+    margin-bottom: 20px;
+    position: absolute;
+    top: 60px;
+  }
 
   h3 {
-    font-size: 80px;
+    font-size: 50px;
     color: $yellow;
   }
+}
+
+.pot-statistics {
+      margin-top: 150px;
+}
+
+.adoption-info {
+  position: absolute;
+    top: 105px;
+    right: 240px;
+}
+
+.about_the_pot {
+  position: absolute;
+  top: 200px;
+  width: 600px;
+  padding: 15px;
+  border: solid 1px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  font-size: 16px;
+  font-style: italic;
 }
 
 .plant-info {
@@ -67,7 +100,6 @@
     align-items: center;
     justify-content: space-between;
     padding-right: 20px;
-
   }
 
   h3 {

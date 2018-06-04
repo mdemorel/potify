@@ -7,38 +7,40 @@
       <div class="home-image">
         <img src="https://www.ourhouseplants.com/imgs-site/houseplant-pot-footer.png" alt="cactus">
       </div>
-        <%= link_to "Pamper me please!", dashboard_path, class: "btn-yellow grow" %>
+        <%= link_to "Enter the game!", dashboard_path, class: "btn-yellow grow" %>
     </div>
     <div class="presentation">
-      <h2>WHAT WE DO</h2>
-      <p class="source-font">Potify helps you to enjoy taking care of your plants </p>
+      <h2>THE RULES OF THE GAME</h2>
+      <p class="source-font">Take care of your plants, have fun!</p>
       <div class="key-learning">
         <div class="reminder">
-          <%= image_tag("tools.png", size: 60) %>
-          Automatic reminders to never forget when to take care of it
+          <%= image_tag("reminder-1.png", size: 60) %>
+          We tell you how and when you need to take care of your plants
         </div>
         <div class="reminder">
-          <%= image_tag("tips.png", size: 60) %>
-        All the information you need for your plant
+          <%= image_tag("reminder.png", size: 60) %>
+          Need more information? We got it covered
         </div>
         <div class="reminder">
-          <%= image_tag("reward.png", size: 60) %>
-          Rewards for each task you complete
+          <%= image_tag("points.png", size: 60) %>
+          Earn points when you complete your tasks !
         </div>
       </div>
     </div>
     <div class="cards-content">
       <!-- link to other pots from other users -->
       <h2>OUR HAPPIEST POTS</h2>
+        <p class="source-font">Their masters know how to please them !</p>
+
       <%= render "shared/home_cards", elements: @pots %>
       <%= link_to "SEE MORE", pots_path, class: "navbar-potify-link btn btn-minimal in-banner" %>
     </div>
-    <div class="cards-content">
+    <!-- <div class="cards-content">
       <h2>CURIOUS ABOUT PLANTS?</h2>
       <p class="source-font">Find out more about indoor plants and find your next baby pot! </p>
       <%#= render "shared/home_cards", elements: @plants %>
-      <%= link_to "DISCOVER", plants_path, class: "navbar-potify-link btn btn-minimal in-banner" %>
-    </div>
+      <%#= link_to "DISCOVER", plants_path, class: "navbar-potify-link btn btn-minimal in-banner" %>
+    </div> -->
 
   </div>
 

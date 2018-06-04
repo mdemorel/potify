@@ -1,13 +1,35 @@
-<div>
+<div class="task-statistics">
   <h4>You took care of <%= pot.name %> <%= pluralize pot.tasks.count, "time" %> since you met 😘</h4>
-  <% pot.tasks.each do |task| %>
-  <% unless task.nil? %>
-    <div class="task-follow-up">
-      <h5><%= task.name.capitalize %></h5>
-      <p>Last <%= task.name %> : <%= pot.send("last_#{task.name}").strftime("%b %d, %Y") %></p>
-      <p>Next <%= task.name %>: <%= pot.next_task_date(task.name).strftime("%b %d, %Y") %></p>
-      <p><%= pluralize pot.tasks.where(name: task.name).count, "time" %> since you met</p>
-    </div>
-  <% end %>
-  <% end %>
+  <div class="row">
+    <% pot.tasks.each do |task| %>
+      <div class="col-xs-12 col-md-6">
+        <% unless task.nil? %>
+          <div class="task-follow-up">
+            <h5><%= task.name.capitalize %></h5>
+            <% if pot.incomplete_task(task.name) %>
+              <div class="task-description">
+                <%= simple_form_for(task, :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
+                  <div class="task-content" data-points="<%= task.points %>">
+                    <table class="task-position">
+                      <tr>
+                        <td>
+                          <div class="status">
+                            <%= f.input :completed, label: "  I did it" %>
+                            <%= f.submit :update, class: "hidden submit-task" %>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+            <p>Last <%= task.name %> : <%= pot.send("last_#{task.name}").strftime("%b %d, %Y") %></p>
+            <p>Next <%= task.name %> in <%= pluralize pot.next_task_date(task.name).day, "day" %></p>
+            <!-- <p><%#= pluralize pot.tasks.where(name: task.name).count, "time" %> since you met</p> -->
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
