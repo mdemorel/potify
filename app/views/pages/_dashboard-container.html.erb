@@ -23,8 +23,10 @@
       <h3>My tasks</h3>
       <div class="row">
         <% pots.each do |pot|%>
-          <%= link_to pot_path(pot) do %>
-            <%= render "shared/task", element: pot %>
+          <% if pot.tasks.where(completed: false).size > 0 %>
+            <%= link_to pot_path(pot) do %>
+              <%= render "shared/task", element: pot %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
