@@ -1,7 +1,8 @@
 .wrapper-color {
   background: linear-gradient($flash-green, $green);
   width: 100%;
-  // position: absolute;
+  position: absolute;
+  padding: 0px!important,
 }
 
 .big-header {
@@ -38,7 +39,7 @@
 
 .container-gray {
   background-color: white;
-  width: 95%;
+  width: 90%;
   margin-top: 50px;
   margin-bottom: 50px;
   border-radius: 10px;
