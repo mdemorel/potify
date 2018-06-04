@@ -3,16 +3,16 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  def create
-    @task = Task.new(task_params)
-  end
+  # def create
+  #   @task = Task.new(task_params)
+  # end
 
   def update
     @task = Task.find(params[:id])
     authorize(@task)
     @task.mark_as_completed!
     @user = current_user
-    @pots = Pot.all
+    @pots = Pot.where(user: current_user)
     @pot = @task.pot
     if @task.save
       respond_to do |format|
