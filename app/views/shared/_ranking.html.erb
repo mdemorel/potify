@@ -1,0 +1,28 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Points</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.first(10).each do |user| %>
+      <% i = 0 %>
+        <tr>
+          <%= (i += 1) %>
+        </tr>
+        <tr>
+          <%= @user.first_name %>
+        </tr>
+        <tr>
+          <%= @user.count_points %>
+        </tr>
+        <tr>
+          <%= @user.photo unless @user.photo.nil? %>
+        </tr>
+      <% end %>
+    </tbody>
+</div>

@@ -6,6 +6,7 @@
     <!-- <div class="item-border-green">
       <%#= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end item-border-green" %>
     </div> -->
+
     <div class="image-links">
       <% if current_user == pot.user %>
         <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
@@ -38,6 +39,10 @@
        </div>
     </div>
 
+    <div>
+      <%= render "shared/plant_information", plant: pot.plant %>
+    </div>
+
     <%# if pot.tasks.where(completed: false).size > 0 %>
      <!--  <div class="pot-tasks"> -->
         <%#= render "shared/task", element: pot %>
@@ -48,9 +53,6 @@
         <%= render "shared/follow_up", pot: pot %>
       </div>
     <% end %>
-
-
-
 
   </div>
 </div>

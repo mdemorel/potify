@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @pots = Pot.where(user: current_user)
+    @users = User.all
   end
 end

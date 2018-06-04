@@ -3,41 +3,14 @@
     <div class="pot-content">
       <div class="pot-image" style="background-image: url('<%= @plant.photo %>')">
       </div>
-      <div class="plant-info">
-        <div class="title">
+      <div class="pot-info">
+        <div class="header">
           <h3><%= @plant.name %></h3>
+          <p><%= @plant.category %></p>
           <%= link_to "Back to plants", plants_path, class: "link-black" %>
+          <p class="about_the_pot">Description: <%= @plant.description %></p>
         </div>
-
-        <p><%= @plant.category %></p>
-        <p>Description: <%= @plant.description %></p>
-        <h4>Watering</h4>
-        <ul class="list-inline">
-          <li><%= @plant.watering_quantity %> cl</li>
-          <li>Every <%= @plant.watering_frequency %> days</li>
-        </ul>
-        <h4>Fertilizing</h4>
-        <ul class="list-inline">
-          <li>Every <%= @plant.fertilizing_frequency %> days</li>
-          <li>Use <%= @plant.fertilizing_type %></li>
-          <li><%= @plant.fertilizing_quantity %> g</li>
-        </ul>
-        <h4>Potting</h4>
-        <ul class="list-inline">
-          <li>Every <%= @plant.potting_frequency %> days</li>
-        </ul>
-        <h4>Exposition</h4>
-        <ul class="list-inline">
-          <li><%= @plant.exposition %><i class="fas fa-sun"></i></li>
-        </ul>
-        <h4>Temperature</h4>
-        <ul class="list-inline">
-          <li><%= @plant.temperature %></li>
-        </ul>
-        <h4>Cutting</h4>
-        <ul class="list-inline">
-          <li><%= @plant.cutting_frequency %></li>
-        </ul>
+        <%= render "shared/plant_information", plant: @plant %>
       </div>
     </div>
   </div>
