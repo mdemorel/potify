@@ -8,6 +8,8 @@ class Task < ApplicationRecord
     "potting" => 300
   }
 
+  TASKS = POINTS.keys
+
   validates :name, inclusion: { in: POINTS.keys }
 
   def mark_as_completed!

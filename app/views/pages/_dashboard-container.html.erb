@@ -8,25 +8,26 @@
     </div>
   </div>
 
-  <div class="my-tasks">
-    <% if current_user.count_tasks > 0 %>
-      <div class="user-tasks inner-padding">
+  <% if current_user.count_tasks > 0 %>
+    <div class="user-tasks inner-padding">
       <h3>My tasks</h3>
-      <div class="task-message">
-        <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
-      </div>
-      <div class="row">
-        <% pots.each do |pot|%>
-          <% if pot.tasks.where(completed: false).size > 0 %>
-            <%= link_to pot_path(pot) do %>
-              <%= render "shared/task", element: pot %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-      </div>
-    <% end %>
-  </div>
+      <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
+      <!-- iterate on each type of task -->
+      <% Task::TASKS.each do |task_name| %>
+      <!-- if the pot needs the task -->
+          <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
+      <% end %>
+      <!-- <div class="row">
+        <%# pots.each do |pot|%>
+          <%# if pot.tasks.where(completed: false).size > 0 %>
+            <%#= link_to pot_path(pot) do %>
+              <%#= render "shared/task", element: pot %>
+            <%# end %>
+          <%# end %>
+        <%# end %>
+      </div> -->
+    </div>
+  <% end %>
 
   <div class="my-garden">
     <h3>My garden</h3>
