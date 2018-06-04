@@ -8,7 +8,7 @@
         <% @plants.each do |plant| %>
           <div class="col-xs-12 col-md-4">
             <%= link_to plant_path(plant) do %>
-              <%= render "shared/card", element: plant %>
+              <%= render "shared/card", element: plant, select: false %>
             <% end %>
           </div>
         <% end %>
