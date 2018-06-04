@@ -6,6 +6,15 @@
   border-radius: 5px;
   margin: 30px 20px;
 
+  .avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+  }
+
   &:hover{
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   }

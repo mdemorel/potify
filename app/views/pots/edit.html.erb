@@ -1,0 +1,55 @@
+
+<div class="wrapper wrapper-color">
+  <div class="container", style="margin-bottom: 40px;">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="form-pots">
+          <h3>Add your plant !</h3>
+          <%= simple_form_for(@pot) do |f| %>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-6">
+                  <%= f.input :name, placeholder: "Name" %>
+                </div>
+                <div class="col-xs-6">
+                  <%= f.association :plant, collection: Plant.all %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <%= f.input :description, placeholder: "Type anything you love about this plant!" %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <label class="form-control-label string optional" for="pot_photo">Add a photo</label>
+                  <%= f.input :photo, label: false %>
+                  <%= f.input :photo_cache, as: :hidden %>
+                  <img width="100%" class="image-preview">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?" %>
+                </div>
+              </div>
+              <label class="form-control-label string optional" for="pot_photo">Select your pot's size</label>
+              <div class="flex">
+                <%= f.input :recipient_size, :as => :hidden %>
+                <div class="select-size" data-size="1"><i class="fa fa-leaf" aria-hidden="true" id="small-leaf"></i> Small</div>
+                <div class="select-size" data-size="2"><i class="fa fa-leaf" aria-hidden="true" id="medium-leaf"></i> Medium</div>
+                <div class="select-size" data-size="3"><i class="fa fa-leaf" aria-hidden="true" id="large-leaf"></i> Large</div>
+              </div>
+              <div class="flexbutton">
+                <%= f.submit "Save", class: "btn-yellow"  %>
+              </div>
+              <%= link_to "Back to my plant", pot_path(@pot), class: "btn-minimal" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/footer" %>
+</div>
+

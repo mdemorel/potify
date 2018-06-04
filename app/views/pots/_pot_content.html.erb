@@ -31,8 +31,13 @@
     <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end" %>
   </div>
    <div>
-    <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fa fa-trash"></i>
+
+    <% if current_user == pot.user %>
+      <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %><%= link_to edit_pot_path(pot) do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
     <% end %>
   </div>
 </div>

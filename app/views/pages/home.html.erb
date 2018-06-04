@@ -28,8 +28,15 @@
       </div>
     </div>
     <div class="cards-content">
-      <h2>CURIOUS ABOUT OUR PLANTS?</h2>
-      <%= render "shared/home_cards", elements: @plants %>
+      <!-- link to other pots from other users -->
+      <h2>OUR HAPPIEST POTS</h2>
+      <%= render "shared/home_cards", elements: @pots %>
+      <%= link_to "SEE MORE", pots_path, class: "navbar-potify-link btn btn-minimal in-banner" %>
+    </div>
+    <div class="cards-content">
+      <h2>CURIOUS ABOUT PLANTS?</h2>
+      <p class="source-font">Find out more about indoor plants and find your next baby pot! </p>
+      <%#= render "shared/home_cards", elements: @plants %>
       <%= link_to "DISCOVER", plants_path, class: "navbar-potify-link btn btn-minimal in-banner" %>
     </div>
 
