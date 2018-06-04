@@ -11,8 +11,8 @@
           <%= simple_form_for(element.incomplete_task(task.name), :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
             <div class="task-content" data-points="<%= task.points %>">
               <table class="task-position">
-    
-     
+
+
                 <tr>
                   <td>
                     <div class="status">
@@ -25,7 +25,6 @@
             </div>
           <% end %>
         </div>
-
       </div>
     <% end%>
   <% end %>

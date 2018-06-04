@@ -2,12 +2,17 @@
 tasks
 task.pot -->
 <div>
-  <h3><%= task_name %></h3>
+  <span class="task-title-badge">
+    <span class="h3"><%= task_name.upcase %></span>
+    <div class="task-badge">
+      <%= render "shared/badge" %>
+    </div>
+  </span>
   <% tasks.each do |task| %>
     <div>
       <!-- <p>Hey, give <%#= task.pot.name %> <%#= task.pot.plant.send("#{task.name}_quantity")%></p> -->
       <p><%= task.pot.name.capitalize %></p>
-      <%= cl_image_tag(task.pot.photo) %>
+      <%= cl_image_tag(task.pot.photo, width: '400') %>
       <div class="task-description">
           <%= simple_form_for(task, :defaults => { :input_html => { :class => "sweet-alert-demo" } }, remote: true) do |f| %>
             <div class="task-content" data-points="<%= task.points %>">
