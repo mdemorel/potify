@@ -1,0 +1,34 @@
+<div class="information_details">
+
+  <div class="row">
+    <div class="plant_info">
+      <div class="col-xs-12 col-md-4 task-information">
+        <h4>Watering</h4>
+        <p><%= plant.watering_quantity %> cl</p>
+        <p>Every <%= plant.watering_frequency %> days</p>
+      </div>
+      <div class="col-xs-12 col-md-4 task-information">
+        <h4>Fertilizing</h4>
+        <p>Every <%= plant.fertilizing_frequency %> days</p>
+        <p>Use <%= plant.fertilizing_type %></p>
+        <p><%= plant.fertilizing_quantity %> g</p>
+      </div>
+       <div class="col-xs-12 col-md-4 task-information">
+        <h4>Potting</h4>
+        <p>Every <%= plant.potting_frequency %> days</p>
+      </div>
+      <div class="col-xs-12 col-md-4 task-information">
+        <h4>Exposition</h4>
+        <p><%= plant.exposition %><i class="fas fa-sun"></i></p>
+      </div>
+      <div class="col-xs-12 col-md-4 task-information">
+        <h4>Temperature</h4>
+        <p><%= plant.temperature %></p>
+      </div>
+      <div class="col-xs-12 col-md-4 task-information">
+        <h4>Cutting</h4>
+        <p><%= plant.cutting_frequency %></p>
+      </div>
+    </div>
+  </div>
+</div>

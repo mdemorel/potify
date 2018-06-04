@@ -1,5 +1,8 @@
 <div class="task-statistics">
-  <h4>You took care of <%= pot.name %> <%= pluralize pot.tasks.count, "time" %> since you met 😘</h4>
+  <% if pot.tasks.where(completed: true).count > 0 %>
+    <h4>You took care of <%= pot.name %> <%= pluralize pot.tasks.where(completed: true).count, "time" %> since you met 😘</h4>
+  <% end %>
+
   <div class="row">
     <% pot.tasks.each do |task| %>
       <div class="col-xs-12 col-md-6">
