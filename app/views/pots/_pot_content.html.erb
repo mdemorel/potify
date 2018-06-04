@@ -1,8 +1,10 @@
 <div class="pot-content">
   <% pot_picture = pot.photo.url.nil? ? pot.plant.photo : pot.photo %>
+
   <div class="pot-image"
     style="background-image: url('<%= cl_image_path(pot_picture) %>')">
   </div>
+
   <div class="pot-info">
     <h3><%= pot.name %></h3>
     <p><i><%= pot.description %></i></p>
@@ -10,18 +12,32 @@
     <% unless pot.adoption_date.nil? %>
     <p><i class="fa fa-heart"></i> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
     <% end %>
+
     <% if pot.tasks.where(completed: false).size > 0 %>
       <div class="pot-tasks">
         <%= render "shared/task", element: pot %>
       </div>
     <% end %>
+
+    <% unless pot.tasks.empty? %>
+      <div>
+        <%= render "shared/follow_up", pot: pot %>
+      </div>
+
+    <% end %>
   </div>
+
   <div class="item-border-green">
     <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green link-flex-end" %>
   </div>
    <div>
-    <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fa fa-trash"></i>
+
+    <% if current_user == pot.user %>
+      <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %><%= link_to edit_pot_path(pot) do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
     <% end %>
   </div>
 </div>

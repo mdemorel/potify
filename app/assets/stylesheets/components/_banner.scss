@@ -1,7 +1,8 @@
 .wrapper-color {
   background: linear-gradient($flash-green, $green);
   width: 100%;
-  // position: absolute;
+  position: absolute;
+  padding: 0px!important,
 }
 
 .big-header {
@@ -15,7 +16,7 @@
     text-align: center;
 
     font-size: 70px;;
-    background: -webkit-linear-gradient(right, $flash-green, $green);
+    background: -webkit-linear-gradient(45deg, $flash-green, $green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 30px;
@@ -38,7 +39,7 @@
 
 .container-gray {
   background-color: white;
-  width: 95%;
+  width: 90%;
   margin-top: 50px;
   margin-bottom: 50px;
   border-radius: 10px;

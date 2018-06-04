@@ -33,7 +33,7 @@ class Pot < ApplicationRecord
     return pot_points
   end
 
-  # def adoption_date=(val)
-  #   Date.strptime(val, "%A/%b/%d") if val.present?
-  # end
+  def next_task_date(task_name)
+    next_task_date = send("last_#{task_name}") + plant.send("#{task_name}_frequency")
+  end
 end

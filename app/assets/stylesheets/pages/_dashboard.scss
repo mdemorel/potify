@@ -1,6 +1,7 @@
 
 
 .container-dashboard {
+  display: flex;
   margin: auto 100px;
   background: white;
 
@@ -41,9 +42,9 @@
 
   #counter_points {
     display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-  position: absolute;
+    vertical-align: middle;
+    line-height: normal;
+    position: absolute;
     bottom: 30%;
     right: 20%;
     font-size: 25px;
@@ -59,32 +60,12 @@ a {
   margin-bottom: 10px;
 }
 
-// .welcome-title {
-//   text-align: left;
-//   font-size: 40px;
-//   color: $green;
-// }
+/* For positionning badge */
+.title {
 
-// .welcome-icon {
-//   max-width: 100px;
-//   max-height: 100px;
-// }
+  h2 {
+    position: absolute;
+  }
+}
 
-// .user-frame {
-//   display: flex;
-//   align-items: center;
-// }
 
-// .welcome-frame {
-//   display: flex;
-//   align-items: center;
-// }
-
-// .welcome-message {
-//   width: 60%;
-// }
-
-// .points {
-//   padding: 30px;
-//   text-align: center;
-// }
