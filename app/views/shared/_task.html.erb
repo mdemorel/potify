@@ -1,7 +1,6 @@
 
   <div class="container-task">
     <div class="task-card">
-      <!-- h2> 😘 Hey your <span id="plant-color-name"><%#= element.name %></span> needs love !</h2> -->
       <% element.tasks.each do |task| %>
        <% if element.incomplete_task(task.name) %>
         <h2><%= task.name.upcase %></h2>
@@ -9,7 +8,7 @@
           <div class="task-instruction">
             <p>🤟 Hey, give <span="plant-integer"><%= task.pot.plant.watering_quantity %></span> cl to <span="plant-name"><%= element.name%></span></p>
           </div>
-          <div class="tasks-plant">
+          <div class="task-pot">
             <!-- render avatar -->
           </div>
         </div>
