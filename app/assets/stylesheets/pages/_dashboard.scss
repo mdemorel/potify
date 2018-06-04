@@ -61,10 +61,13 @@ a {
 }
 
 /* For positionning badge */
-.title {
+.task-title-badge {
+  position: relative;
 
-  h2 {
+  .task-badge {
     position: absolute;
+    top: -20px;
+    right: -25px;
   }
 }
 
