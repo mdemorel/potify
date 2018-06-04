@@ -1,6 +1,7 @@
 
 
 .container-dashboard {
+  display: flex;
   margin: auto 100px;
   background: white;
 
@@ -41,9 +42,9 @@
 
   #counter_points {
     display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-  position: absolute;
+    vertical-align: middle;
+    line-height: normal;
+    position: absolute;
     bottom: 30%;
     right: 20%;
     font-size: 25px;
@@ -58,3 +59,13 @@ a {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/* For positionning badge */
+.title {
+
+  h2 {
+    position: absolute;
+  }
+}
+
+
