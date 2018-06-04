@@ -38,7 +38,7 @@
       <% pots.each do |pot|%>
         <div class="col-xs-6 col-md-3">
           <%= link_to pot_path(pot) do %>
-            <%= render "shared/card", element: pot %>
+            <%= render "shared/card", element: pot, select: false %>
           <% end %>
         </div>
       <% end %>

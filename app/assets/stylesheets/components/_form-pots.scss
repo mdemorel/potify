@@ -106,14 +106,20 @@ label {
 
 .plant-choice-image {
   cursor: pointer;
+  padding-bottom: 20px;
 
   img {
-    height: 40px;
-    margin: 0px 0px;
-    border-radius: 26%;
+    height: 200px;
+    // opacity: 0.2;
 
   }
 }
 
+textarea {
+  resize: none;
+}
 
+span {
+  padding-left: 20px;
+}
 
