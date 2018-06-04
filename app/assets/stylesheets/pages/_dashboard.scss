@@ -37,7 +37,7 @@
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background: linear-gradient($flash-green, $green);
+    background: linear-gradient(0.9turn, $flash-green, $green);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,24 +56,56 @@
 
   .card-task {
     padding-top: 15px;
+    h3 {
+      padding: 5px 10px 10px
+    }
 
     .card-task-items {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      text-align: left;
+      font-size: 14px;
       .card-item {
-        border: 1px solid red;
+        display: flex;
         padding: 2px;
-        width: 48%;
+        align-items: center;
+        justify-content: space-around;
+        width: 96%;
+        height: 65px;
         margin: 1%;
+        border-radius: 2px;
+        background-color: $task-gray;
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.05);
+        p {
+          margin: 0 20px;
+          line-height: 1;
+        }
+        .plant-quantity {
+          color: $green;
+          font-weight: bolder;
+          font-size: 28px;
+        }
+        .pot-name {
+          font-weight: bolder;
+          font-size: 21px;
+        }
+        .task-picto {
+          height: 40px;
+        }
       }
     }
-    .card-mesage {
-      background-color: green;
+    .card-message {
+      background: linear-gradient(0.9turn,$flash-green, $green);
+      border-radius: 0px 0px 4px 4px;
       width: 100%;
-      height: 20px;
+      height: 15px;
+      margin-top: 15px;
     }
   }
 }
+
 
 .user-ranking {
   display: flex;
