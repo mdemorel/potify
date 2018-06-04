@@ -11,25 +11,25 @@
         <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
       </div>
     <% end %>
-    <!-- <div class="welcome-frame">
-      <div class="welcome-message">
-        <p>Today's tip : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorem, asperiores est natus aperiam animi, sed id facilis, repudiandae eveniet laborum aut! Libero quibusdam dicta, at a neque dolores vero?</p>
-      </div>
-    </div> -->
   </div>
 
   <% if current_user.count_tasks > 0 %>
     <div class="user-tasks inner-padding">
       <h3>My tasks</h3>
-      <div class="row">
-        <% pots.each do |pot|%>
-          <% if pot.tasks.where(completed: false).size > 0 %>
-            <%= link_to pot_path(pot) do %>
-              <%= render "shared/task", element: pot %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
+      <!-- iterate on each type of task -->
+      <% Task::TASKS.each do |task_name| %>
+      <!-- if the pot needs the task -->
+          <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
+      <% end %>
+      <!-- <div class="row">
+        <%# pots.each do |pot|%>
+          <%# if pot.tasks.where(completed: false).size > 0 %>
+            <%#= link_to pot_path(pot) do %>
+              <%#= render "shared/task", element: pot %>
+            <%# end %>
+          <%# end %>
+        <%# end %>
+      </div> -->
     </div>
   <% end %>
 
