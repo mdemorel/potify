@@ -10,8 +10,39 @@
                 <div class="col-xs-6">
                   <%= f.input :name, placeholder: "Name" %>
                 </div>
-                <div class="col-xs-6">
-                  <%= f.association :plant, collection: Plant.all %>
+                <div class="col-xs-6 plant-choice-image">
+                  <%= f.label ("Choose a plant") %>
+                 <!--  <span class="btn btn-primary" id="plant-choice-button" data-toggle="modal" data-target="#myModal">CHOOSE YOUR PLANT</span> -->
+                 <div class="avatar" id="div_plant_name" data-toggle="modal" data-target="#myModal">
+                   <img src="https://images.unsplash.com/photo-1511048794321-5d21136bf6df?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=56d9c7f8ce34c1001c7447c4429544c6&auto=format&fit=crop&w=2250&q=80" alt="" id="plant-choice-button" >
+
+                 </div>
+                  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                          <%= render "shared/search" %>
+                          <div class="row">
+                            <% Plant.all.each do |plant| %>
+                              <div class="col-xs-12 col-md-4">
+                                <%= f.radio_button(:plant_id, plant.id, class: "hidden") %>
+                                <%= f.label("plant_id_#{plant.id}") do %>
+                                <%= render "shared/card", element: plant, select: true %>
+                                <% end %>
+                              </div>
+                            <% end %>
+                          </div>
+                        </div>
+                       <!--  <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
