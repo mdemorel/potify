@@ -55,8 +55,18 @@
 
 }
 
+.user-tasks.inner-padding {
+  display: flex;
+  flex-wrap: wrap;
+
+  .task-title-card {
+    width: 48%;
+    margin: 1%;
+  }
+}
+
 .top-dashboard {
-  // display: flex;
+  display: flex;
 
   .card-task {
     padding-top: 15px;
@@ -108,16 +118,23 @@
       margin-top: 15px;
     }
   }
+
 }
 
-
 .user-ranking {
+
+}
+
+.ranking-table {
 
   // border: 2px solid;
   // color: red;
   width: 100%;
   height: 200px;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .user-garden {
   display: block;
