@@ -12,5 +12,8 @@ function previewFile(e) {
     reader.readAsDataURL(file);
   }
 }
-document.querySelector('.form-pots input[type=file]').onchange = previewFile;
+if (document.querySelector('.form-pots input[type=file]')) {
+  document.querySelector('.form-pots input[type=file]').onchange = previewFile;
+
+}
 

@@ -1,15 +1,15 @@
-<!-- gather all the pots needing to perform the task
-tasks
-task.pot -->
 <% tasks.each do |task| %>
   <div class="card-task">
-    <div class="card-task-items">
-      <div class="card-item">
+    <%= simple_form_for(task, remote: true) do |f| %>
+      <div class="card-item grow" data-points="<%= task.points %>" >
+        <%= f.submit :update, class: " hidden submit-task sweet-alert-demo" %>
         <%= cl_image_tag(task.pot.photo, class: 'plant-avatar') %>
         <p> Hey, give <span class='plant-quantity'>10cl</span><br>to <span class='pot-name'><%= task.pot.name.capitalize %></span></p>
-        <%= image_tag "picto-check.svg", class: 'task-picto' %>
+            <%#= f.input :completed, label: "  I did it" %>
+
+        <%#= image_tag "picto-check.svg", class: 'task-picto' %>
       </div>
-    </div>
+    <% end %>
   </div>
 <% end %>
 
