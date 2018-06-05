@@ -1,7 +1,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="welcome-heading">
-        <h3 class="welcome-title">Welcome <%= user.first_name %> !</h3>
+        <h3 class="welcome-title">Welcome <%= user.status %> !</h3>
         <div class="points-circle">
           <%= render "shared/points", user: current_user %>
         </div>
@@ -19,17 +19,20 @@
           <div class="user-tasks inner-padding">
             <% if current_user.count_tasks > 0 %>
               <% Task::TASKS.each do |task_name| %>
-                <div class="task-title-card">
-                  <span class="task-title-badge">
-                    <span class="span-paytone"><%= task_name.upcase %></span>
-                    <div class="task-badge">
-                      <%= render "shared/badge", task_name: task_name %>
+
+                <% if current_user.count_tasks_by_name(task_name) > 0  %>
+                  <div class="task-title-card">
+                    <span class="task-title-badge">
+                      <span class="span-paytone"><%= task_name.upcase %></span>
+                        <div class="task-badge">
+                          <%= render "shared/badge", task_name: task_name %>
+                         </div>
+                    </span>
+                    <div class="task-title">
+                      <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
                     </div>
-                  </span>
-                  <div class="task-title">
-                    <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
                   </div>
-                </div>
+                <% end %>
               <% end %>
             <% else %>
               <div class="item-border-green">

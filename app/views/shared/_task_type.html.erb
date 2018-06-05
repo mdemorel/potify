@@ -1,5 +1,5 @@
 <% tasks.each do |task| %>
-  <div class="card-task">
+  <div class="card-task" id="update-card">
     <%= simple_form_for(task, remote: true) do |f| %>
       <div class="card-item grow" data-points="<%= task.points %>" >
         <%= f.submit :update, class: " hidden submit-task sweet-alert-demo" %>
