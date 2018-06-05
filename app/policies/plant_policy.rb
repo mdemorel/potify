@@ -8,4 +8,12 @@ class PlantPolicy < ApplicationPolicy
   def show?
     return true
   end
+
+  def edit?
+    return true
+  end
+
+  def update?
+    user.admin = true
+  end
 end
