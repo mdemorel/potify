@@ -26,11 +26,11 @@
         <p><i><%= pot.description %></i></p>
       </div>
       <%= render "shared/plant_information", plant: pot.plant %>
-      <%# if pot.tasks.where(completed: false).size > 0 %>
-        <!-- <div class="pot-tasks">
-          <%#= render "shared/task", element: pot %>
-        </div> -->
-      <%# end %>
+      <% if pot.tasks.where(completed: false).size > 0 %>
+        <div class="pot-tasks">
+          <%= render "shared/task", element: pot %>
+        </div>
+      <% end %>
       <%# unless pot.tasks.empty? %>
      <!--    <div class="pot-statistics">
           <%#= render "shared/follow_up", pot: pot %>
