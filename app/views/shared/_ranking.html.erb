@@ -12,7 +12,7 @@
     </div>
   </div>
   <% i = 0 %>
-  <% @users.order(points: :desc).first(10).each do |user| %>
+  <% @users.order(points: :desc).first(5).each do |user| %>
     <% photo = user.photo unless user.photo.nil? %>
     <div class="message">
       <div class="message-status">
