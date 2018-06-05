@@ -14,6 +14,13 @@ class User < ApplicationRecord
   #   return user_points
   # end
 
+  STATUS = {
+    "Baby Seeder" => [0...1000],
+    "Aspiring gardener" => [1000...2000],
+    "Garden Hero" => [2000...3000],
+    "Plant wizard" => [3000...100000]
+  }
+
   def count_tasks
     user_tasks = 0
     self.pots.each do |pot|
@@ -28,6 +35,19 @@ class User < ApplicationRecord
       user_tasks += pot.tasks.where(completed: false).where(name: task_name).size
     end
     return user_tasks
+  end
+
+  def status
+    status = ""
+    if points < 1000
+      status = "Baby seeder"
+    elsif points < 2000
+      status = "Aspiring gardener"
+    elsif points < 3000
+      status = "Garen Hero"
+    else
+      status = "Plant wizard"
+    end
   end
 
   # def points(number)
