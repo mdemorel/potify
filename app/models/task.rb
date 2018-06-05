@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :pot
 
+
   POINTS = {
     "watering" => 100,
     "fertilizing" => 50,
@@ -18,6 +19,7 @@ class Task < ApplicationRecord
     pot.save
     # updates the points of the task
     self.points = POINTS[name]
+    # pot.user.points += self.points
     # updates the completed status
     self.completed = true
     save
