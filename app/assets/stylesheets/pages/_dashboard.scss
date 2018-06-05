@@ -16,9 +16,20 @@
 
 .welcome-heading {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   vertical-align: middle;
   justify-content: space-between;
+  width: 60%;
+}
+
+.player-badges {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.player-stats {
+  margin-left: 20px;
 }
 
 .points {
@@ -28,8 +39,7 @@
   margin-top: 30px;
 }
 
-
-#counter_points {
+.counter_points {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
@@ -38,7 +48,6 @@
   right: 20%;
   font-size: 25px;
 }
-
 
 .points-circle {
   height: 100px;
@@ -124,23 +133,22 @@
   margin-top: 15px;
 }
 
-
-
-
 .user-ranking {
+  margin-top: -50%;
   background-color: $light-gray;
-  height: 100%;
-  width: 60%;
-  margin-left: 25%;
+  height: 168%;
+  width: 65%;
+  margin-left: 33%;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: 1px 1px 20px rgba(125,21,195,0.7);
+  box-shadow: 1px 1px 20px $yellow;
 
   h3 {
     color: black;
     text-align: center;
     padding-top: 10px;
+    font-size: 26px;
   }
 }
 

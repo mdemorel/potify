@@ -33,6 +33,10 @@ class Pot < ApplicationRecord
     return pot_points
   end
 
+  def count_tasks_by_pot(task_name)
+    tasks.where(completed: false).where(name: task_name).size
+  end
+
   def next_task_date(task_name)
     next_task_date = send("last_#{task_name}") + plant.send("#{task_name}_frequency")
   end
