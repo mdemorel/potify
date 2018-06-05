@@ -6,13 +6,13 @@ class User < ApplicationRecord
 
   has_many :pots, dependent: :destroy
 
-  def count_points
-    user_points = 0
-    self.pots.each do |pot|
-      user_points += pot.sum_points
-    end
-    return user_points
-  end
+  # def count_points
+  #   user_points = 0
+  #   self.pots.each do |pot|
+  #     user_points += pot.sum_points
+  #   end
+  #   return user_points
+  # end
 
   def count_tasks
     user_tasks = 0

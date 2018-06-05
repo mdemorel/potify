@@ -12,6 +12,8 @@ class TasksController < ApplicationController
     authorize(@task)
     @task.mark_as_completed!
     @user = current_user
+    @user.points += @task.points
+    @user.save
     @pots = Pot.where(user: current_user)
     @pot = @task.pot
     if @task.save

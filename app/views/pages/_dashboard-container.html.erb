@@ -1,49 +1,108 @@
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="welcome-heading">
-      <h3 class="welcome-title">Welcome <%= user.first_name %> !</h3>
-      <div class="points-circle">
-        <%= render "shared/points", user: current_user %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="welcome-heading">
+        <h3 class="welcome-title">Welcome <%= user.first_name %> !</h3>
+        <div class="points-circle">
+          <%= render "shared/points", user: current_user %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-xs-12 col-md-3">
+  <div class="row">
     <div class="top-dashboard">
-      <div class="card-task">
-        <h3>Task title</h3>
-        <div class="card-task-items">
-          <div class="card-item">
-            <%= image_tag "cactus.jpg", class: 'plant-avatar' %>
-            <p> Hey, give <span class='plant-quantity'>10cl</span><br>to <span class='pot-name'>Bob</span></p>
-            <%= image_tag "picto-check.svg", class: 'task-picto' %>
+      <% if current_user.count_tasks > 0 %>
+        <div class="col-xs-12 col-md-6">
+          <div class="user-task-title">
+            <h3>My tasks</h3>
+            <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
           </div>
-          <div class="card-item">
-
-          </div>
-          <div class="card-item">
-
+          <div class="user-tasks inner-padding">
+            <% Task::TASKS.each do |task_name| %>
+              <div class="task-title-card">
+                <span class="task-title-badge">
+                  <span class="h3"><%= task_name.upcase %></span>
+                  <div class="task-badge">
+                    <%= render "shared/badge" %>
+                  </div>
+                </span>
+                <div class="task-title">
+                  <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
-        <div class="card-message">
-
+      <% end %>
+      <div class="col-xs-12 col-md-6">
+        <div class="user-ranking">
+          <h3>My ranking  </h3>
+          <div class="user-gained-points">
+            <!-- points, plants, actions -->
+          </div>
+          <div class="ranking-table">
+            <%= render "shared/ranking" %>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <% if current_user.count_tasks > 0 %>
-        <div class="user-tasks inner-padding">
-          <h3>My tasks</h3>
-          <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
-          <!-- iterate on each type of task -->
-          <% Task::TASKS.each do |task_name| %>
-          <!-- if the pot needs the task -->
-            <div class="task-title">
-              <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
-            </div>
+  <div class="row">
+    <div class="user-garden">
+      <h3>My garden</h3>
+      <% pots.each do |pot|%>
+        <div class="col-xs-12 col-md-4">
+          <%= link_to pot_path(pot) do %>
+            <%= render "shared/card", element: pot, select: false %>
           <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12">
+      <div class="item-border-green">
+        <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
+      </div>
+    </div>
+  </div>
+
+
+
+       <!--  <div class="card-task">
+          <!- <h3>Task title</h3> -->
+         <!--  <div class="card-task-items">
+            <div class="card-item"> -->
+              <%#= image_tag "cactus.jpg", class: 'plant-avatar' %>
+             <!--  <p> Hey, give <span class='plant-quantity'>10cl</span><br>to <span class='pot-name'>Bob</span></p> -->
+              <%#= image_tag "picto-check.svg", class: 'task-picto' %>
+          <!--   </div>
+            <div class="card-item">
+
+            </div>
+            <div class="card-item">
+
+            </div>
+          </div>
+          <div class="card-message">
+
+          </div>
+        </div> -->
+
+            <!-- <div class="row">
+              <%# pots.each do |pot|%>
+                <%# if pot.tasks.where(completed: false).size > 0 %>
+                  <%#= link_to pot_path(pot) do %>
+                    <%#= render "shared/task", element: pot %>
+                  <%# end %>
+                <%# end %>
+              <%# end %>
+            </div> -->
+          <!-- </div> -->
+        <%# end %>
+
+
+
+
           <!-- <div class="row">
             <%# pots.each do |pot|%>
               <%# if pot.tasks.where(completed: false).size > 0 %>
@@ -53,38 +112,3 @@
               <%# end %>
             <%# end %>
           </div> -->
-        </div>
-      <% end %>
-
-      <div class="user-ranking">
-        <div class="user-gained-points">
-
-        </div>
-        <div class="ranking-table">
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="user-garden">
-        <h3>My garden</h3>
-        <% pots.each do |pot|%>
-          <div class="col-xs-12 col-md-4">
-            <%= link_to pot_path(pot) do %>
-              <%= render "shared/card", element: pot, select: false %>
-            <% end %>
-          </div>
-        <% end %>
-    </div>
-  </div>
-  <div class="col-xs-12">
-    <div class="item-border-green">
-      <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
-    </div>
-  </div>
-</div>
