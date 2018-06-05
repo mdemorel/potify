@@ -22,6 +22,7 @@ gem 'carrierwave', '~> 1.2'
 
 gem 'nokogiri'
 gem 'pundit'
+gem 'faker'
 
 gem 'pg_search'
 

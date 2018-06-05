@@ -167,6 +167,29 @@ strelitzia.save
 colocasia = Plant.new(name: "Colocasia", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/house-plants-online-Colocasia-gigantea-600x615.jpg")
 colocasia.save
 
+Plant.where("watering_frequency".nil?).each do |plant|
+  plant[:watering_quantity] = 10
+  plant[:watering_frequency] = 1
+  plant[:potting_frequency] = 3
+  plant[:fertilizing_frequency] = 2
+  plant[:fertilizing_quantity] = 3
+  plant[:fertilizing_type] = "indoor fertilizer"
+  plant[:exposition] = 2
+  plant[:cutting_frequency] = 4
+  plant[:temperature] = 18
+  plant.save
+end
 
+puts "scraping of plants over!"
 
-puts "scraping over!"
+10.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: "password",
+    first_name: Faker::Name.name ,
+    last_name: Faker::Name.last_name )
+  user.save
+end
+
+puts "scraping of users over!"
+

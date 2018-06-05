@@ -5,15 +5,15 @@
 <% end %>
 
   <div class="frame grow <%= "selected-plant" if select %>" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 100%), url('<%= cl_image_path(pot_picture) %>');" data-url="<%= pot_picture %>">
-    <% if element.class == Pot %>
-      <div class="status-icons">
+    <%# if element.class == Pot %>
+  <!--     <div class="status-icons">
         <i class="fas fa-tint"></i>
         <i class="fas fa-sun"></i>
         <i class="fas fa-leaf"></i>
         <i class="fas fa-cut"></i>
         <i class="fas fa-snowflake"></i>
-      </div>
-    <% end %>
+      </div> -->
+    <%# end %>
 
     <% if params["action"] == "home" %>
       <div>

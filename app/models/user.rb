@@ -21,4 +21,8 @@ class User < ApplicationRecord
     end
     return user_tasks
   end
+
+  # def points(number)
+  #   return number
+  # end
 end
