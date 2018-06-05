@@ -12,20 +12,38 @@
     <div class="pot-user-info">
       <div class="header">
         <h3><%= pot.name %></h3>
+        <div class="about_the_pot">
+          <p><i><%= pot.description %></i></p>
+        </div>
         <div class="item-border-green">
           <% plant_name = pot.plant.name %>
           <%= link_to "Family: #{plant_name}", plant_path(pot.plant), class: "link-border-green link-flex-end" %>
         </div>
       </div>
+
       <div class="adoption-info">
         <% unless pot.adoption_date.nil? %>
           <p> ❤️ You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
         <% end %>
       </div>
-      <div class="about_the_pot">
-        <p><i><%= pot.description %></i></p>
+
+      <div class="tabs">
+        <a class="tab active" data-tab-name="tasks">
+          <h3>Tasks</h3>
+        </a>
+        <a class="tab" data-tab-name="information">
+          <h3>Information</h3>
+        </a>
       </div>
-      <%= render "shared/plant_information", plant: pot.plant %>
+
+      <div class="tabs-container">
+        <div class="tab-tasks" data-target="tasks">
+
+        </div>
+        <div class="tab-information hidden" data-target="information">
+          <%= render "shared/plant_information", plant: pot.plant %>
+        </div>
+      </div>
       <%# if pot.tasks.where(completed: false).size > 0 %>
         <!-- <div class="pot-tasks">
           <%#= render "shared/task", element: pot %>

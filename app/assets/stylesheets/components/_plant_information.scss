@@ -1,16 +1,20 @@
-// .plant_info {
-//     margin-top: 60px;
-//     padding-top: 20px;
-//     font-size: 16px;
-// }
-
 .task-information {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // margin-bottom: 30px;
-    height: 150px;
+
+  height: 70px;
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p{
+    font-size: 18px;
+
+  }
+
+  span {
+  padding: 0px;
+  font-size: 18px;
+}
 }
 
 .bold-green {
@@ -19,6 +23,4 @@
   font-size: 25px;
 }
 
-span {
-  padding: 0px;
-}
+

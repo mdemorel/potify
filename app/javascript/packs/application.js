@@ -3,6 +3,7 @@ import "../plugins/flatpickr";
 import "../components/select_size";
 import { sizeChoice } from "../components/size_choice";
 import {plantChoice} from "../components/plant_choice";
+import {tabs} from "../components/tabs";
 
 
 sizeChoice();
@@ -17,4 +18,5 @@ bindSweetAlertButtonDemo();
 global.bindSweetAlertButtonDemo = bindSweetAlertButtonDemo;
 
 plantChoice();
+tabs()
 

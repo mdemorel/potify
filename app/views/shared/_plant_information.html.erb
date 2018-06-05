@@ -6,25 +6,28 @@
       </div>
       <div class="col-xs-12 col-md-6 task-information">
         <h4>FERTILIZING</h4>
-        <p>Every <%= plant.fertilizing_frequency %> day</p>
-        <p>Use <%= plant.fertilizing_type %></p>
-        <p><%= plant.fertilizing_quantity %> g</p>
+        <p><span class="bold-green"><%= plant.fertilizing_quantity %>g</span> every <span class="bold-green"><%= plant.fertilizing_frequency %></span> day</p>
+        <!-- <p>Use <%#= plant.fertilizing_type %></p> -->
       </div>
        <div class="col-xs-12 col-md-6 task-information">
         <h4>POTTING</h4>
-        <p>Every <%= plant.potting_frequency %> day</p>
+        <p>Every <span class="bold-green" ><%= plant.potting_frequency %> </span> day</p>
       </div>
       <div class="col-xs-12 col-md-6 task-information">
         <h4>EXPOSITION</h4>
-        <p><%= plant.exposition %><i class="fas fa-sun"></i></p>
+        <p>
+          <% plant.exposition.times do %>
+            <i class="fas fa-sun"></i>
+          <% end %>
+        </p>
       </div>
       <div class="col-xs-12 col-md-6 task-information">
         <h4>TEMPERATURE</h4>
-        <p><%= plant.temperature %></p>
+        <p><span class="bold-green" ><%= plant.temperature %>°C</span></p>
       </div>
       <div class="col-xs-12 col-md-6 task-information">
         <h4>CUTTING</h4>
-        <p><%= plant.cutting_frequency %></p>
+        <p>Every <span class="bold-green"><%= plant.cutting_frequency %></span> day </p>
       </div>
     </div>
   </div>
