@@ -21,24 +21,36 @@
             <div class="task-title">
               <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
             </div>
-            <% end %>
-          </div>
-        <% end %>
-        <div class="user-ranking">
-          <div class="user-gained-points">
-
-          </div>
-          <div class="ranking-table">
-
-          </div>
+          <% end %>
+          <!-- <div class="row">
+            <%# pots.each do |pot|%>
+              <%# if pot.tasks.where(completed: false).size > 0 %>
+                <%#= link_to pot_path(pot) do %>
+                  <%#= render "shared/task", element: pot %>
+                <%# end %>
+              <%# end %>
+            <%# end %>
+          </div> -->
         </div>
-      </div>
+      <% end %>
+
     </div>
   </div>
+  <div class="user-ranking">
+    <div class="user-gained-points">
+      <!-- points, plants, actions -->
+
+    </div>
+    <div class="ranking-table">
+      <%= render "shared/ranking" %>
+    </div>
+  </div>
+
 
   <div class="row">
     <div class="col-xs-12">
       <div class="user-garden">
+
         <h3>My garden</h3>
         <% pots.each do |pot|%>
           <div class="col-xs-12 col-md-4">
@@ -54,6 +66,7 @@
         <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
       </div>
     </div>
+
   </div>
 
 </div>
