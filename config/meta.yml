@@ -1,4 +1,4 @@
 meta_product_name: "Potify"
 meta_title: "Potify - Pamper Your Plants"
 meta_description: "Potify is an app that allows you to pamper your indoor plants. By playing with other home gardeners, you will never let them die again!"
-meta_image: "indoor_plants_cactus_eyes"                     # should exist in `app/assets/images/`
+meta_image: "indoor_plants_cactus_eyes.jpg"                     # should exist in `app/assets/images/`
