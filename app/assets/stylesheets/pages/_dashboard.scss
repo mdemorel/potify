@@ -119,16 +119,19 @@
     }
   }
 
-  .user-ranking {
-    border: 2px solid;
-    color: red;
-    width: 48%;
-    height: 200px;
-    display: flex;
-    flex-direction: column-reverse;
-  }
 }
 
+.user-ranking {
+
+}
+
+.ranking-table {
+  border: 2px solid;
+  color: red;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
 
 
 .user-garden {
