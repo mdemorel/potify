@@ -16,6 +16,7 @@ class TasksController < ApplicationController
     @user.save
     @pots = Pot.where(user: current_user)
     @pot = @task.pot
+    @users = User.all
     if @task.save
       respond_to do |format|
         format.html { redirect_to pot_path(@task.pot_id)}

@@ -6,7 +6,7 @@ function bindSweetAlertButtonDemo() {
   if (swalButton) {
     swalButton.forEach(function(button) {
       button.addEventListener('click', (e) => {
-        var point = $(e.currentTarget).parents('form').find('.task-content')[0].dataset.points;
+        var point = $(e.currentTarget).parents('form').find('.card-item')[0].dataset.points;
         swal({
           title: "Youhou, you did great!",
           text: `You won ${point} points`,
