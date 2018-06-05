@@ -15,10 +15,8 @@
         <div class="about_the_pot">
           <p><i><%= pot.description %></i></p>
         </div>
-        <div class="item-border-green">
           <% plant_name = pot.plant.name %>
-          <%= link_to "Family: #{plant_name}", plant_path(pot.plant), class: "link-border-green link-flex-end" %>
-        </div>
+          <%= link_to "Learn more about me", plant_path(pot.plant), class: " btn btn-minimal " %>
       </div>
 
       <div class="adoption-info">
@@ -26,8 +24,7 @@
           <p> ❤️ You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
         <% end %>
       </div>
-
-      <div class="tabs">
+      <!-- <div class="tabs">
         <a class="tab active" data-tab-name="tasks">
           <h3>Tasks</h3>
         </a>
@@ -41,17 +38,32 @@
 
         </div>
         <div class="tab-information hidden" data-target="information">
-          <%= render "shared/plant_information", plant: pot.plant %>
         </div>
-      </div>
-      <%# if pot.tasks.where(completed: false).size > 0 %>
-        <!-- <div class="pot-tasks">
-          <%#= render "shared/task", element: pot %>
-        </div> -->
-      <%# end %>
+      </div> -->
 
+      <div class="user-tasks inner-padding">
+            <% if current_user.count_tasks > 0 %>
+              <% Task::TASKS.each do |task_name| %>
+                <div class="task-title-card">
+                  <span class="task-title-badge">
+                    <span class="span-paytone"><%= task_name.upcase %></span>
+                    <div class="task-badge">
+                      <%= render "shared/badge", task_name: task_name %>
+                    </div>
+                  </span>
+                  <div class="task-title">
+                    <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="item-border-green">
+                <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
+              </div>
+            <% end %>
+          </div>
       <%# unless pot.tasks.empty? %>
-     <!--    <div class="pot-statistics">
+        <!-- <div class="pot-statistics">
           <%#= render "shared/follow_up", pot: pot %>
         </div> -->
       <%# end %>

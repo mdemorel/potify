@@ -62,11 +62,18 @@
 }
 
 .task-title-card {
-    width: 48%;
-    margin: 1%;
-    box-shadow: 0px 0px 5px rgba(21, 233, 166, .3);
+  width: 48%;
+  margin: 1%;
+  box-shadow: 0px 0px 5px rgba(21, 233, 166, .3);
 
 }
+
+.span-paytone {
+  font-size: 18px;
+  padding-left: 7px;
+  font-family: "Paytone One", "sans-serif";
+
+  }
 
 
 .card-task {
