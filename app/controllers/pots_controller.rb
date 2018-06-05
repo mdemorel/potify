@@ -48,6 +48,8 @@ class PotsController < ApplicationController
   def destroy
     @pot = Pot.find(params[:id])
     @pot.destroy
+    @pot.user.points -= 2000
+    @pot.user.save
     authorize(@pot)
     redirect_to dashboard_path
   end

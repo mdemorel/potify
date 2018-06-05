@@ -15,10 +15,10 @@ class User < ApplicationRecord
   # end
 
   STATUS = {
-    "Baby Seeder" => [0...1000],
-    "Aspiring gardener" => [1000...2000],
-    "Garden Hero" => [2000...3000],
-    "Plant wizard" => [3000...100000]
+    "Baby Seeder" => 0,
+    "Aspiring Gardener" => 4000,
+    "Garden Hero" => 8000,
+    "Plant Wizard" => 15000
   }
 
   def count_tasks
@@ -39,15 +39,29 @@ class User < ApplicationRecord
 
   def status
     status = ""
-    if points < 1000
-      status = "Baby seeder"
-    elsif points < 2000
-      status = "Aspiring gardener"
-    elsif points < 3000
-      status = "Garen Hero"
+    if points < 4000
+      status = "Baby Seeder"
+    elsif points < 8000
+      status = "Aspiring Gardener"
+    elsif points < 15000
+      status = "Garden Hero"
     else
-      status = "Plant wizard"
+      status = "Plant Wizard"
     end
+  end
+
+  def is_master
+    status == User::STATUS.keys.last
+  end
+
+  def next_status
+    current_status_index = User::STATUS.keys.find_index(User.find(1).status)
+    User::STATUS.keys[current_status_index + 1]
+  end
+
+  def left_for_next_status
+    points_needed = User::STATUS[next_status]
+    points_needed - points
   end
 
   # def points(number)

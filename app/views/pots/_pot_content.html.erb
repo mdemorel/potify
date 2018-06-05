@@ -44,17 +44,19 @@
       <div class="user-tasks inner-padding">
             <% if current_user.count_tasks > 0 %>
               <% Task::TASKS.each do |task_name| %>
-                <div class="task-title-card">
-                  <span class="task-title-badge">
-                    <span class="span-paytone"><%= task_name.upcase %></span>
-                    <div class="task-badge">
-                      <%= render "shared/badge", task_name: task_name %>
+                <% if pot.count_tasks_by_pot(task_name) > 0 %>
+                  <div class="task-title-card">
+                    <span class="task-title-badge">
+                      <span class="span-paytone"><%= task_name.upcase %></span>
+                      <div class="task-badge">
+                        <%= render "shared/badge", task_name: task_name %>
+                      </div>
+                    </span>
+                    <div class="task-title">
+                      <%= render "shared/task_type", tasks: pot.tasks.where(name: task_name), task_name: task_name %>
                     </div>
-                  </span>
-                  <div class="task-title">
-                    <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
                   </div>
-                </div>
+                <% end %>
               <% end %>
             <% else %>
               <div class="item-border-green">

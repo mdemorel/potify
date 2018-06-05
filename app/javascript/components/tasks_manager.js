@@ -2,14 +2,15 @@
 
 function updateTaskStatus() {
 
-  const dashboard = document.querySelector(".card-item");
+  const dashboard = document.querySelectorAll(".card-item");
 
   if (dashboard) {
-
-    dashboard.addEventListener("click", function (e) {
-      if (e.currentTarget.classList.value.includes("card-item")) {
-        e.currentTarget.parentElement.parentElement.parentElement.querySelector('.submit-task').click();
-      }
+    dashboard.forEach(function(item) {
+      item.addEventListener("click", function (e) {
+        if (e.currentTarget.classList.value.includes("card-item")) {
+          e.currentTarget.parentElement.parentElement.parentElement.querySelector('.submit-task').click();
+        }
+      })
     })
   }
   // const selector = document.querySelectorAll(".pot-tasks form input[type=checkbox]")

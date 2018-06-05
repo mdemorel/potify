@@ -4,7 +4,11 @@
       <div class="card-item grow" data-points="<%= task.points %>" >
         <%= f.submit :update, class: " hidden submit-task sweet-alert-demo" %>
         <%= cl_image_tag(task.pot.photo, class: 'plant-avatar') %>
-        <p> Hey, give <span class='plant-quantity'>10cl</span><br>to <span class='pot-name'><%= task.pot.name.capitalize %></span></p>
+        <% if task.name == "watering" || task.name == "fertilizing" %>
+          <p> Hey, give <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %></span><br>to <span class='pot-name'><%= task.pot.name.capitalize %></span></p>
+        <% else %>
+          <p> Hey, <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
+        <% end %>
             <%#= f.input :completed, label: "  I did it" %>
 
         <%#= image_tag "picto-check.svg", class: 'task-picto' %>
