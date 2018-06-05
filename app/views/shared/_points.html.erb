@@ -1,4 +1,5 @@
 
   <div class="points">
-    <span class="counter_points"><%= user.points %></span><%= "point".pluralize(user.points) %>
+    <%= image_tag("star.ico", class: "icon-avatar") %>
+    <span class="counter_points"><%= user.points %></span><span  class="points-element"><%= "point".pluralize(user.points) %></span>
   </div>

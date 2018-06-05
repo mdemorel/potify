@@ -26,6 +26,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .player-stats {
@@ -35,34 +36,48 @@
 .points {
   color: white;
   padding: 0px 30px;
-  position: relative;
-  margin-top: 30px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -15px;
+    line-height: 1.5px;
+  // position: relative;
+  // margin-top: 30px;
 }
 
 .counter_points {
-  display: inline-block;
+  // display: inline-block;
   vertical-align: middle;
   line-height: normal;
-  position: absolute;
+  // position: absolute;
   bottom: 30%;
   right: 20%;
   font-size: 25px;
+  font-family: "Paytone One", "sans-serif";
+  padding-left: 0 !important;
+}
+
+.points-element {
+  padding-left: 0;
 }
 
 .points-circle {
   height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background: linear-gradient(0.9turn, $flash-green, $green);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  padding-left: 30px;
+  width: 150px;
+  border-radius: 5%;
+  background-color: rebeccapurple;
+  // background-color: $yellow;
+  // background: linear-gradient(0.9turn, $flash-green, $green);
+  // padding-left: 30px;
   text-align: center;
   padding-top: 20px;
-  margin-top: 20px;
+  // margin-top: 20px;
   box-shadow: 0 0 6px rgba(130, 130, 130, 0.3);
+
+  .icon-avatar {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 .user-tasks.inner-padding {
@@ -81,8 +96,7 @@
   font-size: 18px;
   padding-left: 7px;
   font-family: "Paytone One", "sans-serif";
-
-  }
+}
 
 
 .card-task {

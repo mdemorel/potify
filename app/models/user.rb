@@ -55,7 +55,7 @@ class User < ApplicationRecord
   end
 
   def next_status
-    current_status_index = User::STATUS.keys.find_index(User.find(1).status)
+    current_status_index = User::STATUS.keys.find_index(User.find(self.id).status)
     User::STATUS.keys[current_status_index + 1]
   end
 
