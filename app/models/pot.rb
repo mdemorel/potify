@@ -7,7 +7,7 @@ class Pot < ApplicationRecord
   validates :name, presence: true
 
   def needs?(task_name)
-    Date.today - send("last_#{task_name}") >= plant.send("#{task_name}_frequency")
+    (Date.today - send("last_#{task_name}")).to_i >= (plant.send("#{task_name}_frequency")).to_i
   end
 
   def generate_tasks
@@ -35,5 +35,6 @@ class Pot < ApplicationRecord
 
   def next_task_date(task_name)
     next_task_date = send("last_#{task_name}") + plant.send("#{task_name}_frequency")
+    raise
   end
 end
