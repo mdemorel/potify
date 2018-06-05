@@ -1,12 +1,24 @@
-.plant_info {
-    margin-top: 60px;
-    padding-top: 20px;
-    font-size: 16px;
-}
+// .plant_info {
+//     margin-top: 60px;
+//     padding-top: 20px;
+//     font-size: 16px;
+// }
 
 .task-information {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // margin-bottom: 30px;
+    height: 150px;
+}
+
+.bold-green {
+  font-weight: bold;
+  color: $green;
+  font-size: 25px;
+}
+
+span {
+  padding: 0px;
 }
