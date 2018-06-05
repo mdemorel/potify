@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_pack_tag 'application' %>
+  <style>
+
+  .potify-error-page {
+    margin: 0;
+    background-image: url('../images/404.jpeg');
+  }
+
+  .text {
+    color: red;
+
+    h1{
+      text-align: center;
+      align-items: center;
+      font-weight: 900;
+      font-family: Source Sans Pro, "sans-serif";
+      font-size: 45px;
+    }
+    p {
+      font-family: "Paytone One", "sans-serif";
+      font-size: 25px;
+    }
+  }
+
+  </style>
+</head>
+
+<body class= "potify-error-page" >
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <div class="text">
+      <h1>Looks like you get lost.</h1>
+      <p>🌱 You may be surrounded by plants in your home or you may have mistyped the address, the page may have moved. </p>
+    </div>
+  </div>
+</body>
+</html>
