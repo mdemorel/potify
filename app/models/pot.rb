@@ -35,6 +35,5 @@ class Pot < ApplicationRecord
 
   def next_task_date(task_name)
     next_task_date = send("last_#{task_name}") + plant.send("#{task_name}_frequency")
-    raise
   end
 end
