@@ -1,30 +1,31 @@
+<div>
+  <div class="message">
+    <div class="message-status">
+      <p class="price"><strong>Rank</strong></p>
+    </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Rank</th>
-        <th scope="col">User Name</th>
-        <th scope="col">Points</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.first(10).each do |user| %>
-      <% i = 0 %>
-        <tr>
-          <%= (i += 1) %>
-        </tr>
-        <tr>
-          <%= user.first_name %>
-        </tr>
-        <tr>
-          <%= user.count_points %>
-        </tr>
-        <tr>
-          <% photo = user.photo unless user.photo.nil? %>
-          <%= cl_image_tag(photo, class: "avatar") %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <div class="message-name">
+      <h3><strong>User</strong></h3>
+    </div>
+    <div class="message-body">
+      <p><strong>Points</strong></p>
+    </div>
+  </div>
+  <% i = 0 %>
+  <% @users.order(points: :desc).first(10).each do |user| %>
+    <% photo = user.photo unless user.photo.nil? %>
+    <div class="message">
+      <div class="message-status">
+        <p class="price"><%= (i += 1) %></p>
+      </div>
+      <%= cl_image_tag(user.photo, class: "avatar-large") %>
+      <div class="message-name">
+        <h3><%= user.first_name %></h3>
+      </div>
+      <div class="message-body">
+        <p><strong><%= user.points %></strong></p>
+      </div>
+    </div>
 
+  <% end %>
+</div>

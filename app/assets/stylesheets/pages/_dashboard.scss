@@ -126,8 +126,10 @@
 }
 
 .ranking-table {
-  border: 2px solid;
-  color: red;
+
+  // border: 2px solid;
+  // color: red;
+  width: 100%;
   height: 200px;
   display: flex;
   flex-direction: column;
