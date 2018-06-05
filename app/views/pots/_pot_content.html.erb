@@ -11,19 +11,34 @@
   <div class="pot-info">
     <div class="pot-user-info">
       <div class="header">
-        <h3><%= pot.name %></h3>
+        <h3><%= pot.name.capitalize %></h3>
         <div class="about_the_pot">
           <p><i><%= pot.description %></i></p>
         </div>
-          <% plant_name = pot.plant.name %>
-          <%= link_to "Learn more about me", plant_path(pot.plant), class: " btn btn-minimal " %>
+         <%= link_to "Learn more", plant_path(pot.plant), class: "btn btn-minimal "%>
+      </div>
+      <div class="border-top">
       </div>
 
-      <div class="adoption-info">
-        <% unless pot.adoption_date.nil? %>
-          <p> ❤️ You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
-        <% end %>
+      <div class="row recap">
+        <div class="col-xs-12 col-md-4 background-white">
+          <div class="adoption-info">
+            <% unless pot.adoption_date.nil? %>
+              <p> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-4 background-white">
+          <p><%= pot.name.capitalize %> is a <%= pot.plant.name.capitalize %></p>
+        </div>
+        <div class="col-xs-6 col-md-4 background-white">
+          <% if pot.tasks.where(completed: true).count > 0 %>
+            <h4>You took care of <%= pot.name %> <%= pluralize pot.tasks.where(completed: true).count, "time" %> since you met 😘</h4>
+          <% end %>
+        </div>
+
       </div>
+
       <!-- <div class="tabs">
         <a class="tab active" data-tab-name="tasks">
           <h3>Tasks</h3>
@@ -40,7 +55,8 @@
         <div class="tab-information hidden" data-target="information">
         </div>
       </div> -->
-
+      <div class="border-top-small">
+      </div>
       <div class="user-tasks inner-padding">
             <% if current_user.count_tasks > 0 %>
               <% Task::TASKS.each do |task_name| %>
@@ -73,7 +89,7 @@
       <div class="image-links">
         <% if current_user == pot.user %>
           <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fa fa-trash"></i>
+            <p><%= pot.name.capitalize %> is estimated dead</p>
           <% end %>
           <%= link_to edit_pot_path(pot) do %>
             <i class="fas fa-edit"></i>
