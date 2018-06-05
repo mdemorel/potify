@@ -12,28 +12,34 @@
   <div class="row">
     <div class="top-dashboard">
       <% if current_user.count_tasks > 0 %>
-        <div class="user-tasks inner-padding">
-          <h3>My tasks</h3>
-          <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
-          <% Task::TASKS.each do |task_name| %>
-            <div class="task-title-badge">
-              <span class="h3"><%= task_name.upcase %></span>
-              <div class="task-badge">
-                <%= render "shared/badge" %>
+        <div class="col-xs-12 col-md-6">
+          <div class="user-tasks inner-padding">
+            <h3>My tasks</h3>
+            <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
+            <% Task::TASKS.each do |task_name| %>
+              <div class="task-title-card">
+                <div class="task-title-badge">
+                  <span class="h3"><%= task_name.upcase %></span>
+                  <div class="task-badge">
+                    <%= render "shared/badge" %>
+                  </div>
+                </div>
+                <div class="task-title">
+                  <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
+                </div>
               </div>
-            </div>
-            <div class="task-title">
-              <%= render "shared/task_type", tasks: Task.includes(:pot).where(name: task_name, completed: false, pot: current_user.pots), task_name: task_name %>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       <% end %>
-      <div class="user-ranking">
-        <div class="user-gained-points">
-          <!-- points, plants, actions -->
-        </div>
-        <div class="ranking-table">
-          <%= render "shared/ranking" %>
+      <div class="col-xs-12 col-md-6">
+        <div class="user-ranking">
+          <div class="user-gained-points">
+            <!-- points, plants, actions -->
+          </div>
+          <div class="ranking-table">
+            <%= render "shared/ranking" %>
+          </div>
         </div>
       </div>
     </div>
