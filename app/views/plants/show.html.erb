@@ -1,6 +1,9 @@
 <div class="wrapper wrapper-color">
   <div class="container container-gray full-screen">
     <div class="pot-content">
+      <% if current_user.admin == true %>
+        <%= link_to "update", edit_plant_path(@plant) %>
+      <% end %>
       <div class="pot-image" style="background-image: url('<%= @plant.photo %>')">
       </div>
       <div class="pot-info">

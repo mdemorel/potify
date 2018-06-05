@@ -23,7 +23,7 @@
                   <span class="task-title-badge">
                     <span class="h3"><%= task_name.upcase %></span>
                     <div class="task-badge">
-                      <%= render "shared/badge" %>
+                      <%= render "shared/badge", task_name: task_name %>
                     </div>
                   </span>
                   <div class="task-title">
@@ -41,7 +41,7 @@
         </div>
       <div class="col-xs-12 col-md-6">
         <div class="user-ranking">
-          <h3>My ranking  </h3>
+          <h3>🏆 HIGHEST SCORES 🏆</h3>
           <div class="user-gained-points">
             <!-- points, plants, actions -->
           </div>

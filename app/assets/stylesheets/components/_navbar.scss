@@ -45,8 +45,11 @@
 .links {
   display: flex;
     justify-content: space-around;
-    width: 250px;
     margin-right: 30px;
+
+  .item-border-green {
+    margin-right: 10px;
+  }
 }
 
 /* Left section */

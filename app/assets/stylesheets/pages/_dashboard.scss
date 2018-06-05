@@ -118,15 +118,27 @@
       margin-top: 15px;
     }
   }
-
 }
 
 .user-ranking {
+  background-color: $light-gray;
+  height: 100%;
+  width: 60%;
+  margin-left: 25%;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 1px 1px 20px rgba(211,138,232,0.7);
 
+  h3 {
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+  }
 }
 
 .ranking-table {
-
+  line-height: 1.2;
   // border: 2px solid;
   // color: red;
   width: 100%;
@@ -144,9 +156,6 @@
     margin-bottom: 100px;
   }
 }
-
-
-
 
 a {
   text-decoration: none;
@@ -167,5 +176,9 @@ a {
     right: -25px;
   }
 }
+// ne permet pas de faire un beau score
 
+// .user-ranking {
+//   padding-left: 30px;
+// }
 

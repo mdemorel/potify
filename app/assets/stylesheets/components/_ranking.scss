@@ -1,47 +1,61 @@
 .message {
   display: flex;
   align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
+  padding: 5px;
+  border-bottom: 1px solid rgba(220,224,244,0.6);
+  text-align: center;
 }
 .message:last-child {
   border-bottom: none;
 }
-.message-body {
-  flex-grow: 1;
-}
 .message-name {
   padding-left: 10px;
   min-width: 100px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.message-name h3 {
-  font-size: 13px;
-  margin-bottom: 0px;
-}
+// .message-name h3 {
+//   font-size: 13px;
+//   margin-bottom: 0px;
+// }
 .message-name p {
-  font-size: 13px;
-  font-weight: lighter;
-  opacity: 0.6;
-  margin-top: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 30px;
 }
-.message-body {
-  padding-left: 10px;
-  font-size: 13px;
-  color: rgba(0,0,0,0.7);
+// .message-body {
+//   padding-left: 10px;
+//   font-size: 15px;
+//   color: fgba(0, 0, 0, 0.6);
+// }
+
+.message-name-title {
+  margin-left: 80px;
 }
+
+.center {
+  text-align: center;
+}
+
 .message-body {
   padding-left: 20px;
-  color: rgba(0,0,0,0.4);
+  margin-right: 30px;
+  font-size: 15px;
+  color: rgba(0,0,0,0.6);
+}
+
+.point-font {
+  font-size: 20px;
 }
 .message-body strong{
-  color: rgba(0,0,0,0.9);
-  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.6);
 }
 .message-body p {
-  margin: 6px 0;
 }
 .message-status {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 .status.accepted {
@@ -51,10 +65,17 @@
   color: red;
 }
 .status.pending {
-  color: lightgrey;
+  color: rgba(0, 0, 0, 0.6);
 }
 .avatar-large {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  margin-left: 10px;
+}
+.price {
+  color: #15E9A6;
+  font-weight: bolder;
+  font-size: 28px;
+  margin-left: 11px;
 }

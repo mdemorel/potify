@@ -22,6 +22,14 @@ class User < ApplicationRecord
     return user_tasks
   end
 
+  def count_tasks_by_name(task_name)
+    user_tasks = 0
+    self.pots.each do |pot|
+      user_tasks += pot.tasks.where(completed: false).where(name: task_name).size
+    end
+    return user_tasks
+  end
+
   # def points(number)
   #   return number
   # end

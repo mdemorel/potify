@@ -1,14 +1,14 @@
 <div>
   <div class="message">
     <div class="message-status">
-      <p class="price"><strong>Rank</strong></p>
+      <p><strong>RANK</strong></p>
     </div>
 
-    <div class="message-name">
-      <h3><strong>User</strong></h3>
+    <div class="message-name center" id="message-name-title">
+      <p><strong>USER</strong></p>
     </div>
     <div class="message-body">
-      <p><strong>Points</strong></p>
+      <p><strong>POINTS</strong></p>
     </div>
   </div>
   <% i = 0 %>
@@ -18,11 +18,11 @@
       <div class="message-status">
         <p class="price"><%= (i += 1) %></p>
       </div>
-      <%= cl_image_tag(user.photo, class: "avatar-large") %>
       <div class="message-name">
-        <h3><%= user.first_name %></h3>
+        <%= cl_image_tag(user.photo, class: "avatar-large") %>
+        <p><%= user.first_name %></p>
       </div>
-      <div class="message-body">
+      <div class="message-body point-font">
         <p><strong><%= user.points %></strong></p>
       </div>
     </div>
