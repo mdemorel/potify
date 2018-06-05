@@ -2,6 +2,7 @@
 
 .top-dashboard {
     display: flex;
+    height: 400px;
 }
 
 .container-dashboard {
@@ -71,7 +72,7 @@
 .card-task {
   padding: 7px;
   border-radius: 4px;
-
+  z-index: 100;
   h3 {
     margin: 0;
   }
@@ -127,7 +128,7 @@
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: 1px 1px 20px rgba(211,138,232,0.7);
+  box-shadow: 1px 1px 20px rgba(125,21,195,0.7);
 
   h3 {
     color: black;

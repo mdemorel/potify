@@ -2,11 +2,13 @@
 
 function updateTaskStatus() {
 
-  const dashboard = document.querySelector("#dashboard-content");
+  const dashboard = document.querySelector(".card-item");
+
   if (dashboard) {
+
     dashboard.addEventListener("click", function (e) {
-      if (e.target.classList.value.includes("form-check-input")) {
-        e.target.parentElement.parentElement.parentElement.querySelector('.submit-task').click();
+      if (e.currentTarget.classList.value.includes("card-item")) {
+        e.currentTarget.parentElement.parentElement.parentElement.querySelector('.submit-task').click();
       }
     })
   }
@@ -33,6 +35,8 @@ function updateTaskStatusOnShow() {
     })
   }
 }
+
+global.updateTaskStatus = updateTaskStatus;
 
 export { updateTaskStatus };
 
