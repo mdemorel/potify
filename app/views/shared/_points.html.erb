@@ -1,3 +1,4 @@
-<div class="points">
-  <span id="counter_points"><%= pluralize user.points, "point" %></span>
-</div>
+
+  <div class="points">
+    <span class="counter_points"><%= user.points %></span><%= "point".pluralize(user.points) %>
+  </div>

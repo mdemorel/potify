@@ -116,7 +116,7 @@ oxalis.save
 jade = Plant.new(name: "Jade", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/Crassula-ovata-jade-plant-600x816.jpg")
 jade.save
 
-zamioculcas = Plant.new(name: "zamioculcas", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/Zamioculcas-zamiifolia-house-plant-inspiration-600x600.jpg")
+zamioculcas = Plant.new(name: "Zamioculcas", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/Zamioculcas-zamiifolia-house-plant-inspiration-600x600.jpg")
 zamioculcas.save
 
 senecio = Plant.new(name: "Senecio rowleyanus", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/Senecio-rowleyanus-hanging-house-plant-600x800.jpg")
