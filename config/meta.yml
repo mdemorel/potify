@@ -1,0 +1,4 @@
+meta_product_name: "Potify"
+meta_title: "Potify - Pamper Your Plants"
+meta_description: "Potify is an app that allows you to pamper your indoor plants and never let them die again!"
+meta_image: "potify_cover.png"                       # should exist in `app/assets/images/`
