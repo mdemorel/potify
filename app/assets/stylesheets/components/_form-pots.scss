@@ -95,14 +95,14 @@ label {
 }
 
 
-.selected-plant {
-  transition: all .2s ease-in-out;
-  &.active {
-    transform: scale(1.1);
+// .selected-plant {
+//   transition: all .2s ease-in-out;
+//   &.active {
+//     transform: scale(1.1);
 
-  }
+//   }
 
-}
+// }
 
 .plant-choice-image {
   cursor: pointer;
