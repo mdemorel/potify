@@ -56,21 +56,23 @@
         </div>
       <% end %>
 
-      <div class="user-ranking">
-        <div class="user-gained-points">
+    </div>
+  </div>
+  <div class="user-ranking">
+    <div class="user-gained-points">
+      <!-- points, plants, actions -->
 
-        </div>
-        <div class="ranking-table">
+    </div>
+    <div class="ranking-table">
+      <%= render "shared/ranking" %>
 
-        </div>
-      </div>
     </div>
   </div>
 </div>
 
 
 <div class="row">
-  <div class="col-xs-12">
+  <!-- <div class="col-xs-12"> -->
     <div class="user-garden">
         <h3>My garden</h3>
         <% pots.each do |pot|%>
@@ -86,5 +88,5 @@
     <div class="item-border-green">
       <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
     </div>
-  </div>
+ <!--  </div> -->
 </div>

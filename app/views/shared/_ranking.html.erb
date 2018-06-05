@@ -15,13 +15,14 @@
           <%= (i += 1) %>
         </tr>
         <tr>
-          <%= @user.first_name %>
+          <%= user.first_name %>
         </tr>
         <tr>
-          <%= @user.count_points %>
+          <%= user.count_points %>
         </tr>
         <tr>
-          <%= @user.photo unless @user.photo.nil? %>
+          <% photo = user.photo unless user.photo.nil? %>
+          <%= cl_image_tag(photo, class: "avatar") %>
         </tr>
       <% end %>
     </tbody>
