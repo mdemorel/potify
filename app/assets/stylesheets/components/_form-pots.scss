@@ -48,39 +48,27 @@
   margin-right: 5px;
   cursor: pointer;
   border-radius: 6px;
-  background-color: $green;
+  background-color: $light-gray;
+  color: $gray;
   text-align: center;
-  color: white;
   border: none;
   box-shadow: 0 18px 35px rgba(50, 50, 93, 0.02), 0 8px 15px rgba(0, 0, 0, 0.05);
 
   &:hover {
-    background-color: $light-gray;
-    color: $gray;
+    background-color: $green;
+    color: white;
   }
 
   &:hover .fa-leaf{
-    color: $gray;
+    color: white;
   }
 
   &.active {
-    background-color: $light-gray;
-    color: $gray;
+    background-color: $green;
   }
 
   &.active .fa-leaf {
-    color: $gray;
-  }
-
-
-  .fa-leaf {
     color: white;
-    &:hover {
-      color: $gray;
-    }
-    &.active {
-      color: $gray
-    }
   }
 
   #small-leaf {
