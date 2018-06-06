@@ -1,14 +1,3 @@
-// function removeForm() {
-//   document.getElementById("edit_task_<%= @task.id %>").remove();
-// }
-
-// removeForm();
-
-// function refreshCounterTask() {
-//   const counterTask = document.getElementById("counter_tasks");
-//   counterTask.innerHTML = '<%= pluralize current_user.count_tasks, "task"%>';
-// };
-// refreshCounterTask();
 
 var dashboard = document.querySelector('.wrapper-dashboard');
 var potShow = document.querySelector('#container-pot-show');
@@ -20,7 +9,7 @@ if (dashboard) {
 if (potShow){
   potShow.innerHTML = '<%= j render "./pots/pot_content", pot: @pot %>';
 }
-<% if current_user.count_tasks > 0 %>
+<% if current_user.tasks.where(completed: false).count > 0 %>
   if (navBadgeContainer) {
     navBadgeContainer.innerHTML = '<%= j render "./shared/navbar_badge", user: @user %>';
   };
