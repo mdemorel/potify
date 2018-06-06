@@ -134,7 +134,7 @@ span {
 // login-form
 
 label {
-  text-transform: uppercase;
+  text-transform: capitalize;
   // text-align: center;
 }
 
@@ -152,7 +152,7 @@ label {
 
 .plant-upload-image {
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .form-actions {
@@ -168,3 +168,29 @@ abbr[title="required"] {
   display: none;
 }
 
+
+// Modal part
+
+.modal-body {
+  position: relative;
+  padding: 15px;
+  margin: 0px 20px 0px 10px;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.modal-header {
+  padding: 0px;
+  border-bottom: none;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 67px rgba(21, 233, 166, 0.3);
+  background-clip: padding-box;
+  outline: 0;
+}

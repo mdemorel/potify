@@ -17,22 +17,27 @@
                 </div>
               </div>
               <div class="row">
+                <div class="col-xs-12 .plant-upload-image">
+                  <label class="form-control-label string optional" for="pot_photo">Upload a pic</label>
+                  <%= f.input :photo, label: false %>
+                  <%= f.input :photo_cache, as: :hidden %>
+                  <img width="100%" class="image-preview">
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-xs-12 plant-choice-image">
                   <%= f.label ("Select a plant") %>
                   <div id="div_plant_name" data-toggle="modal" data-target="#myModal">
-                     <img src="https://images.unsplash.com/photo-1511048794321-5d21136bf6df?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=56d9c7f8ce34c1001c7447c4429544c6&auto=format&fit=crop&w=2250&q=80" alt="" id="plant-choice-button" >
+                    <img src="https://images.unsplash.com/photo-1519289776718-d7becf12a9f0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3eefa9de5d15b3108867a8e77d2363ef&auto=format&fit=crop&w=1050&q=80" alt="" id="plant-choice-button" >
+
                   </div>
                 </div>
               </div>
               <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-lg" role="document">
                   <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
                     <div class="modal-body">
+                      <h3>Find your plant's family!</h3>
                       <div class="row">
                         <% Plant.all.each do |plant| %>
                           <div class="col-xs-12 col-md-4">
@@ -45,14 +50,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 .plant-upload-image">
-                  <label class="form-control-label string optional" for="pot_photo">Add a photo</label>
-                  <%= f.input :photo, label: false %>
-                  <%= f.input :photo_cache, as: :hidden %>
-                  <img width="100%" class="image-preview">
                 </div>
               </div>
               <div class="row">
