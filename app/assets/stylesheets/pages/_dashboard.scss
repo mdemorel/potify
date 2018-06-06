@@ -41,6 +41,7 @@
     align-items: center;
     margin-top: -15px;
     line-height: 1.5px;
+    color: $gray;
   // position: relative;
   // margin-top: 30px;
 }
@@ -65,14 +66,15 @@
   height: 100px;
   width: 150px;
   border-radius: 5%;
-  background-color: rebeccapurple;
   // background-color: $yellow;
   // background: linear-gradient(0.9turn, $flash-green, $green);
   // padding-left: 30px;
   text-align: center;
   padding-top: 20px;
   // margin-top: 20px;
-  box-shadow: 0 0 6px rgba(130, 130, 130, 0.3);
+  box-shadow: 1px 1px 6px #E7BB41;
+  border: solid #E7BB41;
+  background-color: white;
 
   .icon-avatar {
     height: 40px;
