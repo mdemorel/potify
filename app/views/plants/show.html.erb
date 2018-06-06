@@ -10,10 +10,10 @@
         <div class="header">
           <h3><%= @plant.name %></h3>
           <p><%= @plant.category %></p>
+          <p class="about_the_pot">Description: <%= @plant.description %></p>
           <%#= link_to "Back to plants", plants_path, class: "link-black" %>
         </div>
         <%= render "shared/plant_information", plant: @plant %>
-        <p class="about_the_pot">Description: <%= @plant.description %></p>
       </div>
     </div>
   </div>
