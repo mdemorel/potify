@@ -182,14 +182,14 @@ end
 
 puts "scraping of plants over!"
 
-10.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: "password",
-    first_name: Faker::Name.name ,
-    last_name: Faker::Name.last_name )
-  user.save
-end
+# 10.times do
+#   user = User.new(
+#     email: Faker::Internet.email,
+#     password: "password",
+#     first_name: Faker::Name.name ,
+#     last_name: Faker::Name.last_name )
+#   user.save
+# end
 
-puts "scraping of users over!"
+# puts "scraping of users over!"
 
