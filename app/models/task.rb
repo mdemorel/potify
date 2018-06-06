@@ -25,4 +25,17 @@ class Task < ApplicationRecord
     save
   end
 
+  def action_name
+    action = ""
+    if name == "watering"
+      action = "water"
+    elsif name == "potting"
+      action = "pot"
+    elsif name == "cutting"
+      action = "cut"
+    elsif name == "fertilizing"
+      action = "fertilize"
+    end
+  end
+
 end

@@ -26,8 +26,8 @@
             <div class="points-circle">
               <div class="points">
                 <%= image_tag("cactus-family.png", height: 40) %>
-                <span class="counter_points"><%= user.count_tasks %></span>
-                <span class="points-element"><%= "action".pluralize(user.count_tasks) %></span>
+                <span class="counter_points"><%= user.tasks.where(completed: true).size %></span>
+                <span class="points-element"><%= "action".pluralize(user.tasks) %></span>
               </div>
             </div>
           </div>
@@ -42,16 +42,16 @@
         <div class="col-xs-12 col-md-6">
           <div class="user-task-title">
             <h3>My tasks</h3>
-            <% if current_user.count_tasks > 0 %>
-              <p>You have <span id="counter_tasks" class="no-padding-left"><%= current_user.count_tasks%></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
+            <% if current_user.tasks.where(completed: false).size > 0 %>
+              <p>You have <span id="counter_tasks" class="no-padding-left"><%= current_user.tasks.where(completed: false).size %></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
             <% else %>
               <p>Well done!! Enjoy your day!</p>
             <% end %>
           </div>
           <div class="user-tasks inner-padding">
-            <% if current_user.count_tasks > 0 %>
+            <% if current_user.tasks.where(completed: false).size > 0 %>
               <% Task::TASKS.each do |task_name| %>
-                <% if current_user.count_tasks_by_name(task_name) > 0  %>
+                <% if current_user.tasks.where(completed: false, name: task_name).size > 0  %>
                   <div class="task-title-card">
                     <span class="task-title-badge">
                       <span class="span-paytone"><%= task_name.upcase %></span>
