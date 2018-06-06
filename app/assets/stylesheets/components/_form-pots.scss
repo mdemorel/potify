@@ -118,11 +118,20 @@ label {
 .plant-choice-image {
   cursor: pointer;
   padding-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
 
   img {
     height: 200px;
     // opacity: 0.2;
-
+    transition: opacity .4s ease-in-out;
+    transition: transform .2s, -webkit-transform .2s;
+    border-radius: 4px;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+      transform: scale(1.02);
+    }
   }
 }
 
@@ -138,6 +147,7 @@ span {
 
 label {
   text-transform: uppercase;
+  text-align: center;
 }
 
 .login-links {
@@ -152,6 +162,11 @@ label {
   }
 }
 
+.plant-upload-image {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .form-actions {
   display: flex;
   justify-content: center;
@@ -159,5 +174,9 @@ label {
   &:hover a {
     color: white;
   }
+}
+
+abbr[title="required"] {
+  display: none;
 }
 
