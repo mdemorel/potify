@@ -38,7 +38,7 @@
         </div> -->
       </div>
       <div class="follow-up-card recap">
-        <% pot.tasks.each do |task| %>
+        <% pot.tasks.last(4).each do |task| %>
           <div class="recap-item">
             <% unless task.nil? %>
               <div class="task-follow-up">
