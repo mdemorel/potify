@@ -16,7 +16,7 @@
           <div class="player-stats">
             <div class="points-circle">
               <div class="points">
-                <%= image_tag("plant.png", class: "icon-avatar") %>
+                <%= image_tag("plants.png", height: 40) %>
                 <span class="counter_points"><%= user.pots.size %></span>
                 <span class="points-element"><%= "plant".pluralize(user.pots.size) %></span>
               </div>
@@ -25,7 +25,7 @@
           <div class="player-stats">
             <div class="points-circle">
               <div class="points">
-                <%= image_tag("arrosoir.png", class: "icon-avatar") %>
+                <%= image_tag("cactus-family.png", height: 40) %>
                 <span class="counter_points"><%= user.count_tasks %></span>
                 <span class="points-element"><%= "action".pluralize(user.count_tasks) %></span>
               </div>
