@@ -26,10 +26,8 @@
               </div>
               <div class="row">
                 <div class="col-xs-12 plant-choice-image">
-                  <%= f.label ("Select a plant") %>
                   <div id="div_plant_name" data-toggle="modal" data-target="#myModal">
-                    <img src="https://images.unsplash.com/photo-1519289776718-d7becf12a9f0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3eefa9de5d15b3108867a8e77d2363ef&auto=format&fit=crop&w=1050&q=80" alt="" id="plant-choice-button" >
-
+                    <i class="mdi mdi-cursor-default-outline"></i> Select plant
                   </div>
                 </div>
               </div>
@@ -54,7 +52,7 @@
               </div>
               <div class="row">
                 <div class="col-xs-12">
-                <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?", label: false %>
+                <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?" %>
                 </div>
               </div>
               <label class="form-control-label string optional" for="pot_photo">Select your pot's size</label>

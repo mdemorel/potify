@@ -1,4 +1,5 @@
 import "bootstrap";
+import "mdi/css/materialdesignicons.min.css";
 import "../plugins/flatpickr";
 import "../components/select_size";
 import { sizeChoice } from "../components/size_choice";
