@@ -1,90 +1,84 @@
-<div class="wrapper wrapper-color">
-  <div class="container" style="margin-bottom: 40px;"  >
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="form-pots">
-          <h3>Edit your plant !</h3>
-          <%= simple_form_for(@plant) do |f| %>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-xs-12">
-                  <%= f.input :name, placeholder: "Name" %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :category, as: :string, label: "Category", required: false%>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <%= f.input :description, placeholder: "Type anything you love about this plant!", class: "text-resize-none" %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :watering_frequency, as: :integer, label: "watering_frequency", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :watering_quantity, as: :integer, label: "watering_quantity", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :potting_frequency, as: :integer, label: "potting_frequency", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :fertilizing_quantity, as: :integer, label: "fertilizing_quantity", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :fertilizing_frequency, as: :integer, label: "fertilizing_frequency", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :fertilizing_type, as: :string, label: "fertilizing_type", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :exposition, as: :integer, label: "exposition", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :cutting_frequency, as: :integer, label: "cutting_frequency", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :temperature, as: :integer, label: "temperature", required: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :plant_url, as: :string, label: "plant_url", required: false %>
-                </div>
-              </div>
-
-
-              <div class="flexbutton">
-                <%= f.submit "Save", class: "btn-yellow"  %>
+<div class="container" style="margin-bottom: 40px;"  >
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-pots">
+        <h3>Edit your plant !</h3>
+        <%= simple_form_for(@plant) do |f| %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.input :name, placeholder: "Name" %>
               </div>
             </div>
-          <% end %>
-        </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :category, as: :string, label: "Category", required: false%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.input :description, placeholder: "Type anything you love about this plant!", class: "text-resize-none" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :watering_frequency, as: :integer, label: "watering_frequency", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :watering_quantity, as: :integer, label: "watering_quantity", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :potting_frequency, as: :integer, label: "potting_frequency", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :fertilizing_quantity, as: :integer, label: "fertilizing_quantity", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :fertilizing_frequency, as: :integer, label: "fertilizing_frequency", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :fertilizing_type, as: :string, label: "fertilizing_type", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :exposition, as: :integer, label: "exposition", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :cutting_frequency, as: :integer, label: "cutting_frequency", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :temperature, as: :integer, label: "temperature", required: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :plant_url, as: :string, label: "plant_url", required: false %>
+              </div>
+            </div>
+
+
+            <div class="flexbutton">
+              <%= f.submit "Save", class: "btn-yellow"  %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <%= render "shared/footer" %>
 </div>
-
-
-
-
+<%= render "shared/footer" %>

@@ -1,45 +1,50 @@
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="welcome-heading">
-        <h3 class="welcome-title">Welcome <%= user.status %> !</h3>
-          <% if user.is_master %>
-            <div>You have become a real master on taking care of plants. Stay tuned for upcoming rewards!</div>
-          <% else %>
-            <div>You are <%= user.left_for_next_status %> points away from <%= user.next_status %></div>
-         <% end %>
-        <div class="player-badges">
-          <div class="player-stats">
-            <div class="points-circle">
-              <%= render "shared/points", user: current_user %>
-            </div>
-          </div>
-          <div class="player-stats">
-            <div class="points-circle">
-              <div class="points">
-                <%= image_tag("plants.png", height: 40) %>
-                <span class="counter_points"><%= user.pots.size %></span>
-                <span class="points-element"><%= "plant".pluralize(user.pots.size) %></span>
-              </div>
-            </div>
-          </div>
-          <div class="player-stats">
-            <div class="points-circle">
-              <div class="points">
-                <%= image_tag("cactus-family.png", height: 40) %>
-                <span class="counter_points"><%= user.tasks.where(completed: true).size %></span>
-                <span class="points-element"><%= "action".pluralize(user.tasks) %></span>
-              </div>
-            </div>
-          </div>
+  <!-- <div class="row">
+    <div class="col-xs-12"> -->
 
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
 
-  <div class="row">
+  <!-- <div class="row"> -->
+  <div class="dashboard-container">
     <div class="top-dashboard">
-        <div class="col-xs-12 col-md-6">
+      <div class="left-side-dashboard">
+        <div class="welcome-heading">
+          <h3 class="welcome-title">Welcome <%= user.status %> !</h3>
+          <div class="player-badges">
+            <div class="status-message">
+              <% if user.is_master %>
+                You have become a real master on taking care of plants. Stay tuned for upcoming rewards!
+              <% else %>
+                You are <%= user.left_for_next_status %> points away from <%= user.next_status %>
+             <% end %>
+           </div>
+            <div class="player-stats">
+              <div class="points-circle">
+                <%= render "shared/points", user: current_user %>
+              </div>
+            </div>
+            <div class="player-stats">
+              <div class="points-circle">
+                <div class="points">
+                  <%= image_tag("plants.png", height: 40) %>
+                  <span class="counter_points"><%= user.pots.size %></span>
+                  <span class="points-element"><%= "plant".pluralize(user.pots.size) %></span>
+                </div>
+              </div>
+            </div>
+            <div class="player-stats">
+              <div class="points-circle">
+                <div class="points">
+                  <%= image_tag("cactus-family.png", height: 40) %>
+                  <span class="counter_points"><%= user.tasks.where(completed: true).size %></span>
+                  <span class="points-element"><%= "action".pluralize(user.tasks) %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!--       <div class="col-xs-12 col-md-6">
+  -->    <div class="user-tasks inner-padding">
           <div class="user-task-title">
             <h3>My tasks</h3>
             <% if current_user.tasks.where(completed: false).size > 0 %>
@@ -48,9 +53,11 @@
               <p>Well done!! Enjoy your day!</p>
             <% end %>
           </div>
-          <div class="user-tasks inner-padding">
+          <div class="task-list">
+
             <% if current_user.tasks.where(completed: false).size > 0 %>
               <% Task::TASKS.each do |task_name| %>
+              <!-- <div class="col-xs-12 col-md-6"> -->
                 <% if current_user.tasks.where(completed: false, name: task_name).size > 0  %>
                   <div class="task-title-card">
                     <span class="task-title-badge">
@@ -64,32 +71,34 @@
                     </div>
                   </div>
                 <% end %>
+              <!-- </div> -->
               <% end %>
+          </div>
             <% else %>
-              <div class="image-height-300">
-                <img src="https://cdn.dribbble.com/users/729829/screenshots/2547652/galshir-cacti.gif" alt="" >
-              </div>
-              <div class="white-square">
-              </div>
-            <% end %>
-          </div>
-
+            <div class="image-height-300">
+              <img src="https://cdn.dribbble.com/users/729829/screenshots/2547652/galshir-cacti.gif" alt="" >
+            </div>
+            <div class="white-square">
+            </div>
+          <% end %>
         </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="user-ranking">
-          <h3>🏆 HIGHEST SCORES 🏆</h3>
-          <div class="user-gained-points">
-            <!-- points, plants, actions -->
-          </div>
-          <div class="ranking-table">
-            <%= render "shared/ranking" %>
-          </div>
+      </div>
+    <div class="user-ranking">
+        <h3>🏆 HIGHEST SCORES 🏆</h3>
+        <div class="user-gained-points">
+          <!-- points, plants, actions -->
+        </div>
+        <div class="ranking-table">
+          <%= render "shared/ranking" %>
         </div>
       </div>
     </div>
-  </div>
+      <!-- </div> -->
+<!--       <div class="col-xs-12 col-md-6">
+      <!-- </div> -->
+  <!-- </div> -->
 
-  <div class="row">
+  <!-- <div class="row"> -->
     <div class="user-garden">
       <h3>My garden</h3>
       <% pots.each do |pot|%>
@@ -100,9 +109,11 @@
         </div>
       <% end %>
     </div>
+
+  </div>
     <!-- <div class="col-xs-12"> -->
     <!-- </div> -->
-  </div>
+  <!-- </div> -->
 
 
 
