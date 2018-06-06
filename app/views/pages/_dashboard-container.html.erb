@@ -16,16 +16,18 @@
           <div class="player-stats">
             <div class="points-circle">
               <div class="points">
+                <%= image_tag("plant.png", class: "icon-avatar") %>
                 <span class="counter_points"><%= user.pots.size %></span>
-                <%= "plant".pluralize(user.pots.size) %>
+                <span class="points-element"><%= "plant".pluralize(user.pots.size) %></span>
               </div>
             </div>
           </div>
           <div class="player-stats">
             <div class="points-circle">
               <div class="points">
+                <%= image_tag("arrosoir.png", class: "icon-avatar") %>
                 <span class="counter_points"><%= user.count_tasks %></span>
-                <%= "action".pluralize(user.count_tasks) %>
+                <span class="points-element"><%= "action".pluralize(user.count_tasks) %></span>
               </div>
             </div>
           </div>
