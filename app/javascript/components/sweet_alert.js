@@ -8,9 +8,11 @@ function bindSweetAlertButtonDemo() {
       button.addEventListener('click', (e) => {
         var point = $(e.currentTarget).parents('form').find('.card-item')[0].dataset.points;
         swal({
-          title: "Youhou, you did great!",
-          text: `You won ${point} points`,
-          icon: "success",
+          icon: 'https://cdn.dribbble.com/users/1315300/screenshots/3556675/untitled-1.gif',
+          iconHeight: 100,
+          title: `You won ${point} points`,
+          text: "Youhou, you did great!",
+          // icon: "success",
           timer: 30000,
         });
       });

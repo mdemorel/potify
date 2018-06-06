@@ -11,69 +11,43 @@
   <div class="pot-info">
     <div class="pot-user-info">
       <div class="header">
-        <h3><%= pot.name %></h3>
+        <h3><%= pot.name.capitalize %></h3>
         <div class="about_the_pot">
           <p><i><%= pot.description %></i></p>
         </div>
-          <% plant_name = pot.plant.name %>
-          <%= link_to "Learn more about me", plant_path(pot.plant), class: " btn btn-minimal " %>
+         <%= link_to "Learn more", plant_path(pot.plant), class: "btn btn-minimal "%>
+      </div>
+      <div class="border-top">
       </div>
 
-      <div class="adoption-info">
-        <% unless pot.adoption_date.nil? %>
-          <p> ❤️ You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
-        <% end %>
-      </div>
-      <!-- <div class="tabs">
-        <a class="tab active" data-tab-name="tasks">
-          <h3>Tasks</h3>
-        </a>
-        <a class="tab" data-tab-name="information">
-          <h3>Information</h3>
-        </a>
-      </div>
-
-      <div class="tabs-container">
-        <div class="tab-tasks" data-target="tasks">
-
-        </div>
-        <div class="tab-information hidden" data-target="information">
-        </div>
-      </div> -->
-
-      <div class="user-tasks inner-padding">
-            <% if current_user.count_tasks > 0 %>
-              <% Task::TASKS.each do |task_name| %>
-                <% if pot.count_tasks_by_pot(task_name) > 0 %>
-                  <div class="task-title-card">
-                    <span class="task-title-badge">
-                      <span class="span-paytone"><%= task_name.upcase %></span>
-                      <div class="task-badge">
-                        <%= render "shared/badge", task_name: task_name %>
-                      </div>
-                    </span>
-                    <div class="task-title">
-                      <%= render "shared/task_type", tasks: pot.tasks.where(name: task_name), task_name: task_name %>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
-            <% else %>
-              <div class="item-border-green">
-                <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
-              </div>
+      <div class="row recap">
+        <div class="col-xs-12 col-md-4 background-white">
+          <div class="adoption-info">
+            <% unless pot.adoption_date.nil? %>
+              <p> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%b %d, %Y"); %></p>
             <% end %>
           </div>
-      <%# unless pot.tasks.empty? %>
-        <!-- <div class="pot-statistics">
-          <%#= render "shared/follow_up", pot: pot %>
-        </div> -->
-      <%# end %>
+        </div>
+        <div class="col-xs-6 col-md-4 background-white">
+          <p><%= pot.name.capitalize %> is a <%= pot.plant.name.capitalize %></p>
+        </div>
+        <div class="col-xs-6 col-md-4 background-white">
+          <% if pot.tasks.where(completed: true).count > 0 %>
+            <h4>You took care of <%= pot.name %> <%= pluralize pot.tasks.where(completed: true).count, "time" %> since you met 😘</h4>
+          <% end %>
+        </div>
+      </div>
 
+
+      <% unless pot.tasks.empty? %>
+        <div class="pot-statistics">
+          <%= render "shared/follow_up", pot: pot %>
+        </div>
+      <% end %>
       <div class="image-links">
         <% if current_user == pot.user %>
           <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fa fa-trash"></i>
+            <p><%= pot.name.capitalize %> is estimated dead</p>
           <% end %>
           <%= link_to edit_pot_path(pot) do %>
             <i class="fas fa-edit"></i>

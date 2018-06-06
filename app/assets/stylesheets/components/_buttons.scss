@@ -25,6 +25,18 @@
   }
 }
 
+  // .btn-yellow {
+  //   margin: auto;
+  //   margin-top: -50px;
+
+  //   &:hover a {
+  //     color: white;
+  //     font-weight: bolder;
+  //     text-decoration: none;
+  //     opacity: 1;
+  //   }
+  // }
+
 .btn-yellow {
   border-radius: 10px;
   border-color: transparent;
@@ -33,6 +45,7 @@
   padding: 10px 20px;
   box-shadow: 0 18px 35px rgba(50, 50, 93, 0.02), 0 8px 15px rgba(0, 0, 0, 0.05);
   opacity: 0.8;
+
   &:hover a {
     color: white;
     font-weight: bolder;
