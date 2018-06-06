@@ -14,7 +14,7 @@
     overflow-wrap: break-word;
     text-align: center;
 
-    font-size: 70px;;
+    font-size: 65px;;
     background: -webkit-linear-gradient(45deg, $flash-green, $green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -28,7 +28,7 @@
 }
 
 .home-image {
-    margin-top: -10%;
+    margin-top: -5%;
     text-align: center;
   img {
     height: 350px;
@@ -43,7 +43,7 @@
   margin-bottom: 50px;
   border-radius: 10px;
   // box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 25px 25px 100px rgba(56, 62, 65, 0.35), 25px 0px 200px rgba(255, 255, 255,0.1);
+  box-shadow: 20px 20px 100px 20px rgba(56, 62, 65, 0.35), 25px 0px 200px rgba(255, 255, 255,0.1);
   position: relative;
 }
 .banner {
@@ -99,11 +99,11 @@
     .reminder {
       flex: 0 0 30%;
       text-align: center;
-          padding: 20px 50px;
-          display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        padding: 20px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 }
 

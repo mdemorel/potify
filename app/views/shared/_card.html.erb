@@ -19,6 +19,12 @@
       <div>
         <%= cl_image_tag(element.user.photo, width: 42, crop: :fill, class: "avatar dropdown-toggle") %>
       </div>
+      <div class="player-info">
+        <% user_name = "" %>
+        <% element.user.first_name.nil? ? user_name = "Player" : user_name = element.user.first_name %>
+        <p><%= user_name %></p>
+        <p>🌟<%= element.user.points %></p>
+      </div>
     <% end %>
     <div class="element-details">
       <% if element.class == Pot %>

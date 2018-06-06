@@ -43,7 +43,7 @@
           <div class="user-task-title">
             <h3>My tasks</h3>
             <% if current_user.count_tasks > 0 %>
-              <p>You have <span id="counter_tasks"><%= pluralize current_user.count_tasks, "task"%></span> to perform today </p>
+              <p>You have <span id="counter_tasks no-padding-left"><%= current_user.count_tasks%></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
             <% else %>
               <p>Well done!! Enjoy your day!</p>
             <% end %>
@@ -99,12 +99,12 @@
           <% end %>
         </div>
       <% end %>
-    </div>
-    <div class="col-xs-12">
       <div class="item-border-green">
-        <%= link_to "+ add a plant", new_pot_path, class: "link-border-green-item-border-green" %>
+        <%= link_to "+ add a plant", new_pot_path, class: "link-border-green item-border-green add-button" %>
       </div>
     </div>
+    <!-- <div class="col-xs-12"> -->
+    <!-- </div> -->
   </div>
 
 
