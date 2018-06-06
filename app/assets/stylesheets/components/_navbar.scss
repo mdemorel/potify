@@ -93,4 +93,16 @@
   border-top: 1px solid #E6E6E6;
 }
 
-
+#badge-container {
+  display: inline-block;
+  #navbar-badge {
+    width: 18px;
+    height: 18px;
+    font-size: 13px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 17px;
+    right: 184px;
+  }
+}
