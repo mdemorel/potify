@@ -3,11 +3,15 @@
     <%= simple_form_for(task, remote: true) do |f| %>
       <div class="card-item grow" data-points="<%= task.points %>" >
         <%= f.submit :update, class: " hidden submit-task sweet-alert-demo" %>
-        <%= cl_image_tag(task.pot.photo, class: 'plant-avatar') %>
-        <% if task.name == "watering" || task.name == "fertilizing" %>
-          <p> Hey, give <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %></span><br>to <span class='pot-name'><%= task.pot.name.capitalize %></span></p>
+        <% image = "" %>
+        <% task.pot.photo.nil? ? image = task.pot.plant.photo : image = task.pot.photo %>
+        <%= cl_image_tag(image, class: 'plant-avatar') %>
+        <% if task.name == "watering" %>
+          <p> You need to water <span class='pot-name'><%= task.pot.name.capitalize %></span> with <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>cl</span><br></p>
+        <% elsif task.name == "fertilizing" %>
+          <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>g</span> of fertilizer<br></p>
         <% else %>
-          <p> Hey, <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
+          <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
         <% end %>
             <%#= f.input :completed, label: "  I did it" %>
 

@@ -1,31 +1,42 @@
   <div class="row plant_info">
     <div class="col-xs-12 col-md-6 task-information">
-      <h4>WATERING</h4>
-      <p><span class="bold-green" ><%= plant.watering_quantity %>cl </span> every <span class="bold-green"><%= plant.watering_frequency %></span> <%= "day".pluralize(plant.watering_frequency) %></p>
+      <div class="plant-details">
+        <h4>WATERING</h4>
+        <p><span class="bold-green" ><%= plant.watering_quantity %>cl </span> every <span class="bold-green"><%= plant.watering_frequency %></span> <%= "day".pluralize(plant.watering_frequency) %></p>
+      </div>
     </div>
     <div class="col-xs-12 col-md-6 task-information">
+      <div class="plant-details"></div>
       <h4>FERTILIZING</h4>
       <p><span class="bold-green"><%= plant.fertilizing_quantity %>g</span> every <span class="bold-green"><%= plant.fertilizing_frequency %></span> <%= "day".pluralize(plant.fertilizing_frequency) %></p>
       <!-- <p>Use <%#= plant.fertilizing_type %></p> -->
     </div>
      <div class="col-xs-12 col-md-6 task-information">
-      <h4>POTTING</h4>
-      <p>Every <span class="bold-green" ><%= plant.potting_frequency %> </span> <%= "day".pluralize(plant.potting_frequency) %></p>
+      <div class="plant-details">
+        <h4>POTTING</h4>
+        <p>Every <span class="bold-green" ><%= plant.potting_frequency %> </span> <%= "day".pluralize(plant.potting_frequency) %></p>
+      </div>
     </div>
     <div class="col-xs-12 col-md-6 task-information">
-      <h4>EXPOSITION</h4>
-      <p>
-        <% plant.exposition.times do %>
-          <i class="fas fa-sun"></i>
-        <% end %>
-      </p>
+      <div class="plant-details">
+        <h4>EXPOSITION</h4>
+        <p>
+          <% plant.exposition.times do %>
+            <i class="fas fa-sun"></i>
+          <% end %>
+        </p>
+      </div>
     </div>
     <div class="col-xs-12 col-md-6 task-information">
-      <h4>TEMPERATURE</h4>
-      <p><span class="bold-green" ><%= plant.temperature %>°C</span></p>
+      <div class="plant-details">
+        <h4>TEMPERATURE</h4>
+        <p><span class="bold-green" ><%= plant.temperature %>°C</span></p>
+      </div>
     </div>
     <div class="col-xs-12 col-md-6 task-information">
-      <h4>CUTTING</h4>
-      <p>Every <span class="bold-green"><%= plant.cutting_frequency %></span> <%= "day".pluralize(plant.cutting_frequency) %> </p>
+      <div class="plant-details">
+        <h4>CUTTING</h4>
+        <p>Every <span class="bold-green"><%= plant.cutting_frequency %></span> <%= "day".pluralize(plant.cutting_frequency) %> </p>
+      </div>
     </div>
   </div>

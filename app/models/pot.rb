@@ -39,5 +39,9 @@ class Pot < ApplicationRecord
 
   def next_task_date(task_name)
     next_task_date = send("last_#{task_name}") + plant.send("#{task_name}_frequency")
+    if next_task_date < Date.today
+      next_task_date = Date.today + plant.send("#{task_name}_frequency")
+    end
+    return next_task_date
   end
 end
