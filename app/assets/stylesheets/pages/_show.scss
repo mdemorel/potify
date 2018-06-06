@@ -64,17 +64,48 @@
   }
 }
 
+.follow-up-card {
+  // max-width: 300px;
+}
+
 .recap {
   background: $light-gray;
-  // height: 100px;
-}
-
-.background-white {
-  background: white;
+  display: flex;
+  justify-content: center;
   padding: 20px;
-  margin: 10px;
+
+  p {
+    font-size: 14px;
+  }
 }
 
+.recap-item {
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 1px 1px 6px #E7BB41;
+  border: solid #E7BB41;
+  text-align: center;
+  width: 150px;
+
+  img {
+    height: 50px
+  }
+}
+
+.recap-small-item {
+  background: white;
+  box-shadow: 1px 1px 6px #E7BB41;
+  border: solid #E7BB41;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 250px;
+}
+
+.recap-big-item {
+  display: flex;
+}
 
 
 .pot-statistics {
