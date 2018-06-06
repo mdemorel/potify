@@ -1,8 +1,11 @@
 /* Big divs */
-
+.full-screen {
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .top-dashboard {
     display: flex;
-    height: 400px;
+    min-height: 500px;
 }
 
 .container-dashboard {
@@ -12,6 +15,10 @@
   h3 {
     font-size: 40px;
   }
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
 }
 
 .welcome-heading {
@@ -41,9 +48,13 @@
     align-items: center;
     margin-top: -15px;
     line-height: 1.5px;
-    color: $gray;
+    color: #697277;
   // position: relative;
   // margin-top: 30px;
+}
+
+#counter_tasks span {
+  padding-left: 0 !important;
 }
 
 .counter_points {
@@ -85,12 +96,16 @@
 .user-tasks.inner-padding {
   display: flex;
   flex-wrap: wrap;
+  width: 125%;
 }
 
 .task-title-card {
   width: 48%;
   margin: 1%;
   box-shadow: 0px 0px 5px rgba(21, 233, 166, .3);
+  margin-bottom: 15px;
+  border-bottom: solid $green 5px;
+  padding-top: 5px;
 
 }
 
@@ -120,22 +135,26 @@
   margin: 1%;
   border-radius: 2px;
   background-color: $task-gray;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.05);
+  // box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   p {
     margin: 0 20px;
     line-height: 1;
+    font-size: 14px;
+    font-weight: lighter;
   }
 }
 
-.plant-quantity {
+.plant-quantity  {
   color: $green;
   font-weight: bolder;
-  font-size: 28px;
+  font-size: 25px;
+  padding-left: 0;
 }
-.pot-name {
+.pot-name  {
   font-weight: bolder;
-  font-size: 21px;
+  font-size: 20px;
+  padding-left: 0
 }
 .task-picto {
   height: 40px;
@@ -152,9 +171,9 @@
 .user-ranking {
   margin-top: -50%;
   background-color: $light-gray;
-  height: 168%;
-  width: 65%;
-  margin-left: 33%;
+  height: 130%;
+  width: 70%;
+  margin-left: 30%;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
@@ -181,10 +200,25 @@
 
 .user-garden {
   display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 70px;
+  min-height: 350px;
+
+
   .item-border-green {
     justify-content: center;
     display: flex;
     margin-bottom: 100px;
+
+
+    .add-button {
+      margin-bottom: 30px;
+      text-align: center;
+      position: absolute;
+      bottom: 53%;
+      right: 10%;
+    }
   }
 }
 

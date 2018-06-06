@@ -12,6 +12,7 @@
 
 var dashboard = document.querySelector('.wrapper-dashboard');
 var potShow = document.querySelector('#container-pot-show');
+var navBadgeContainer = document.getElementById("badge-container");
 
 if (dashboard) {
   dashboard.innerHTML = '<%= j render "./pages/dashboard-container", user: @user, pots: @pots %>';
@@ -19,6 +20,13 @@ if (dashboard) {
 if (potShow){
   potShow.innerHTML = '<%= j render "./pots/pot_content", pot: @pot %>';
 }
+<% if current_user.count_tasks > 0 %>
+  if (navBadgeContainer) {
+    navBadgeContainer.innerHTML = '<%= j render "./shared/navbar_badge", user: @user %>';
+  };
+<% else %>
+  navBadgeContainer.remove();
+<% end %>
 
 bindSweetAlertButtonDemo();
 updateTaskStatus();

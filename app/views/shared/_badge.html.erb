@@ -1,9 +1,3 @@
 <div class="badge">
-  <% if params["action"] == "dashboard" %>
     <%= current_user.count_tasks_by_name(task_name) %>
-
-  <% elsif params["action"] == "show" %>
-    <%= @pot.count_tasks_by_pot(task_name) %>
-  <% end %>
-
 </div>
