@@ -20,6 +20,21 @@
   }
 }
 
+.player-info {
+  color: $yellow;
+  top: 5px;
+    line-height: 5px;
+    width: 70px;
+    padding: 6px 0px 0px 0px;
+    background-color: white;
+    position: absolute;
+    right: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: $gray;
+    box-shadow: 1px 1px 6px #E7BB41;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
