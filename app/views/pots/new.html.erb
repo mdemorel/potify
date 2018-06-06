@@ -8,12 +8,12 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-xs-12">
-                  <%= f.input :name, placeholder: "Name" %>
+                  <%= f.input :name, placeholder: "Name", label: false %>
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-12">
-                  <%= f.input :description, placeholder: "Type anything you love about this plant!", class: "text-resize-none" %>
+                  <%= f.input :description, placeholder: "Type anything you love about this plant!", label: false,class: "text-resize-none" %>
                 </div>
               </div>
               <div class="row">
@@ -48,7 +48,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 .plant-upload-image">
                   <label class="form-control-label string optional" for="pot_photo">Add a photo</label>
                   <%= f.input :photo, label: false %>
                   <%= f.input :photo_cache, as: :hidden %>
@@ -57,7 +57,7 @@
               </div>
               <div class="row">
                 <div class="col-xs-12">
-                <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?" %>
+                <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?", label: false %>
                 </div>
               </div>
               <label class="form-control-label string optional" for="pot_photo">Select your pot's size</label>
