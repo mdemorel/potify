@@ -10,9 +10,9 @@ require 'open-uri'
 require 'nokogiri'
 
 puts "Destroying database"
-Plant.destroy_all if Rails.env.development?
-Pot.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+Plant.destroy_all
+Pot.destroy_all
+User.destroy_all
 
 puts "Scraping data"
 
