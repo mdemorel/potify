@@ -18,10 +18,10 @@ class PotsController < ApplicationController
     @plant = Plant.find(params[:pot][:plant_id])
     @pot = Pot.new(pot_params)
     @pot.user = current_user
-    @pot.last_watering = Date.today - @plant.watering_frequency.day
-    @pot.last_cutting = Date.today - @plant.cutting_frequency.day
-    @pot.last_potting = Date.today - @plant.potting_frequency.day
-    @pot.last_fertilizing = Date.today - @plant.fertilizing_frequency.day
+    @pot.last_watering = Date.today - 1.day
+    @pot.last_cutting = Date.today
+    @pot.last_potting = Date.today
+    @pot.last_fertilizing = Date.today
     authorize(@pot)
     if @pot.save
       redirect_to pot_path(@pot)
