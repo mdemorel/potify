@@ -7,7 +7,7 @@
         <% task.pot.photo.nil? ? image = task.pot.plant.photo : image = task.pot.photo %>
         <%= cl_image_tag(image, class: 'plant-avatar') %>
         <% if task.name == "watering" %>
-          <p> You need to water <span class='pot-name'><%= task.pot.name.capitalize %></span> with <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>cl</span><br></p>
+          <p> You need to <%= task.action_name %> <span class='pot-name'><%= task.pot.name.capitalize %></span> with <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>cl</span><br></p>
         <% elsif task.name == "fertilizing" %>
           <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>g</span> of fertilizer<br></p>
         <% else %>

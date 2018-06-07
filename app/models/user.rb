@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pots, dependent: :destroy
+  has_many :tasks, through: :pots
 
   # def count_points
   #   user_points = 0
@@ -21,21 +22,29 @@ class User < ApplicationRecord
     "Plant Wizard" => 15000
   }
 
-  def count_tasks
-    user_tasks = 0
-    self.pots.each do |pot|
-      user_tasks += pot.tasks.where(completed: false).size
-    end
-    return user_tasks
-  end
+  # def count_tasks
+  #   user_tasks = 0
+  #   self.pots.each do |pot|
+  #     user_tasks += pot.tasks.where(completed: false).size
+  #   end
+  #   return user_tasks
+  # end
 
-  def count_tasks_by_name(task_name)
-    user_tasks = 0
-    self.pots.each do |pot|
-      user_tasks += pot.tasks.where(completed: false).where(name: task_name).size
-    end
-    return user_tasks
-  end
+  # def count_all_tasks
+  #   all_tasks = 0
+  #   pots.each do |pot|
+  #     all_tasks += pot.tasks.size
+  #   end
+  #   return all_tasks
+  # end
+
+  # def count_tasks_by_name(task_name)
+  #   user_tasks = 0
+  #   self.pots.each do |pot|
+  #     user_tasks += pot.tasks.where(completed: false).where(name: task_name).size
+  #   end
+  #   return user_tasks
+  # end
 
   def status
     status = ""

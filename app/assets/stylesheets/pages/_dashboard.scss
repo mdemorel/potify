@@ -1,24 +1,56 @@
 /* Big divs */
+
+.container-dashboard {
+  margin: auto 100px;
+  background: white;
+
+  h3 {
+    font-size: 40px;
+  }
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .top-dashboard {
     display: flex;
-    min-height: 500px;
+    margin-top : 30px;
+    justify-content: space-around;
+    // min-height: 500px;
 }
 
-.no-padding-left {
-  padding-left: 0 !important;
+.left-side-dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-right: 30px;
 }
 
+// gamer status
 .welcome-heading {
   display: flex;
   flex-direction: column;
   vertical-align: middle;
   justify-content: space-between;
-  width: 60%;
+  background-color: #FCE76C;
+  border-radius: 5px;
+  padding-left: 20px;
+  box-shadow: 1px 1px 20px #E7BB41;
+  margin-bottom: 30px;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+.status-message {
+  flex: 0 0 30%;
 }
 
 .player-badges {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: 20px;
   margin-top: 30px;
 }
@@ -76,21 +108,32 @@
 }
 
 
-
+// tasks
 .user-tasks.inner-padding {
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
-  width: 125%;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px rgba(21, 233, 166, 40%);
+}
+
+.task-list {
+  display: flex;
+    flex-wrap: wrap;
+
 }
 
 .task-title-card {
-  width: 48%;
-  margin: 1%;
+  width: calc(50% - 5px);
   box-shadow: 0px 0px 5px rgba(21, 233, 166, .3);
   margin-bottom: 15px;
   border-bottom: solid $green 5px;
   padding-top: 5px;
-
+  &:nth-of-type(2n+1) {
+    margin-right: 10px;
+  }
 }
 
 .span-paytone {
@@ -152,16 +195,19 @@
   margin-top: 15px;
 }
 
+// ranking
 .user-ranking {
-  margin-top: -50%;
   background-color: $light-gray;
-  height: 130%;
-  width: 70%;
-  margin-left: 30%;
+  // height: 130%;
+  // margin-left: 30%;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
   box-shadow: 1px 1px 20px $yellow;
+  position: sticky;
+  top: 25px;
+  width: 30%;
+  height: min-content;
 
   h3 {
     color: black;
@@ -175,20 +221,21 @@
   line-height: 1.2;
   // border: 2px solid;
   // color: red;
-  width: 100%;
-  height: 200px;
+  // width: 100%;
+  // height: 200px;
   display: flex;
   flex-direction: column;
 }
 
 
 .user-garden {
+
+  padding-left: 20px;
   display: block;
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 70px;
   min-height: 350px;
-
 
   .item-border-green {
     justify-content: center;
