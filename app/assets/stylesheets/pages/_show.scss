@@ -69,11 +69,13 @@
 }
 
 .recap {
-  background: $light-gray;
   display: flex;
   justify-content: center;
   padding: 20px;
   margin-bottom: 20px;
+  background-color: #FCE76C;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px #E7BB41;
 
 
   p {
@@ -82,16 +84,13 @@
 }
 
 .recap-item {
-  background: white;
+  display: flex;
   padding: 10px;
   margin: 10px;
-  box-shadow: 1px 1px 6px #E7BB41;
-  border: solid #E7BB41;
-  text-align: center;
-  width: 150px;
 
   img {
-    height: 50px
+    height: 50px;
+    border-radius: 50px;
   }
 }
 

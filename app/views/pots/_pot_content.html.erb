@@ -17,8 +17,8 @@
       <div class="recap">
         <div class="recap-item">
           <% unless pot.adoption_date.nil? %>
-          <%= image_tag "adoption.png" %>
-            <p> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%B %d, %Y"); %></p>
+          <p> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%B %d, %Y"); %></p>
+          <%= image_tag "adoption.png", class: "avatar" %>
           <% end %>
         </div>
         <div class="recap-item">
