@@ -8,7 +8,10 @@
   p {
     margin-top: 12.5px;
   }
+}
 
+.message.current-user .message-status p.price {
+  color: #15E9A6;
 }
 .message:last-child {
   border-bottom: none;
@@ -80,7 +83,6 @@
   margin-left: 10px;
 }
 .price {
-  color: #15E9A6;
   font-weight: bolder;
   font-size: 28px;
   margin-left: 11px;

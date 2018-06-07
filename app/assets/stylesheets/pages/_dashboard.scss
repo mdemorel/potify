@@ -76,17 +76,15 @@ span.status-points {
 
 .points {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -15px;
-    color: #697277;
-    justify-content: center;
-    background-color: white;
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-  // position: relative;
-  // margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -15px;
+  color: #697277;
+  justify-content: center;
+  background-color: white;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 }
 
 #counter_tasks span {
@@ -133,6 +131,33 @@ span.status-points {
 
 
 // tasks
+
+.task-message {
+  flex: 0 0 60%;
+}
+
+.top-tasks {
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks-badges {
+  display: flex;
+}
+
+.tasks-badges-element {
+      background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-task-title {
+  margin-bottom: 10px;
+}
+
 .user-tasks.inner-padding {
   flex-direction: column;
   display: flex;
@@ -177,17 +202,17 @@ span.status-points {
 }
 
 .card-item {
-  display: flex;
-  padding: 2px;
-  align-items: center;
-  justify-content: space-around;
-  width: 96%;
-  height: 65px;
-  margin: 1%;
-  border-radius: 2px;
-  background-color: $task-gray;
-  // box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
+      display: flex;
+    /* padding: 2px; */
+    align-items: center;
+    justify-content: space-around;
+    /* width: 96%; */
+    /* height: 65px; */
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #F7F2F2;
+    cursor: pointer;
+
   p {
     margin: 0 20px;
     line-height: 1;
@@ -199,13 +224,14 @@ span.status-points {
 .plant-quantity  {
   color: $green;
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 20px;
   padding-left: 0;
 }
 .pot-name  {
   font-weight: bolder;
-  font-size: 20px;
-  padding-left: 0
+  font-size: 16px;
+  padding-left: 0;
+  font-family: "Paytone One", "sans-serif";
 }
 .task-picto {
   height: 40px;
@@ -257,10 +283,14 @@ span.status-points {
 
   padding-left: 20px;
   display: block;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 70px;
-  min-height: 350px;
+  margin-top: 40px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px #15e9a6;
 
   .item-border-green {
     justify-content: center;
@@ -289,13 +319,33 @@ a {
 
 /* For positionning badge */
 .task-title-badge {
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    ALIGN-ITEMS: center;
 }
 
 .task-badge {
-  position: absolute;
-  top: -20px;
-  right: -18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.late-date {
+      font-size: 12px;
+    background-color: #E7BB41;
+    color: white;
+    font-weight: bold;
+    padding-left: 4px;
+    border-radius: 3px;
+    padding-right: 4px;
+    margin-top: -5px;
+}
+
+.avatar-date {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 // ne permet pas de faire un beau score
 
@@ -317,7 +367,7 @@ img {
   height: 20px;
   background-color: white;
   position: absolute;
-  bottom: -7px;
-  right: 161px;
+  bottom: 0px;
+  right: 0px;
 }
 

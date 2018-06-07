@@ -4,12 +4,12 @@
   background-position: center;
   position: relative;
   border-radius: 5px;
-  margin: 10px 5px;
-  // put a 4cards in a row  //
+  margin: 10px 10px 30px;
   height: 325px;
   width: 265px;
+  margin-bottom: 70px;
 
-  .avatar {
+   .avatar {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -19,7 +19,8 @@
   }
 
   &:hover{
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    opacity: 0.93;
   }
 }
 
@@ -42,52 +43,50 @@
   text-transform: uppercase;
 }
 
-.status-icons {
-  margin-left: 55%;
-  margin-top: 5px;
-
-  .fas.fa-tint {
-    color: $blue;
-  }
-  .fas.fa-sun {
-    color: $yellow;
-  }
-  .fas.fa-leaf {
-    color: $green;
-  }
-
-  .fas.fa-cut {
-    color: $red;
-  }
-
-  .fas.fa-snowflake {
-    color: $light-gray;
-  }
+.element-name h4 {
+  color: white;
+  font-family: "Paytone One", "sans-serif";
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  bottom: 55px;
+  padding-left: 15px;
+  text-shadow: 1px 1px 2px rgba(58, 57, 57, 0.3);
 }
 
 .element-details {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #15E9A6;
+  color: white;
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  padding: 10px 20px;
-  text-align: center;
-  width: 80%;
-
-  #element-name h4 {
-    color: black;
-    font-family: "Paytone One", "sans-serif";
-  }
-
-  #element-category {
-    color: rgba(0,0,0,0.7);
-    font-size: 15px;
-    font-family: "Source Sans Pro", "sans-serif";
-  }
+  left: 0;
+  bottom: 0;
+  border-radius: 0px 0px 5px 5px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
+.element-category {
+  color: white;
+  font-family: "Source Sans Pro", "sans-serif";
+  font-size: 21px;
+  font-weight: 100;
+  flex: 1 0 70%;
+  padding-left: 15px;
+}
 
+.modify-pot {
+  border-left: solid 1px rgba(255,255,255, 0.5);
+  text-align: center;
+  flex: 1 0 25%;
+  justify-content: center;
+}
+
+.element-category, .modify-pot {
+  display: flex;
+  align-items: center;
+}
 
 .card-link {
   position: absolute;
@@ -95,3 +94,27 @@
   width: 100%;
   top: 0;
 }
+
+
+// .status-icons {
+//   margin-left: 55%;
+//   margin-top: 5px;
+
+//   .fas.fa-tint {
+//     color: $blue;
+//   }
+//   .fas.fa-sun {
+//     color: $yellow;
+//   }
+//   .fas.fa-leaf {
+//     color: $green;
+//   }
+
+//   .fas.fa-cut {
+//     color: $red;
+//   }
+
+//   .fas.fa-snowflake {
+//     color: $light-gray;
+//   }
+// }

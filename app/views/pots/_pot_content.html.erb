@@ -15,23 +15,29 @@
       <div class="border-top">
       </div>
       <div class="recap">
-        <div class="recap-item">
+        <div class="recap-item border-right">
           <% unless pot.adoption_date.nil? %>
-          <%= image_tag "adoption.png" %>
-            <p> You adopted <%= pot.name %> on <%= pot.adoption_date.strftime("%B %d, %Y"); %></p>
+          <p class="recap-item-p"> You adopted <strong><%= pot.name %></strong> on <%= pot.adoption_date.strftime("%B %d, %Y"); %></p>
+          <div class="points">
+            <%= image_tag "adoption.png", size: 50 %>
+          </div>
           <% end %>
         </div>
-        <div class="recap-item">
-          <%= image_tag "cactus-family.png" %>
-          <p><%= pot.name.capitalize %> belongs to the family of <%= pot.plant.name.capitalize %></p>
+        <div class="recap-item border-right">
+          <p class="recap-item-p"><strong><%= pot.name.capitalize %></strong> belongs to the family of <%= pot.plant.name.capitalize %></p>
+          <div class="points">
+            <%= image_tag "cactus-family.png", size: 50 %>
+          </div>
         </div>
         <div class="recap-item">
-          <%= image_tag "care.png" %>
           <% if pot.tasks.where(completed: true).count > 0 %>
-            <p>You took care of <%= pot.name.capitalize %> <%= pluralize pot.tasks.where(completed: true).count, "time" %> since you met</p>
+            <p>You took care of <strong><%= pot.name.capitalize %></strong> <%= pluralize pot.tasks.where(completed: true).count, "time" %> since you met</p>
           <% else %>
           <p>You never took care of <%= pot.name.capitalize %> yet! </p>
           <% end %>
+          <div class="points">
+            <%= image_tag "care.png",  size: 50 %>
+          </div>
         </div>
         <!-- <div class="recap-item">
 
