@@ -4,7 +4,7 @@
       <div class="show-task-title-card-hearder">
         <span class="span-paytone"><h4>WATERING</h4></span>
         <div class="padding-right">
-          <img class="icons icons-task" src="/assets/watering.png" width="50" height="50" alt="watering">
+          <%=  image_tag "watering.png", size: 50, class: "icons icons-task" %>
         </div>
       </div>
         <p><span class="bold-green"><%= plant.watering_quantity %>cl</span> every <span class="bold-green"><%= plant.watering_frequency %></span> <%= "day".pluralize(plant.watering_frequency) %></p>
@@ -15,7 +15,7 @@
       <div class="show-task-title-card-hearder">
         <span class="span-paytone"><h4>FERTILIZING</h4></span>
         <div class="padding-right">
-          <img class="icons icons-task" src="/assets/fertilize.jpg" alt="fertilize" width="50" height="50">
+          <%=  image_tag "fertilize.jpg", size: 50, class: "icons icons-task" %>
         </div>
       </div>
       <p><span class="bold-green"><%= plant.fertilizing_quantity %>g</span> every <span class="bold-green"><%= plant.fertilizing_frequency %></span> <%= "day".pluralize(plant.fertilizing_frequency) %></p>
@@ -27,7 +27,7 @@
       <div class="show-task-title-card-hearder">
         <span class="span-paytone"><h4>POTTING</h4></span>
         <div class="padding-right">
-          <img class="icons icons-task" src="/assets/potting.jpg" alt="potting" width="50" height="50">
+          <%=  image_tag "potting.jpg", size: 50, class: "icons icons-task" %>
         </div>
       </div>
       <p>Every <span class="bold-green" ><%= plant.potting_frequency %> </span> <%= "day".pluralize(plant.potting_frequency) %></p>
@@ -38,7 +38,7 @@
       <div class="show-task-title-card-hearder">
         <span class="span-paytone"><h4>EXPOSITION</h4></span>
         <div class="padding-right">
-          <img class="icons icons-task" src="/assets/sun.jpg" alt="exposition" width="50" height="50">
+          <%= image_tag "sun.jpg", size: 50, class: "icons icons-task" %>
         </div>
       </div>
       <p><% plant.exposition.times do %><i class="fas fa-sun"></i><% end %></p>
@@ -49,7 +49,7 @@
       <div class="show-task-title-card-hearder">
         <span class="span-paytone"><h4>TEMPERATURE</h4></span>
         <div class="padding-right">
-          <img class="icons icons-task" src="/assets/temperature.jpg" alt="" width="50" height="50">
+          <%= image_tag "temperature.jpg", size: 50, class: "icons icons-task" %>
         </div>
       </div>
       <p><strong><%= plant.name %></strong> needs to stay in a temperature around <span class="bold-green" ><%= plant.temperature %>°C</span></p>
@@ -60,7 +60,7 @@
       <div class="show-task-title-card-hearder">
         <span class="span-paytone"><h4>CUTTING</h4></span>
         <div class="padding-right">
-          <img class="icons icons-task" src="/assets/cutting.jpg" alt="cutting" width="50" height="50">
+          <%=  image_tag "cutting.jpg", size: 50, class: "icons icons-task" %>
         </div>
       </div>
       <p><strong><%= plant.name %></strong> needs to be cut every <span class="bold-green"><%= plant.cutting_frequency %></span> <%= "day".pluralize(plant.cutting_frequency) %> </p>
