@@ -12,6 +12,7 @@ require 'nokogiri'
 puts "Destroying database"
 Plant.destroy_all if Rails.env.development?
 Pot.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
 
 puts "Scraping data"
 
@@ -138,8 +139,8 @@ monstera = Plant.new(
   name: "Monstera Deliciosa",
   photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/tropical-plants-Monstera-deliciosa-600x600.jpg",
   description: "The scientific name Monstera deliciosa refers, in part, to the edible pineapple-like fruit this rainforest plant can provide – just make sure to read about how to ripen the fruits properly to avoid irritation upon consuming. These stunning large-leafed plants make a great statement piece and add warm, tropical appeal to any interior.",
-  watering_frequency: 1,
-  watering_quantity: 10,
+  watering_frequency: 3,
+  watering_quantity: 30,
   )
 monstera.save
 
@@ -168,7 +169,7 @@ Plant.where("watering_frequency".nil?).each do |plant|
   plant[:fertilizing_frequency] = 2
   plant[:fertilizing_quantity] = 3
   plant[:fertilizing_type] = "indoor fertilizer"
-  plant[:exposition] = 2
+  plant[:exposition] = 1
   plant[:cutting_frequency] = 4
   plant[:temperature] = 18
   plant.save
@@ -176,14 +177,116 @@ end
 
 puts "scraping of plants over!"
 
-# 10.times do
-#   user = User.new(
-#     email: Faker::Internet.email,
-#     password: "password",
-#     first_name: Faker::Name.name ,
-#     last_name: Faker::Name.last_name )
-#   user.save
-# end
+puts "scraping users"
 
-# puts "scraping of users over!"
+julie = User.new(
+  first_name: "Julie",
+  email: "julie@pierre.com",
+  password: "123456",
+  photo: "https://avatars3.githubusercontent.com/u/22213449?v=4",
+  points: 4000)
+julie.save!
 
+louise = User.new(
+  first_name: "Louise",
+  email: "louise@darche.com",
+  password: "123456",
+  photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/h16ouwa2bz1faf4gxgpe.jpg")
+louise.save!
+
+elsa = User.new(
+  first_name: "Elsa",
+  email: "elsa@szymczak.com",
+  password: "123456",
+  points: 3000,
+  photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/p2sykhfbnarhxatd9avz.jpg")
+elsa.save!
+
+marco = User.new(
+  first_name: "Marco",
+  email: "marco@morel.com",
+  password: "123456",
+  points: 6000,
+  photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/giirlbhp92mlrrqcadi6.jpg")
+marco.save!
+
+chloe = User.new(
+  first_name: "Chloe",
+  email: "chloe@maurel.com",
+  password: "123456",
+  points: 10000,
+  photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wxzk6phduggp0na772ga.jpg")
+chloe.save!
+
+elon = User.new(
+  first_name: "Elon",
+  email: "elon@musk.com",
+  password: "123456",
+  points: 12000,
+  photo: "https://specials-images.forbesimg.com/imageserve/5a8d90fd4bbe6f2652f61c15/416x416.jpg?background=000000&cropX1=0&cropX2=1999&cropY1=159&cropY2=2159")
+elon.save!
+
+bob = User.new(
+  first_name: "Bob",
+  email: "bob@marley.com",
+  password: "123456",
+  points: 2000,
+  photo: "https://images-na.ssl-images-amazon.com/images/I/C1y54gHJoBS._SL1000_.png")
+bob.save!
+
+fleur = User.new(
+  first_name: "Fleur",
+  email: "fleur@pellerin.com",
+  points: 4050,
+  password: "123456",
+  photo: "http://i.f1g.fr/media/ext/1900x1900/madame.lefigaro.fr/sites/default/files/img/2017/02/fleur-pellerin.jpg")
+fleur.save!
+
+rosa = User.new(
+  first_name: "Rosa",
+  email: "rosa@luxembourg.com",
+  password: "123456",
+  points: 5450,
+  photo: "http://www.contretemps.eu/wp-content/uploads/rosa-luxemburg.jpg")
+rosa.save!
+
+donald = User.new(
+  first_name: "Donald",
+  email: "donald@trump.com",
+  password: "123456",
+  points: 200,
+  photo: "https://www.swissinfo.ch/blob/44084338/cda455255e5065d34f0b6a0aa6dde29d/image_20180430phf9016-data.jpg")
+donald.save!
+
+brigitte = User.new(
+  first_name: "Brigitte",
+  email: "brigitte@macron.com",
+  password: "123456",
+  points: 4000,
+  photo: "https://www.telegraph.co.uk/content/dam/news/2017/08/21/TELEMMGLPICT000137670357_trans_NvBQzQNjv4BqhapkVlcy4J6MLIykjOByPo2gd4MKWmZpLLJg1iubIMc.jpeg?imwidth=450")
+brigitte.save!
+
+marie = User.new(
+  first_name: "Marie",
+  email: "marie@rollin.com",
+  password: "123456",
+  points: 2550,
+  photo: "https://dzftds8z9s83c.cloudfront.net/profiles/avatars/production/2089/medium/IMG_4836.jpg?1476197480")
+marie.save!
+
+plants = Plant.all
+User.all.each do |user|
+  plant = plants.sample
+  pot = Pot.new(
+    name: Faker::Name.first_name,
+    description: "I love my plant!",
+    plant_id: plant.id,
+    photo: plant.photo,
+    user_id: user.id,
+    adoption_date: Date.today - 3.week
+    )
+  pot.save!
+  plants = plants.select do |plante|
+    plante if plante != plant
+  end
+end
