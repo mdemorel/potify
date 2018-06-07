@@ -5,10 +5,10 @@
   position: relative;
   border-radius: 5px;
   margin: 10px 10px 30px;
-  height: 325px;
-  width: 100%;
-  max-width: 265px;
-  margin: auto;
+  border-bottom: solid #15E9A6 5px;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 0px 5px rgba(21, 233, 166, .3);
 
    .avatar {
     height: 40px;
@@ -23,6 +23,10 @@
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
     opacity: 0.93;
   }
+}
+
+.player-info {
+  text-align: center;
 }
 
 .player-info {
@@ -49,32 +53,35 @@
   font-family: "Paytone One", "sans-serif";
   font-size: 30px;
   color: white;
-  position: absolute;
-  bottom: 55px;
+  // position: absolute;
+  // bottom: 55px;
   padding-left: 15px;
   text-shadow: 0 1px 3px rgba(58, 57, 57, 0.8);
+  margin: 0;
 }
 
-.element-details {
-  background-color: #15E9A6;
-  color: white;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border-radius: 0px 0px 5px 5px;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+// .element-details {
+
+//   background-color: #15E9A6;
+//   color: white;
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   border-radius: 0px 0px 5px 5px;
+//   height: 60px;
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+// }
 
 .element-category {
   color: white;
   font-family: "Source Sans Pro", "sans-serif";
   font-size: 21px;
   font-weight: 100;
-  flex: 1 0 70%;
+  // flex: 1 0 70%;
   padding-left: 15px;
+  text-shadow: 0 1px 3px rgba(58, 57, 57, 0.8);
 }
 
 .modify-pot {
@@ -84,10 +91,10 @@
   justify-content: center;
 }
 
-.element-category, .modify-pot {
-  display: flex;
-  align-items: center;
-}
+// .element-category, .modify-pot {
+//   display: flex;
+//   align-items: center;
+// }
 
 .card-link {
   position: absolute;
@@ -96,9 +103,12 @@
   top: 0;
 }
 
-.player-home {
+.card-content {
+  padding-bottom: 10px;
 
 }
+
+
 
 // .status-icons {
 //   margin-left: 55%;
