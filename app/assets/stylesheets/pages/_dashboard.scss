@@ -288,10 +288,14 @@ span.status-points {
 
   padding-left: 20px;
   display: block;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 70px;
-  min-height: 350px;
+  margin-top: 40px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px #15e9a6;
 
   .item-border-green {
     justify-content: center;
@@ -328,8 +332,25 @@ a {
 .task-badge {
     display: flex;
     justify-content: space-between;
-    ALIGN-ITEMS: center;
+    align-items: center;
     padding: 10px;
+}
+
+.late-date {
+      font-size: 12px;
+    background-color: #E7BB41;
+    color: white;
+    font-weight: bold;
+    padding-left: 4px;
+    border-radius: 3px;
+    padding-right: 4px;
+    margin-top: -5px;
+}
+
+.avatar-date {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 // ne permet pas de faire un beau score
 

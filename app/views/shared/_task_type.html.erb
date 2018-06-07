@@ -3,9 +3,15 @@
     <%= simple_form_for(task, remote: true) do |f| %>
       <div class="card-item grow" data-points="<%= task.points %>" >
         <%= f.submit :update, class: " hidden submit-task sweet-alert-demo" %>
-        <% image = "" %>
-        <% task.pot.photo.nil? ? image = task.pot.plant.photo : image = task.pot.photo %>
-        <%= cl_image_tag(image, class: 'plant-avatar') %>
+        <div class="avatar-date">
+          <% image = "" %>
+          <% task.pot.photo.nil? ? image = task.pot.plant.photo : image = task.pot.photo %>
+          <%= cl_image_tag(image, class: 'plant-avatar') %>
+          <% if (task.pot.next_task_date(task.name) - Date.today).to_i > 0 %>
+
+            <div class="late-date"><%= (task.pot.next_task_date(task.name) - Date.today).to_i %> <%= "day".pluralize((task.pot.next_task_date(task.name) - Date.today).to_i) %> late</div>
+          <% end %>
+        </div>
         <div class="task-message">
 
           <% if task.name == "watering" %>
