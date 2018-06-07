@@ -8,7 +8,7 @@
   height: 325px;
   width: 265px;
 
-  .avatar {
+   .avatar {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -50,6 +50,7 @@
   position: absolute;
   bottom: 55px;
   padding-left: 15px;
+  text-shadow: 1px 1px 2px rgba(58, 57, 57, 0.3);
 }
 
 .element-details {
