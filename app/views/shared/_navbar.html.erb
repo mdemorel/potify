@@ -17,7 +17,7 @@
         </div>
         <div class="item-border-green">
           <%= link_to "MY GARDEN", dashboard_path, class: "link-border-green item-border-green" %>
-          <% if current_user&.tasks.where(completed: false).size > 0 %>
+          <% if current_user && current_user.tasks.where(completed: false).size > 0 %>
             <div id="badge-container">
               <%= render "shared/navbar_badge" %>
             </div>
