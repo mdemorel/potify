@@ -4,14 +4,15 @@
   margin: auto 100px;
   background: white;
 
-  h3 {
-    font-size: 40px;
-  }
 }
 
 .dashboard-container {
   display: flex;
   flex-direction: column;
+  h3 {
+    font-size: 35px;
+    color: #393E41;
+  }
 }
 
 .top-dashboard {
@@ -58,6 +59,8 @@
 .player-stats {
   margin-left: 20px;
 }
+
+
 
 .points {
   color: white;
@@ -197,23 +200,24 @@
 
 // ranking
 .user-ranking {
-  background-color: $light-gray;
+  // background-color: $light-gray;
   // height: 130%;
   // margin-left: 30%;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: 1px 1px 20px $yellow;
+  box-shadow: 1px 1px 20px #15e9a6;
+  // box-shadow: 1px 1px 20px $yellow;
   position: sticky;
   top: 25px;
   width: 30%;
   height: min-content;
 
   h3 {
-    color: black;
+    // color: black;
     text-align: center;
     padding-top: 10px;
-    font-size: 26px;
+    // font-size: 26px;
   }
 }
 

@@ -15,7 +15,7 @@
               <% if user.is_master %>
                 You have become a real master on taking care of plants. Stay tuned for upcoming rewards!
               <% else %>
-                You are <%= user.left_for_next_status %> points away from <%= user.next_status %>
+                You are <span class="no-padding-left "><%= user.left_for_next_status %> points</span>  away from <%= user.next_status %>
              <% end %>
            </div>
             <div class="player-stats">
@@ -83,7 +83,7 @@
             <% end %>
 
           </div>
-            
+
         </div>
       </div>
     <div class="user-ranking">
