@@ -21,13 +21,14 @@
                   <label class="form-control-label string optional" for="pot_photo">Upload a pic</label>
                   <%= f.input :photo, label: false %>
                   <%= f.input :photo_cache, as: :hidden %>
+                  <a href="#" class="btn btn-minimal" id="upload-fake-btn">Add a photo</a>
                   <img width="100%" class="image-preview">
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-12 plant-choice-image">
                   <div id="div_plant_name" data-toggle="modal" data-target="#myModal">
-                    <i class="mdi mdi-cursor-default-outline"></i> Select plant
+                    <i class="mdi mdi-cursor-default-outline"></i> Select plant's family
                   </div>
                 </div>
               </div>

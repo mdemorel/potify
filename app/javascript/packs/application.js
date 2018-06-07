@@ -5,7 +5,8 @@ import "../components/select_size";
 import { sizeChoice } from "../components/size_choice";
 import {plantChoice} from "../components/plant_choice";
 import {tabs} from "../components/tabs";
-import {triggerClick} from "../components/dashboard_card_item"
+import {triggerClick} from "../components/dashboard_card_item";
+import { fireUploadButton } from "../components/upload_button";
 
 
 sizeChoice();
@@ -20,5 +21,6 @@ bindSweetAlertButtonDemo();
 global.bindSweetAlertButtonDemo = bindSweetAlertButtonDemo;
 
 plantChoice();
-tabs()
-triggerClick()
+tabs();
+triggerClick();
+fireUploadButton();
