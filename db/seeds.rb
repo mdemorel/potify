@@ -191,6 +191,7 @@ louise = User.new(
   first_name: "Louise",
   email: "louise@darche.com",
   password: "123456",
+  points: 650,
   photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/h16ouwa2bz1faf4gxgpe.jpg")
 louise.save!
 
