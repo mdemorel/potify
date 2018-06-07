@@ -1,84 +1,78 @@
-<div class="wrapper wrapper-color">
-  <div class="container" style="margin-bottom: 40px;"  >
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="form-pots">
-          <h3>Add your plant !</h3>
-          <%= simple_form_for(@pot) do |f| %>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-xs-12">
-                  <%= f.input :name, placeholder: "Name", label: false %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <%= f.input :description, placeholder: "Type anything you love about this plant!", label: false,class: "text-resize-none" %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 plant-choice-image">
-                  <%= f.label ("Select a plant") %>
-                  <div id="div_plant_name" data-toggle="modal" data-target="#myModal">
-                     <img src="https://images.unsplash.com/photo-1511048794321-5d21136bf6df?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=56d9c7f8ce34c1001c7447c4429544c6&auto=format&fit=crop&w=2250&q=80" alt="" id="plant-choice-button" >
-                  </div>
-                </div>
-              </div>
-              <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <% Plant.all.each do |plant| %>
-                          <div class="col-xs-12 col-md-4">
-                            <%= f.radio_button(:plant_id, plant.id, class: "hidden") %>
-                            <%= f.label("plant_id_#{plant.id}") do %>
-                              <%= render "shared/card", element: plant, select: true %>
-                            <% end %>
-                          </div>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 .plant-upload-image">
-                  <label class="form-control-label string optional" for="pot_photo">Add a photo</label>
-                  <%= f.input :photo, label: false %>
-                  <%= f.input :photo_cache, as: :hidden %>
-                  <img width="100%" class="image-preview">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?", label: false %>
-                </div>
-              </div>
-              <label class="form-control-label string optional" for="pot_photo">Select your pot's size</label>
-              <div class="flex">
-                <%= f.input :recipient_size, :as => :hidden %>
-                <div class="select-size" data-size="1"><i class="fa fa-leaf" aria-hidden="true" id="small-leaf"></i> Small</div>
-                <div class="select-size" data-size="2"><i class="fa fa-leaf" aria-hidden="true" id="medium-leaf"></i> Medium</div>
-                <div class="select-size" data-size="3"><i class="fa fa-leaf" aria-hidden="true" id="large-leaf"></i> Large</div>
-              </div>
-              <div class="flexbutton">
-                <%= f.submit "Save", class: "btn-yellow"  %>
+<div class="container" style="margin-bottom: 40px;"  >
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-pots">
+        <h3>Add your plant !</h3>
+        <%= simple_form_for(@pot) do |f| %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.input :name, placeholder: "Name", label: false %>
               </div>
             </div>
-          <% end %>
-        </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.input :description, placeholder: "Type anything you love about this plant!", label: false,class: "text-resize-none" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 plant-choice-image">
+                <%= f.label ("Select a plant") %>
+                <div id="div_plant_name" data-toggle="modal" data-target="#myModal">
+                   <img src="https://images.unsplash.com/photo-1511048794321-5d21136bf6df?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=56d9c7f8ce34c1001c7447c4429544c6&auto=format&fit=crop&w=2250&q=80" alt="" id="plant-choice-button" >
+                </div>
+              </div>
+            </div>
+            <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <% Plant.all.each do |plant| %>
+                        <div class="col-xs-12 col-md-4">
+                          <%= f.radio_button(:plant_id, plant.id, class: "hidden") %>
+                          <%= f.label("plant_id_#{plant.id}") do %>
+                            <%= render "shared/card", element: plant, select: true %>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 .plant-upload-image">
+                <label class="form-control-label string optional" for="pot_photo">Add a photo</label>
+                <%= f.input :photo, label: false %>
+                <%= f.input :photo_cache, as: :hidden %>
+                <img width="100%" class="image-preview">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+              <%= f.input :adoption_date, as: :string, label: "Adoption date", required: false, input_html: {class: "datepicker"}, placeholder: "Since when do you have this plant at home?", label: false %>
+              </div>
+            </div>
+            <label class="form-control-label string optional" for="pot_photo">Select your pot's size</label>
+            <div class="flex">
+              <%= f.input :recipient_size, :as => :hidden %>
+              <div class="select-size" data-size="1"><i class="fa fa-leaf" aria-hidden="true" id="small-leaf"></i> Small</div>
+              <div class="select-size" data-size="2"><i class="fa fa-leaf" aria-hidden="true" id="medium-leaf"></i> Medium</div>
+              <div class="select-size" data-size="3"><i class="fa fa-leaf" aria-hidden="true" id="large-leaf"></i> Large</div>
+            </div>
+            <div class="flexbutton">
+              <%= f.submit "Save", class: "btn-yellow"  %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <%= render "shared/footer" %>
 </div>
-
-
-
-
+<%= render "shared/footer" %>
