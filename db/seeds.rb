@@ -138,8 +138,8 @@ monstera = Plant.new(
   name: "Monstera Deliciosa",
   photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/tropical-plants-Monstera-deliciosa-600x600.jpg",
   description: "The scientific name Monstera deliciosa refers, in part, to the edible pineapple-like fruit this rainforest plant can provide – just make sure to read about how to ripen the fruits properly to avoid irritation upon consuming. These stunning large-leafed plants make a great statement piece and add warm, tropical appeal to any interior.",
-  watering_frequency: 1,
-  watering_quantity: 10,
+  watering_frequency: 3,
+  watering_quantity: 30,
   )
 monstera.save
 
@@ -168,13 +168,25 @@ Plant.where("watering_frequency".nil?).each do |plant|
   plant[:fertilizing_frequency] = 2
   plant[:fertilizing_quantity] = 3
   plant[:fertilizing_type] = "indoor fertilizer"
-  plant[:exposition] = 2
+  plant[:exposition] = 1
   plant[:cutting_frequency] = 4
   plant[:temperature] = 18
   plant.save
 end
 
 puts "scraping of plants over!"
+
+puts "scraping users"
+
+julie = User.new(
+  first_name: "Julie",
+  email: "julie@pierre.com",
+  password: "123456",
+  photo: "https://avatars3.githubusercontent.com/u/22213449?v=4")
+julie.save!
+
+
+
 
 # 10.times do
 #   user = User.new(
