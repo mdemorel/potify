@@ -6,8 +6,9 @@
   border-radius: 5px;
   margin: 10px 10px 30px;
   height: 325px;
-  width: 265px;
-  margin-bottom: 70px;
+  width: 100%;
+  max-width: 265px;
+  margin: auto;
 
    .avatar {
     height: 40px;
