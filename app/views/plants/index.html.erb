@@ -1,19 +1,17 @@
-<div class="wrapper wrapper-color">
-  <div class="container container-gray full-screen">
-    <div class="container">
-      <h1 style="text-align: center;
-        margin: 50px;">Looking for a plant?</h1>
-      <%= render "shared/search" %>
-      <div class="row">
-        <% @plants.each do |plant| %>
-          <div class="col-xs-12 col-md-4">
-            <%= link_to plant_path(plant) do %>
-              <%= render "shared/card", element: plant, select: false %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+<div class="container container-gray full-screen">
+  <div class="container">
+    <h1 style="text-align: center;
+      margin: 50px;">Looking for a plant?</h1>
+    <%= render "shared/search" %>
+    <div class="row">
+      <% @plants.each do |plant| %>
+        <div class="col-xs-12 col-md-4">
+          <%= link_to plant_path(plant) do %>
+            <%= render "shared/card", element: plant, select: false %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
-  <%= render "shared/footer" %>
 </div>
+<%= render "shared/footer" %>
