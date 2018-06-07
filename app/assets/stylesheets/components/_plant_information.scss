@@ -1,6 +1,6 @@
 
 .task-information {
-
+  flex: 0 0 50%;
   height: 70px;
 
   h4 {
@@ -17,6 +17,12 @@
   }
 }
 
+.plant-details {
+      display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .bold-green {
   font-weight: bold;
   color: $green;
@@ -25,5 +31,13 @@
 
 .plant_info {
   margin-bottom: 20px;
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+p.about_the_plant {
+  border-radius: 10px;
+    font-size: 18px;
+    font-weight: lighter;
+}
