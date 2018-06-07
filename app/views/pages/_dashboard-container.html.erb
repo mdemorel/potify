@@ -1,10 +1,3 @@
-  <!-- <div class="row">
-    <div class="col-xs-12"> -->
-
-    <!-- </div>
-  </div> -->
-
-  <!-- <div class="row"> -->
   <div class="dashboard-container">
     <div class="top-dashboard">
       <div class="left-side-dashboard">
@@ -54,7 +47,7 @@
             <div class="user-task-title">
               <h3>My tasks</h3>
               <% if current_user.tasks.where(completed: false).size > 0 %>
-                <p>You have <span id="counter_tasks" class="no-padding-left"><%= current_user.tasks.where(completed: false).size %></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
+                <p>You have <span id="counter_tasks" class="no-padding-left"><strong><%= current_user.tasks.where(completed: false).size %></strong></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
               <% else %>
                 <p>Well done!! Enjoy your day!</p>
               <% end %>

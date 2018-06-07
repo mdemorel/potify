@@ -39,7 +39,7 @@
               </div>
               <div class="show-task-item-text">
                   <p class="action-date">Today</p>
-                  <p class="action-date date"><strong><%= Date.today %></strong></p>
+                  <p class="action-date date"><strong><%= Date.today.strftime("%B %d, %Y") %></strong></p>
               </div>
             </div>
           <% end %>
