@@ -281,7 +281,7 @@ User.all.each do |user|
     name: Faker::Name.first_name,
     description: "I love my plant!",
     plant_id: plant.id,
-    photo: plant.photo,
+    remote_photo_url: plant.photo,
     user_id: user.id,
     adoption_date: Date.today - 3.week
     )
