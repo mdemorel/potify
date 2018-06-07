@@ -108,7 +108,8 @@ label {
   cursor: pointer;
   padding-bottom: 20px;
   margin-top: 20px;
-  // text-align: center;
+  display: flex;
+  justify-content: space-around;
 
   img {
     height: 200px;
@@ -127,6 +128,7 @@ label {
 img.image-preview {
   width: 100%;
   border-radius: 5px;
+  width: 95%;
 }
 
 textarea {
@@ -213,6 +215,8 @@ background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.71) 0%, rgba(48, 51, 
   border-radius: 5px;
   opacity: 0.85;
   font-size: 25px;
+  width: 95%;
+
 
   &:hover {
     opacity: 1;
