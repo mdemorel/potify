@@ -1,86 +1,69 @@
-  <div class="plant_info">
-    <div class="task-title-card follow-up-card plant-information">
-      <div class="plant-details">
-        <div class="show-task-title-card-hearder">
-          <span class="span-paytone"><h4>WATERING</h4></span>
-        </div>
-        <div class="task-image">
-          <%#= image_tag("watering.png", height: "60px") %>
-        </div>
-        <div class="show-task-content">
-          <p><span class="bold-green" ><%= plant.watering_quantity %>cl </span> every <span class="bold-green"><%= plant.watering_frequency %></span> <%= "day".pluralize(plant.watering_frequency) %></p>
+<div class="plant_info">
+  <div class="task-title-card follow-up-card plant-information">
+    <div class="plant-details">
+      <div class="show-task-title-card-hearder">
+        <span class="span-paytone"><h4>WATERING</h4></span>
+        <div class="padding-right">
+          <img class="icons icons-task" src="/assets/watering.png" width="50" height="50" alt="watering">
         </div>
       </div>
-    </div>
-    <div class="task-title-card follow-up-card plant-information">
-      <div class="plant-details">
-        <div class="task-image">
-          <%#= image_tag("care.png", height: "60px") %>
-        </div>
-        <div class="show-task-title-card-hearder">
-          <span class="span-paytone"><h4>FERTILIZING</h4></span>
-        </div>
-        <div class="show-task-content">
-          <p><span class="bold-green"><%= plant.fertilizing_quantity %>g</span> every <span class="bold-green"><%= plant.fertilizing_frequency %></span> <%= "day".pluralize(plant.fertilizing_frequency) %></p>
-        </div>
-
-      </div>
-      <!-- <p>Use <%#= plant.fertilizing_type %></p> -->
-    </div>
-     <div class="task-title-card follow-up-card plant-information">
-      <div class="plant-details">
-        <div class="task-image">
-          <%#= image_tag("localization.png", height: "60px") %>
-        </div>
-        <div class="show-task-title-card-hearder">
-          <span class="span-paytone"><h4>POTTING</h4></span>
-        </div>
-        <div class="show-task-content">
-          <p>Every <span class="bold-green" ><%= plant.potting_frequency %> </span> <%= "day".pluralize(plant.potting_frequency) %></p>
-        </div>
-      </div>
-    </div>
-    <div class="task-title-card follow-up-card plant-information">
-      <div class="plant-details">
-        <div class="task-image">
-          <%#= image_tag("localization.png", height: "60px") %>
-        </div>
-        <div class="show-task-title-card-hearder">
-          <span class="span-paytone"><h4>EXPOSITION</h4></span>
-        </div>
-        <div class="show-task-content">
-          <p>
-            <% plant.exposition.times do %>
-              <i class="fas fa-sun"></i>
-            <% end %>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="task-title-card follow-up-card plant-information">
-      <div class="plant-details">
-        <div class="task-image">
-          <%#= image_tag("localization.png", height: "60px") %>
-        </div>
-        <div class="show-task-title-card-hearder">
-          <span class="span-paytone"><h4>TEMPERATURE</h4></span>
-        </div>
-        <div class="show-task-content">
-          <p><%= plant.name %>needs to stay in a temperature around <span class="bold-green" ><%= plant.temperature %>°C</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="task-title-card follow-up-card plant-information">
-      <div class="plant-details">
-        <div class="task-image">
-          <%#= image_tag("plants.png", height: "60px") %>
-        </div>
-        <div class="show-task-title-card-hearder">
-          <span class="span-paytone"><h4>CUTTING</h4></span>
-        </div>
-        <div class="show-task-content">
-          <p><%= plant.name %>needs to be cut every <span class="bold-green"><%= plant.cutting_frequency %></span> <%= "day".pluralize(plant.cutting_frequency) %> </p>
-        </div>
-      </div>
+        <p><span class="bold-green"><%= plant.watering_quantity %>cl</span> every <span class="bold-green"><%= plant.watering_frequency %></span> <%= "day".pluralize(plant.watering_frequency) %></p>
     </div>
   </div>
+  <div class="task-title-card follow-up-card plant-information">
+    <div class="plant-details">
+      <div class="show-task-title-card-hearder">
+        <span class="span-paytone"><h4>FERTILIZING</h4></span>
+        <div class="padding-right">
+          <img class="icons icons-task" src="/assets/fertilize.jpg" alt="fertilize" width="50" height="50">
+        </div>
+      </div>
+      <p><span class="bold-green"><%= plant.fertilizing_quantity %>g</span> every <span class="bold-green"><%= plant.fertilizing_frequency %></span> <%= "day".pluralize(plant.fertilizing_frequency) %></p>
+    </div>
+    <!-- <p>Use <%#= plant.fertilizing_type %></p> -->
+  </div>
+   <div class="task-title-card follow-up-card plant-information">
+    <div class="plant-details">
+      <div class="show-task-title-card-hearder">
+        <span class="span-paytone"><h4>POTTING</h4></span>
+        <div class="padding-right">
+          <img class="icons icons-task" src="/assets/potting.jpg" alt="potting" width="50" height="50">
+        </div>
+      </div>
+      <p>Every <span class="bold-green" ><%= plant.potting_frequency %> </span> <%= "day".pluralize(plant.potting_frequency) %></p>
+    </div>
+  </div>
+  <div class="task-title-card follow-up-card plant-information">
+    <div class="plant-details">
+      <div class="show-task-title-card-hearder">
+        <span class="span-paytone"><h4>EXPOSITION</h4></span>
+        <div class="padding-right">
+          <img class="icons icons-task" src="/assets/sun.jpg" alt="exposition" width="50" height="50">
+        </div>
+      </div>
+      <p><% plant.exposition.times do %><i class="fas fa-sun"></i><% end %></p>
+    </div>
+  </div>
+  <div class="task-title-card follow-up-card plant-information">
+    <div class="plant-details">
+      <div class="show-task-title-card-hearder">
+        <span class="span-paytone"><h4>TEMPERATURE</h4></span>
+        <div class="padding-right">
+          <img class="icons icons-task" src="/assets/temperature.jpg" alt="" width="50" height="50">
+        </div>
+      </div>
+      <p><%= plant.name %>needs to stay in a temperature around <span class="bold-green" ><%= plant.temperature %>°C</span></p>
+    </div>
+  </div>
+  <div class="task-title-card follow-up-card plant-information">
+    <div class="plant-details">
+      <div class="show-task-title-card-hearder">
+        <span class="span-paytone"><h4>CUTTING</h4></span>
+        <div class="padding-right">
+          <img class="icons icons-task" src="/assets/cutting.jpg" alt="cutting" width="50" height="50">
+        </div>
+      </div>
+      <p><%= plant.name %>needs to be cut every <span class="bold-green"><%= plant.cutting_frequency %></span> <%= "day".pluralize(plant.cutting_frequency) %> </p>
+    </div>
+  </div>
+</div>
