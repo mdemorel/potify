@@ -52,7 +52,7 @@
           <img class="icons icons-task" src="/assets/temperature.jpg" alt="" width="50" height="50">
         </div>
       </div>
-      <p><%= plant.name %>needs to stay in a temperature around <span class="bold-green" ><%= plant.temperature %>°C</span></p>
+      <p><strong><%= plant.name %></strong> needs to stay in a temperature around <span class="bold-green" ><%= plant.temperature %>°C</span></p>
     </div>
   </div>
   <div class="task-title-card follow-up-card plant-information">
@@ -63,7 +63,7 @@
           <img class="icons icons-task" src="/assets/cutting.jpg" alt="cutting" width="50" height="50">
         </div>
       </div>
-      <p><%= plant.name %>needs to be cut every <span class="bold-green"><%= plant.cutting_frequency %></span> <%= "day".pluralize(plant.cutting_frequency) %> </p>
+      <p><strong><%= plant.name %></strong> needs to be cut every <span class="bold-green"><%= plant.cutting_frequency %></span> <%= "day".pluralize(plant.cutting_frequency) %> </p>
     </div>
   </div>
 </div>
