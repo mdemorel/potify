@@ -19,14 +19,14 @@
           <% unless pot.adoption_date.nil? %>
           <p class="recap-item-p"> You adopted <strong><%= pot.name %></strong> on <%= pot.adoption_date.strftime("%B %d, %Y"); %></p>
           <div class="points">
-            <%= image_tag "adoption.png", size: 50 %>
+            <%= image_tag "adoption.png", size: 50, class: "icons" %>
           </div>
           <% end %>
         </div>
         <div class="recap-item border-right">
           <p class="recap-item-p"><strong><%= pot.name.capitalize %></strong> belongs to the family of <%= pot.plant.name.capitalize %></p>
           <div class="points">
-            <%= image_tag "cactus-family.png", size: 50 %>
+            <%= image_tag "cactus-family.png", size: 50, class: "icons" %>
           </div>
         </div>
         <div class="recap-item">
@@ -36,23 +36,25 @@
           <p>You never took care of <%= pot.name.capitalize %> yet! </p>
           <% end %>
           <div class="points">
-            <%= image_tag "care.png",  size: 50 %>
+            <%= image_tag "care.png",  size: 50, class: "icons" %>
           </div>
         </div>
         <!-- <div class="recap-item">
 
         </div> -->
       </div>
+      <div class="border-top-small">
+      </div>
       <%= render "shared/follow_up", pot: pot %>
       <div class="image-links">
-        <% if current_user == pot.user %>
-          <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <p><%= pot.name.capitalize %> died ... 👼 </p>
-          <% end %>
-          <%= link_to edit_pot_path(pot) do %>
-            <i class="fas fa-cog"></i>
-          <% end %>
-        <% end %>
+        <%#if current_user == pot.user %>
+          <%#= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <!-- <p><%#= pot.name.capitalize %> died ... 👼 </p>
+          <%# end %> -->
+          <%#= link_to edit_pot_path(pot) do %>
+<!--             <i class="fas fa-cog"></i>
+ -->          <%# end %>
+        <%# end %>
       </div>
     </div>
   </div>

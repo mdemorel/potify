@@ -19,7 +19,6 @@
              <% end %>
            </div>
            <div class="player-bages-dashboard">
-
             <div class="player-stats">
               <!-- <div class="points-circle"> -->
                 <div class="points">
@@ -62,16 +61,16 @@
             </div>
             <div class="tasks-badges">
               <div class="tasks-badges-element">
-
+                <%=  image_tag "watering.png", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-
+                <%=  image_tag "fertilize.jpeg", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-
+                <%=  image_tag "plants.png", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-
+                <%=  image_tag "potting.jpeg", size: 50, class: "icons icons-task" %>
               </div>
             </div>
 
@@ -122,12 +121,14 @@
 
     <div class="user-garden">
       <h3>My greenhouse</h3>
-      <% pots.each do |pot|%>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <%= link_to pot_path(pot) do %>
-            <%= render "shared/card", element: pot, select: false %>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="row">
+        <% pots.each do |pot|%>
+          <div class="col-xs-12 col-sm-4 col-md-3">
+            <%= link_to pot_path(pot) do %>
+              <%= render "shared/card", element: pot, select: false %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>

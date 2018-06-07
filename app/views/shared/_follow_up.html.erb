@@ -3,7 +3,21 @@
     <div class="task-title-card follow-up-card">
       <% unless task.nil? %>
         <div class="show-task-title-card-hearder">
-          <span class="span-paytone"><%= task.name.upcase %></span>
+          <span class="span-paytone padding-left"><%= task.name.upcase %></span>
+          <div class="padding-right">
+            <% if task.name == "watering" %>
+              <%=  image_tag "watering.png", size: 50, class: "icons icons-task" %>
+            <% end %>
+            <% if task.name == "fertilizing" %>
+              <%=  image_tag "fertilize.jpeg", size: 50, class: "icons icons-task" %>
+            <% end %>
+            <% if task.name == "cutting" %>
+              <%=  image_tag "cutting.jpeg", size: 50, class: "icons icons-task" %>
+            <% end %>
+            <% if task.name == "potting" %>
+              <%=  image_tag "potting.jpeg", size: 50, class: "icons icons-task" %>
+            <% end %>
+          </div>
         </div>
         <div class="show-task-content">
           <% if pot.tasks.where(completed: true, name: task.name).size > 0 %>
@@ -15,6 +29,17 @@
               <div class="show-task-item-text">
                   <p class="action-date">Last</p>
                   <p class="action-date date"><strong><%= pot.send("last_#{task.name}").strftime("%B %d, %Y") %></strong></p>
+              </div>
+            </div>
+          <% else %>
+           <div class="show-task-item">
+              <div class="circle-border">
+                <div class="gray-line">
+                </div>
+              </div>
+              <div class="show-task-item-text">
+                  <p class="action-date">Today</p>
+                  <p class="action-date date"><strong><%= Date.today %></strong></p>
               </div>
             </div>
           <% end %>
