@@ -283,7 +283,11 @@ User.all.each do |user|
     plant_id: plant.id,
     photo: plant.photo,
     user_id: user.id,
-    adoption_date: Date.today - 3.week
+    adoption_date: Date.today - 3.week,
+    last_watering: Date.today - 2.week,
+    last_cutting: Date.today - 2.week,
+    last_potting: Date.today - 2.week,
+    last_fertilizing: Date.today - 2.week
     )
   pot.save!
   plants = plants.select do |plante|
