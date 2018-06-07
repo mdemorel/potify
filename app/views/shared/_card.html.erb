@@ -4,44 +4,36 @@
   <% pot_picture = element.photo %>
 <% end %>
 
-  <div class="frame grow <%= "selected-plant" if select %>" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 100%), url('<%= cl_image_path(pot_picture) %>');" data-url="<%= pot_picture %>">
-    <%# if element.class == Pot %>
-  <!--     <div class="status-icons">
-        <i class="fas fa-tint"></i>
-        <i class="fas fa-sun"></i>
-        <i class="fas fa-leaf"></i>
-        <i class="fas fa-cut"></i>
-        <i class="fas fa-snowflake"></i>
-      </div> -->
-    <%# end %>
+<div class="frame grow <%= "selected-plant" if select %>" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 100%), url('<%= cl_image_path(pot_picture) %>');" data-url="<%= pot_picture %>">
 
-    <% if params["action"] == "home" %>
-      <div>
-        <%= cl_image_tag(element.user.photo, width: 42, crop: :fill, class: "avatar dropdown-toggle") %>
+  <% if params["action"] == "home" %>
+    <div>
+      <%= cl_image_tag(element.user.photo, width: 42, crop: :fill, class: "avatar dropdown-toggle") %>
+    </div>
+    <div class="player-info">
+      <% user_name = "" %>
+      <% element.user.first_name.nil? ? user_name = "Player" : user_name = element.user.first_name %>
+      <p><%= user_name %></p>
+      <p>🌟<%= element.user.points %></p>
+    </div>
+  <% end %>
+
+  <div class="element-name uppercase">
+    <h4><%= element.name %></h4>
+  </div>
+  <div class="element-details">
+    <% if element.class == Pot %>
+      <div class="element-category">
+        <%= element.plant.name %>
       </div>
-      <div class="player-info">
-        <% user_name = "" %>
-        <% element.user.first_name.nil? ? user_name = "Player" : user_name = element.user.first_name %>
-        <p><%= user_name %></p>
-        <p>🌟<%= element.user.points %></p>
+    <% else %>
+      <div id="element-name uppercase">
+          <h4><%= element.name %></h4>
+      </div>
+      <div id="element-category">
+        <%= element.category if element.category != nil %>
       </div>
     <% end %>
-    <div class="element-details">
-      <% if element.class == Pot %>
-        <div class="element-name uppercase">
-          <h4><%= element.name %></h4>
-        </div>
-        <div class="element-category">
-          <%= element.plant.name %>
-        </div>
-      <% else %>
-        <div id="element-name uppercase">
-            <h4><%= element.name %></h4>
-        </div>
-        <div id="element-category">
-          <%= element.category if element.category != nil %>
-        </div>
-      <% end %>
-    </div>
   </div>
+</div>
 
