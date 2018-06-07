@@ -16,18 +16,26 @@
 
           <% if task.name == "watering" %>
             <p> You need to <%= task.action_name %> <span class='pot-name'><%= task.pot.name.capitalize %></span> with <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>cl</span><br></p>
+             <div class="tasks-badges-element">
+              <%=  image_tag "watering.png", size: 50, class: "icons icons-task" %>
+            </div>
           <% elsif task.name == "fertilizing" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>g</span> of fertilizer<br></p>
-          <% else %>
+            <div class="tasks-badges-element">
+              <%=  image_tag "fertilize.jpg", size: 50, class: "icons icons-task" %>
+            </div>
+          <% elsif task.name == "cutting" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
+            <div class="tasks-badges-element">
+              <%=  image_tag "plants.png", size: 50, class: "icons icons-task" %>
+            </div>
+          <% elsif task.name == "potting" %>
+            <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
+            <div class="tasks-badges-element">
+              <%=  image_tag "potting.jpg", size: 50, class: "icons icons-task" %>
+            </div>
           <% end %>
         </div>
-        <div class="tasks-badges-element">
-
-        </div>
-            <%#= f.input :completed, label: "  I did it" %>
-
-        <%#= image_tag "picto-check.svg", class: 'task-picto' %>
       </div>
     <% end %>
   </div>

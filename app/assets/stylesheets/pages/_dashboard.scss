@@ -82,8 +82,7 @@ span.status-points {
   color: #697277;
   justify-content: center;
   background-color: white;
-  height: 80px;
-  width: 80px;
+  padding: 8px;
   border-radius: 50%;
 }
 
@@ -134,6 +133,9 @@ span.status-points {
 
 .task-message {
   flex: 0 0 60%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 .top-tasks {
@@ -147,10 +149,10 @@ span.status-points {
 }
 
 .tasks-badges-element {
-      background-color: red;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+    // background-color: red;
+    // height: 40px;
+    // width: 40px;
+    // border-radius: 50%;
     margin-right: 10px;
 }
 
@@ -218,6 +220,7 @@ span.status-points {
     line-height: 1;
     font-size: 14px;
     font-weight: lighter;
+    width: 120px;
   }
 }
 
@@ -291,6 +294,7 @@ span.status-points {
   padding-right: 20px;
   border-radius: 5px;
   box-shadow: 1px 1px 20px #15e9a6;
+  padding-bottom: 35px;
 
   .item-border-green {
     justify-content: center;
@@ -321,7 +325,7 @@ a {
 .task-title-badge {
     display: flex;
     justify-content: space-between;
-    ALIGN-ITEMS: center;
+    align-items: center;
 }
 
 .task-badge {

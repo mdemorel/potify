@@ -1,5 +1,5 @@
 <% if element.class == Pot %>
-  <% pot_picture = element.photo.url.nil? ? element.plant.photo : element.photo %>
+  <% pot_picture = element.photo ? element.plant.photo : element.photo %>
 <% else %>
   <% pot_picture = element.photo %>
 <% end %>
@@ -19,24 +19,28 @@
   <% end %>
 
   <div class="element-name uppercase">
-    <h4><%= element.name %></h4>
+    <h4 style="<%= "bottom: 5px;" if params["controller"] == "pots" && params["action"] == "new" %>"><%= element.name %></h4>
   </div>
-  <div class="element-details">
-    <% if element.class == Pot %>
-      <div class="element-category">
-        <%= element.plant.name %>
-      </div>
-      <div class="modify-pot">
-        <i class= "mdi  mdi-pencil"></i>
-      </div>
-    <% else %>
-      <div id="element-name uppercase">
-          <h4><%= element.name %></h4>
-      </div>
-      <div id="element-category">
-        <%= element.category if element.category != nil %>
-      </div>
-    <% end %>
-  </div>
+  <% unless params["controller"] == "pots" && params["action"] == "new" %>
+    <div class="element-details">
+      <% if element.class == Pot %>
+        <div class="element-category">
+          <%= element.plant.name %>
+        </div>
+        <% if element.user == current_user %>
+          <div class="modify-pot">
+            <i class= "mdi  mdi-pencil"></i>
+          </div>
+        <% end %>
+      <% else %>
+        <div id="element-name uppercase">
+            <h4><%= element.name %></h4>
+        </div>
+        <div id="element-category">
+          <%= element.category if element.category != nil %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 

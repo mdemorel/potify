@@ -15,8 +15,11 @@
   background-size: cover;
   background-position: center;
   flex: 0 0 40%;
-  padding-left: 20px;
-  height: 95%;
+  height: 693px;
+
+  img {
+    height: 30%
+  }
 
 }
 
@@ -37,7 +40,7 @@
 
   a {
     position: absolute;
-    right: 26px;
+    right: 73px;
     top: 23px;
   }
 
@@ -56,18 +59,22 @@
   background-color: #FCE76C;
   border-radius: 5px;
   box-shadow: 1px 1px 20px #E7BB41;
+  max-height: 115px;
 
 
   p {
     font-size: 14px;
     flex: 0 0 60%;
     padding-left: 5px;
-    color: black
+    color: black;
+    padding-right: 5px;
+
   }
 }
 
 .recap-item {
   display: flex;
+  flex: 1 0 33%;
   padding: 10px;
   justify-content: space-between;
   align-items: center
@@ -174,8 +181,6 @@
     margin: 0 20px;
     position: relative;
     z-index: 1;
-
-
 }
 
 .action-date {
@@ -187,10 +192,10 @@
   margin-bottom: 10px;
 }
 
-.follow-up-card {
-  padding-bottom: 20px;
+// .follow-up-card {
+//   padding-bottom: 20px;
 
- }
+//  }
 
 .gray-line {
   width: 6px;
@@ -201,6 +206,25 @@
   right: 4px;
 }
 
+.icons {
+  border-radius: 50%;
+}
+
+.padding-right {
+  padding-right: 15px;
+}
+
+.icons-task {
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(21, 233, 166, 0.3);
+}
+
+.show-task-title-card-hearder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+}
 
 /// For plant show ///
 
