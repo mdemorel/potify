@@ -1,10 +1,3 @@
-  <!-- <div class="row">
-    <div class="col-xs-12"> -->
-
-    <!-- </div>
-  </div> -->
-
-  <!-- <div class="row"> -->
   <div class="dashboard-container">
     <div class="top-dashboard">
       <div class="left-side-dashboard">
@@ -19,7 +12,6 @@
              <% end %>
            </div>
            <div class="player-bages-dashboard">
-
             <div class="player-stats">
               <!-- <div class="points-circle"> -->
                 <div class="points">
@@ -55,23 +47,23 @@
             <div class="user-task-title">
               <h3>My tasks</h3>
               <% if current_user.tasks.where(completed: false).size > 0 %>
-                <p>You have <span id="counter_tasks" class="no-padding-left"><%= current_user.tasks.where(completed: false).size %></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
+                <p>You have <span id="counter_tasks" class="no-padding-left"><strong><%= current_user.tasks.where(completed: false).size %></strong></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
               <% else %>
                 <p>Well done!! Enjoy your day!</p>
               <% end %>
             </div>
             <div class="tasks-badges">
               <div class="tasks-badges-element">
-
+                <%=  image_tag "watering.png", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-
+                <%=  image_tag "fertilize.jpg", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-
+                <%=  image_tag "plants.png", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-
+                <%=  image_tag "potting.jpg", size: 50, class: "icons icons-task" %>
               </div>
             </div>
 
@@ -122,12 +114,14 @@
 
     <div class="user-garden">
       <h3>My greenhouse</h3>
-      <% pots.each do |pot|%>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <%= link_to pot_path(pot) do %>
-            <%= render "shared/card", element: pot, select: false %>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="row">
+        <% pots.each do |pot|%>
+          <div class="col-xs-12 col-sm-4 col-md-3">
+            <%= link_to pot_path(pot) do %>
+              <%= render "shared/card", element: pot, select: false %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
