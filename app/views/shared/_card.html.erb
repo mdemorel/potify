@@ -1,5 +1,5 @@
 <% if element.class == Pot %>
-  <% pot_picture = element.photo.url.nil? ? element.plant.photo : element.photo %>
+  <% pot_picture = element.photo ? element.plant.photo : element.photo %>
 <% else %>
   <% pot_picture = element.photo %>
 <% end %>

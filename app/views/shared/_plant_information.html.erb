@@ -5,7 +5,6 @@
         <div class="task-image">
           <%#= image_tag("watering.png", height: "60px") %>
         </div>
-        <p><span class="bold-green" ><%= plant.watering_quantity %>cl </span> every <span class="bold-green"><%= plant.watering_frequency %></span> <%= "day".pluralize(plant.watering_frequency) %></p>
       </div>
     </div>
     <div class="task-title-card follow-up-card">
@@ -15,6 +14,17 @@
         </div>
         <span><h4>FERTILIZING</h4></span>
         <p><span class="bold-green"><%= plant.fertilizing_quantity %>g</span> every <span class="bold-green"><%= plant.fertilizing_frequency %></span> <%= "day".pluralize(plant.fertilizing_frequency) %></p>
+    <div class="task-title-card follow-up-card plant-information">
+      <div class="plant-details">
+        <div class="task-image">
+          <%#= image_tag("care.png", height: "60px") %>
+        </div>
+        <div class="show-task-title-card-hearder">
+          <span class="span-paytone"><h4>FERTILIZING</h4></span>
+        </div>
+        <div class="show-task-content">
+          <p><span class="bold-green"><%= plant.fertilizing_quantity %>g</span> every <span class="bold-green"><%= plant.fertilizing_frequency %></span> <%= "day".pluralize(plant.fertilizing_frequency) %></p>
+        </div>
 
       </div>
       <!-- <p>Use <%#= plant.fertilizing_type %></p> -->
