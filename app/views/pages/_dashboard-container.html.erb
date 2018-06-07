@@ -57,13 +57,13 @@
                 <%=  image_tag "watering.png", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-                <%=  image_tag "fertilize.jpeg", size: 50, class: "icons icons-task" %>
+                <%=  image_tag "fertilize.jpg", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
                 <%=  image_tag "plants.png", size: 50, class: "icons icons-task" %>
               </div>
               <div class="tasks-badges-element">
-                <%=  image_tag "potting.jpeg", size: 50, class: "icons icons-task" %>
+                <%=  image_tag "potting.jpg", size: 50, class: "icons icons-task" %>
               </div>
             </div>
 
@@ -113,7 +113,12 @@
     </div>
 
     <div class="user-garden">
-      <h3>My greenhouse</h3>
+      <div class="user-garden-header">
+        <h3>My greenhouse</h3>
+        <div class="item-border-green">
+          <%= link_to "+ ADD A PLANT", new_pot_path, class: "link-border-green" %>
+        </div>
+      </div>
       <div class="row">
         <% pots.each do |pot|%>
           <div class="col-xs-12 col-sm-4 col-md-3">

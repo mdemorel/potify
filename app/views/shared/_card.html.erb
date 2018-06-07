@@ -5,7 +5,6 @@
 <% end %>
 
 <div class="frame grow <%= "selected-plant" if select %>" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%,rgba(255, 255, 255, 0.07) 60%), url('<%= cl_image_path(pot_picture) %>');" data-url="<%= pot_picture %>">
-
   <% if params["action"] == "home" %>
     <div>
       <%= cl_image_tag(element.user.photo, width: 42, crop: :fill, class: "avatar dropdown-toggle") %>
@@ -18,25 +17,22 @@
     </div>
   <% end %>
 
-  <div class="element-name uppercase">
-    <h4><%= element.name %></h4>
-  </div>
-  <div class="element-details">
-    <% if element.class == Pot %>
-      <div class="element-category">
-        <%= element.plant.name %>
-      </div>
-      <div class="modify-pot">
-        <i class= "mdi  mdi-pencil"></i>
-      </div>
-    <% else %>
-      <div id="element-name uppercase">
-          <h4><%= element.name %></h4>
-      </div>
-      <div id="element-category">
-        <%= element.category if element.category != nil %>
-      </div>
-    <% end %>
+  <div class="card-content">
+    <div class="element-name">
+      <h4><%= element.name.upcase %></h4>
+        <% if element.class == Pot %>
+          <div class="element-category">
+            <%= element.plant.name %>
+          </div>
+        <% else %>
+          <div id="element-name">
+              <h4><%= element.name %></h4>
+          </div>
+         <!--  <div id="element-category">
+            <%#= element.category if element.category != nil %>
+          </div> -->
+        <% end %>
+    </div>
   </div>
 </div>
 

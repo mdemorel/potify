@@ -1,5 +1,6 @@
 .item-border-green {
   cursor: pointer;
+  color: $gray;
   &:hover a{
     color: $gray;
     box-shadow: inset 0em -0.6em $green;
