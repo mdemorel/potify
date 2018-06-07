@@ -22,7 +22,7 @@
           <% elsif task.name == "fertilizing" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>g</span> of fertilizer<br></p>
             <div class="tasks-badges-element">
-              <%=  image_tag "fertilize.jpeg", size: 50, class: "icons icons-task" %>
+              <%=  image_tag "fertilize.jpg", size: 50, class: "icons icons-task" %>
             </div>
           <% elsif task.name == "cutting" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
@@ -32,7 +32,7 @@
           <% elsif task.name == "potting" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
             <div class="tasks-badges-element">
-              <%=  image_tag "potting.jpeg", size: 50, class: "icons icons-task" %>
+              <%=  image_tag "potting.jpg", size: 50, class: "icons icons-task" %>
             </div>
           <% end %>
         </div>
