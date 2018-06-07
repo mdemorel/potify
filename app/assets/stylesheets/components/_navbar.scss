@@ -98,12 +98,16 @@
 }
 
  #navbar-badge {
-    width: 18px;
-    height: 18px;
-    font-size: 13px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    top: 17px;
-    right: 184px;
+  width: 18px;
+  height: 18px;
+  font-size: 13px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 17px;
+  right: 184px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6em;
   }
