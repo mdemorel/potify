@@ -36,27 +36,33 @@
   justify-content: space-between;
   background-color: #FCE76C;
   border-radius: 5px;
-  padding-left: 20px;
   box-shadow: 1px 1px 20px #E7BB41;
   margin-bottom: 30px;
+}
+
+.welcome-title {
+  margin-left: 20px;
 }
 
 .no-padding-left {
   padding-left: 0 !important;
 }
 .status-message {
-  flex: 0 0 30%;
+  flex: 0 0 25%;
 }
 
 .player-badges {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 20px;
   margin-top: 30px;
+  flex-wrap: wrap;
+  margin: 20px;
 }
 
 .player-stats {
-  margin-left: 20px;
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: center;
 }
 
 .points {
