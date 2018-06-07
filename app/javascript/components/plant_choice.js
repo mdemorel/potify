@@ -7,9 +7,10 @@ function plantChoice() {
         selected.classList.remove("active");
       });
       e.currentTarget.classList.toggle("active");
-      const name = this.querySelector('h4').innerHTML
-
-      $("#div_plant_name").html(`<img src="${$(this).attr('data-url')}"><span>${name}</span>`);
+      const name = this.querySelector('h4').innerHTML;
+      const selectPlant = document.getElementById('div_plant_name');
+      selectPlant.style.backgroundImage = `url('${e.currentTarget.dataset.url}')`;
+      selectPlant.innerText = '';
 
       setTimeout(() => {
 
