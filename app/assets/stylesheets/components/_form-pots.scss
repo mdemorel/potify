@@ -128,7 +128,7 @@ textarea {
   resize: none;
 }
 
-span {
+.plant-choice-image span {
   padding-left: 20px;
 }
 
@@ -207,7 +207,7 @@ background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.71) 0%, rgba(48, 51, 
   color: white;
   border-radius: 5px;
   opacity: 0.85;
-  font-size: 16px;
+  font-size: 25px;
 
   &:hover {
     opacity: 1;
@@ -219,4 +219,8 @@ background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.71) 0%, rgba(48, 51, 
   border-color: $green;
   outline: none;
   box-shadow: none;
+}
+
+#upload-fake-btn {
+  margin-bottom: 20px;
 }

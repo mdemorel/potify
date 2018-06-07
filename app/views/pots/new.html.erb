@@ -18,17 +18,17 @@
               </div>
               <div class="row">
                 <div class="col-xs-12 .plant-upload-image">
-                  <label class="form-control-label string optional" for="pot_photo">Upload a pic</label>
-                  <%= f.input :photo, label: false %>
+                  <label class="form-control-label string optional" for="pot_photo"></label>
+                  <%= f.input :photo, label: false, input_html: { style: 'display: none;'} %>
                   <%= f.input :photo_cache, as: :hidden %>
-                  <a href="#" class="btn btn-minimal" id="upload-fake-btn">Add a photo</a>
+                  <a href="#" class="btn btn-minimal" id="upload-fake-btn"> <i class= "mdi mdi-arrow-up-bold-circle-outline"></i> Add a photo</a>
                   <img width="100%" class="image-preview">
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-12 plant-choice-image">
                   <div id="div_plant_name" data-toggle="modal" data-target="#myModal">
-                    <i class="mdi mdi-cursor-default-outline"></i> Select plant's family
+                    <i class="mdi mdi-cursor-default-outline"></i> Add your plant's family
                   </div>
                 </div>
               </div>
