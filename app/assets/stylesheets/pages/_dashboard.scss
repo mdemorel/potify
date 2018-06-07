@@ -1,20 +1,7 @@
 /* Big divs */
-.full-screen {
-  padding-left: 30px;
-  padding-right: 30px;
-}
 .top-dashboard {
     display: flex;
     min-height: 500px;
-}
-
-.container-dashboard {
-  margin: auto 100px;
-  background: white;
-
-  h3 {
-    font-size: 40px;
-  }
 }
 
 .no-padding-left {
@@ -243,9 +230,15 @@ a {
 // .user-ranking {
 //   padding-left: 30px;
 // }
-.image-height-300 img {
+.image-height-300 {
+
+position: relative;
+
+img {
   height: 300px;
 }
+}
+
 
 .white-square {
   width: 80px;
