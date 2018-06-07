@@ -50,14 +50,31 @@
           </div>
         </div>
   <!--       <div class="col-xs-12 col-md-6">
-  -->    <div class="user-tasks inner-padding">
-          <div class="user-task-title">
-            <h3>My tasks</h3>
-            <% if current_user.tasks.where(completed: false).size > 0 %>
-              <p>You have <span id="counter_tasks" class="no-padding-left"><%= current_user.tasks.where(completed: false).size %></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
-            <% else %>
-              <p>Well done!! Enjoy your day!</p>
-            <% end %>
+  -->   <div class="user-tasks inner-padding">
+          <div class="top-tasks">
+            <div class="user-task-title">
+              <h3>My tasks</h3>
+              <% if current_user.tasks.where(completed: false).size > 0 %>
+                <p>You have <span id="counter_tasks" class="no-padding-left"><%= current_user.tasks.where(completed: false).size %></span> <span class="no-padding-left"><%= "task".pluralize %></span> to perform today </p>
+              <% else %>
+                <p>Well done!! Enjoy your day!</p>
+              <% end %>
+            </div>
+            <div class="tasks-badges">
+              <div class="tasks-badges-element">
+
+              </div>
+              <div class="tasks-badges-element">
+
+              </div>
+              <div class="tasks-badges-element">
+
+              </div>
+              <div class="tasks-badges-element">
+
+              </div>
+            </div>
+
           </div>
           <div class="task-list">
 

@@ -133,6 +133,33 @@ span.status-points {
 
 
 // tasks
+
+.task-message {
+  flex: 0 0 60%;
+}
+
+.top-tasks {
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks-badges {
+  display: flex;
+}
+
+.tasks-badges-element {
+      background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-task-title {
+  margin-bottom: 10px;
+}
+
 .user-tasks.inner-padding {
   flex-direction: column;
   display: flex;
@@ -177,17 +204,17 @@ span.status-points {
 }
 
 .card-item {
-  display: flex;
-  padding: 2px;
-  align-items: center;
-  justify-content: space-around;
-  width: 96%;
-  height: 65px;
-  margin: 1%;
-  border-radius: 2px;
-  background-color: $task-gray;
-  // box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
+      display: flex;
+    /* padding: 2px; */
+    align-items: center;
+    justify-content: space-around;
+    /* width: 96%; */
+    /* height: 65px; */
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #F7F2F2;
+    cursor: pointer;
+
   p {
     margin: 0 20px;
     line-height: 1;
@@ -199,13 +226,14 @@ span.status-points {
 .plant-quantity  {
   color: $green;
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 20px;
   padding-left: 0;
 }
 .pot-name  {
   font-weight: bolder;
-  font-size: 20px;
-  padding-left: 0
+  font-size: 16px;
+  padding-left: 0;
+  font-family: "Paytone One", "sans-serif";
 }
 .task-picto {
   height: 40px;
@@ -289,13 +317,16 @@ a {
 
 /* For positionning badge */
 .task-title-badge {
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    ALIGN-ITEMS: center;
 }
 
 .task-badge {
-  position: absolute;
-  top: -20px;
-  right: -18px;
+    display: flex;
+    justify-content: space-between;
+    ALIGN-ITEMS: center;
+    padding: 10px;
 }
 // ne permet pas de faire un beau score
 
