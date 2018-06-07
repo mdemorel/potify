@@ -15,32 +15,38 @@
               <% if user.is_master %>
                 You have become a real master on taking care of plants. Stay tuned for upcoming rewards!
               <% else %>
-                You are <%= user.left_for_next_status %> points away from <%= user.next_status %>
+                You are <span class="no-padding-left status-points"><%= user.left_for_next_status %> points</span>  away from <%= user.next_status %>
              <% end %>
            </div>
+           <div class="player-bages-dashboard">
+
             <div class="player-stats">
-              <div class="points-circle">
-                <%= render "shared/points", user: current_user %>
-              </div>
+              <!-- <div class="points-circle"> -->
+                <div class="points">
+                  <%= image_tag("points_icon.png", size: 40) %>
+                </div>
+                <span class="counter_points"><%= user.points %></span><span  class="points-element"><%= "point".pluralize(user.points) %></span>
+              <!-- </div> -->
             </div>
             <div class="player-stats">
-              <div class="points-circle">
+              <!-- <div class="points-circle"> -->
                 <div class="points">
                   <%= image_tag("plants.png", height: 40) %>
-                  <span class="counter_points"><%= user.pots.size %></span>
-                  <span class="points-element"><%= "plant".pluralize(user.pots.size) %></span>
                 </div>
-              </div>
+                <span class="counter_points"><%= user.pots.size %></span>
+                <span class="points-element"><%= "plant".pluralize(user.pots.size) %></span>
+              <!-- </div> -->
             </div>
             <div class="player-stats">
-              <div class="points-circle">
+              <!-- <div class="points-circle"> -->
                 <div class="points">
                   <%= image_tag("cactus-family.png", height: 40) %>
-                  <span class="counter_points"><%= user.tasks.where(completed: true).size %></span>
-                  <span class="points-element"><%= "action".pluralize(user.tasks) %></span>
                 </div>
-              </div>
+                <span class="counter_points"><%= user.tasks.where(completed: true).size %></span>
+                <span class="points-element"><%= "action".pluralize(user.tasks) %></span>
+              <!-- </div> -->
             </div>
+           </div>
           </div>
         </div>
   <!--       <div class="col-xs-12 col-md-6">
@@ -83,7 +89,7 @@
             <% end %>
 
           </div>
-            
+
         </div>
       </div>
     <div class="user-ranking">
