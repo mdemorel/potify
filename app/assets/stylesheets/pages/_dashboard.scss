@@ -4,14 +4,16 @@
   margin: auto 100px;
   background: white;
 
-  h3 {
-    font-size: 40px;
-  }
 }
 
 .dashboard-container {
   display: flex;
   flex-direction: column;
+  color: #393E41;
+  h3 {
+    font-size: 35px;
+    // color: #393E41;
+  }
 }
 
 .top-dashboard {
@@ -47,36 +49,45 @@ form span.padding
   margin-left: 20px;
 }
 
+.player-badges {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    margin: 20px;
+    align-items: center;
+}
 .no-padding-left {
   padding-left: 0 !important;
+}
+
+span.status-points {
+  font-weight: bolder;
+  font-size: 20px;
 }
 .status-message {
   flex: 0 0 25%;
 }
 
-.player-badges {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  margin: 20px;
-}
 
 .player-stats {
   flex: 0 0 25%;
   display: flex;
-  justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .points {
-  color: white;
-  padding: 0px 30px;
   display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: -15px;
-    line-height: 1.5px;
     color: #697277;
+    justify-content: center;
+    background-color: white;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
   // position: relative;
   // margin-top: 30px;
 }
@@ -99,22 +110,29 @@ form span.padding
 
 .points-element {
   padding-left: 0;
+  font-size: 15px;
 }
 
-.points-circle {
-  height: 100px;
-  width: 150px;
-  border-radius: 5%;
-  // background-color: $yellow;
-  // background: linear-gradient(0.9turn, $flash-green, $green);
-  // padding-left: 30px;
-  text-align: center;
-  padding-top: 20px;
-  // margin-top: 20px;
-  box-shadow: 1px 1px 6px #E7BB41;
-  border: solid #E7BB41;
-  background-color: white;
+.player-bages-dashboard {
+      display: flex;
+    flex: 0 0 50%;
+    justify-content: space-around;
 }
+
+// .points-circle {
+//   height: 100px;
+//   width: 150px;
+//   border-radius: 5%;
+//   // background-color: $yellow;
+//   // background: linear-gradient(0.9turn, $flash-green, $green);
+//   // padding-left: 30px;
+//   text-align: center;
+//   padding-top: 20px;
+//   // margin-top: 20px;
+//   box-shadow: 1px 1px 6px #E7BB41;
+//   border: solid #E7BB41;
+//   background-color: white;
+// }
 
 
 // tasks
@@ -206,23 +224,24 @@ form span.padding
 
 // ranking
 .user-ranking {
-  background-color: $light-gray;
+  // background-color: $light-gray;
   // height: 130%;
   // margin-left: 30%;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: 1px 1px 20px $yellow;
+  box-shadow: 1px 1px 20px #15e9a6;
+  // box-shadow: 1px 1px 20px $yellow;
   position: sticky;
   top: 25px;
   width: 30%;
   height: min-content;
 
   h3 {
-    color: black;
+    // color: black;
     text-align: center;
-    padding-top: 10px;
-    font-size: 26px;
+    padding-bottom: 5px;
+    font-size: 30px;
   }
 }
 

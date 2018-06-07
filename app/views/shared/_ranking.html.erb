@@ -14,7 +14,7 @@
   <% i = 0 %>
   <% @users.order(points: :desc).first(10).each do |user| %>
     <% photo = user.photo unless user.photo.nil? %>
-    <div class="message">
+    <div class="message<%= " current-user" if user == current_user %>">
       <div class="message-status">
         <p class="price"><%= (i += 1) %></p>
       </div>
