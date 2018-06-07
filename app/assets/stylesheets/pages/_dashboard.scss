@@ -30,9 +30,6 @@
   margin-right: 30px;
 }
 
-form span.padding
-
-
 // gamer status
 .welcome-heading {
   display: flex;
@@ -79,15 +76,14 @@ span.status-points {
 
 .points {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -15px;
-    color: #697277;
-    justify-content: center;
-    background-color: white;
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -15px;
+  justify-content: center;
+  background-color: white;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
   // position: relative;
   // margin-top: 30px;
 }
