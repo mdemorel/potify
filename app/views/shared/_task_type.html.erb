@@ -7,9 +7,8 @@
           <% image = "" %>
           <% task.pot.photo.nil? ? image = task.pot.plant.photo : image = task.pot.photo %>
           <%= cl_image_tag(image, class: 'plant-avatar') %>
-          <% if (task.pot.next_task_date(task.name) - Date.today).to_i > 0 %>
-
-            <div class="late-date"><%= (task.pot.next_task_date(task.name) - Date.today).to_i %> <%= "day".pluralize((task.pot.next_task_date(task.name) - Date.today).to_i) %> late</div>
+          <% if (task.pot.late(task.name)) > 0 %>
+            <div class="late-date"><%= (task.pot.late(task.name)) %> <%= "day".pluralize(task.pot.late(task.name)) %> late</div>
           <% end %>
         </div>
         <div class="task-message">
@@ -22,7 +21,7 @@
           <% elsif task.name == "fertilizing" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>g</span> of fertilizer<br></p>
             <div class="tasks-badges-element">
-              <%=  image_tag "fertilize.jpeg", size: 50, class: "icons icons-task" %>
+              <%=  image_tag "fertilize.jpg", size: 50, class: "icons icons-task" %>
             </div>
           <% elsif task.name == "cutting" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
@@ -32,7 +31,7 @@
           <% elsif task.name == "potting" %>
             <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <%= task.name %><br> </p>
             <div class="tasks-badges-element">
-              <%=  image_tag "potting.jpeg", size: 50, class: "icons icons-task" %>
+              <%=  image_tag "potting.jpg", size: 50, class: "icons icons-task" %>
             </div>
           <% end %>
         </div>
