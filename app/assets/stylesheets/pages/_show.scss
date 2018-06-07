@@ -3,8 +3,6 @@
   display: flex;
   align-items: center;
   padding: 0px;
-  height: 700px;
-
 }
 
 .link-flex-end {
@@ -204,7 +202,30 @@
 }
 
 
-// p.show-task-item {
-//   font-size: 18px;
+/// For plant show ///
 
-// }
+.plant_info {
+  .plant-details {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    padding-left: 15px;
+    justify-content: space-evenly;
+  }
+  h4 {
+    font-size: 18px;
+    font-family: "Paytone One", "sans-serif";
+  }
+  .show-task-title-card-hearder {
+    display: flex;
+    justify-content: space-between;
+
+    .padding-right {
+      padding-right: 15px;
+    }
+  }
+  .icons-task {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(21,233,166,0.3);
+  }
+}
