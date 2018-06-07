@@ -231,7 +231,7 @@ bob = User.new(
   email: "bob@marley.com",
   password: "123456",
   points: 2000,
-  photo: "https://images-na.ssl-images-amazon.com/images/I/C1y54gHJoBS._SL1000_.png")
+  photo: "https://cps-static.rovicorp.com/3/JPG_400/MI0003/146/MI0003146038.jpg?partner=allrovi.com")
 bob.save!
 
 fleur = User.new(
@@ -247,7 +247,7 @@ rosa = User.new(
   email: "rosa@luxembourg.com",
   password: "123456",
   points: 5450,
-  photo: "http://www.contretemps.eu/wp-content/uploads/rosa-luxemburg.jpg")
+  photo: "http://www.dhm.de/fileadmin/medien/lemo/Titelbilder/f59_1341.jpg")
 rosa.save!
 
 donald = User.new(
@@ -258,13 +258,13 @@ donald = User.new(
   photo: "https://www.swissinfo.ch/blob/44084338/cda455255e5065d34f0b6a0aa6dde29d/image_20180430phf9016-data.jpg")
 donald.save!
 
-brigitte = User.new(
-  first_name: "Brigitte",
-  email: "brigitte@macron.com",
+laetitia = User.new(
+  first_name: "Laetitia",
+  email: "laetitia@blanche.com",
   password: "123456",
   points: 4000,
-  photo: "https://www.telegraph.co.uk/content/dam/news/2017/08/21/TELEMMGLPICT000137670357_trans_NvBQzQNjv4BqhapkVlcy4J6MLIykjOByPo2gd4MKWmZpLLJg1iubIMc.jpeg?imwidth=450")
-brigitte.save!
+  photo: "https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-1/c23.42.160.160/p200x200/32243694_10156196124135281_8785340588762333184_n.jpg?_nc_cat=0&oh=102470e7bd00d789cd4244528e8d4b5c&oe=5BB3CE57")
+laetitia.save!
 
 marie = User.new(
   first_name: "Marie",
@@ -273,6 +273,8 @@ marie = User.new(
   points: 2550,
   photo: "https://dzftds8z9s83c.cloudfront.net/profiles/avatars/production/2089/medium/IMG_4836.jpg?1476197480")
 marie.save!
+
+puts "Users created"
 
 plants = Plant.all
 User.all.each do |user|
@@ -283,10 +285,46 @@ User.all.each do |user|
     plant_id: plant.id,
     remote_photo_url: plant.photo,
     user_id: user.id,
-    adoption_date: Date.today - 3.week
+    created_at: Date.today - 5.week,
+    updated_at: Date.today - 5.week,
+    adoption_date: Date.today - 3.week,
+    last_watering: Date.today - 2.week,
+    last_cutting: Date.today - 2.week,
+    last_potting: Date.today - 2.week,
+    last_fertilizing: Date.today - 2.week
     )
   pot.save!
+
+  Task::TASKS.each do |task_name|
+    task = Task.new(
+      name: task_name,
+      completed: true,
+      pot: pot)
+    task.save!
+  end
+
   plants = plants.select do |plante|
     plante if plante != plant
   end
 end
+
+puts "pots created"
+
+pot = Pot.new(
+  name: "Alphonse",
+  description: "I have just met Alphonse, he's so cute! I hope we will have a lifetime of happiness.",
+  plant_id: monstera.id,
+  remote_photo_url: monstera.photo,
+  user_id: louise.id,
+  created_at: Date.today - 5.week,
+  updated_at: Date.today - 5.week,
+  adoption_date: Date.today - 5.week,
+  last_watering: Date.today - 2.week,
+  last_cutting: Date.today - 2.week,
+  last_potting: Date.today - 2.week,
+  last_fertilizing: Date.today - 2.week
+  )
+
+puts "Alphonse created"
+
+

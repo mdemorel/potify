@@ -7,9 +7,8 @@
           <% image = "" %>
           <% task.pot.photo.nil? ? image = task.pot.plant.photo : image = task.pot.photo %>
           <%= cl_image_tag(image, class: 'plant-avatar') %>
-          <% if (task.pot.next_task_date(task.name) - Date.today).to_i > 0 %>
-
-            <div class="late-date"><%= (task.pot.next_task_date(task.name) - Date.today).to_i %> <%= "day".pluralize((task.pot.next_task_date(task.name) - Date.today).to_i) %> late</div>
+          <% if (task.pot.late(task.name)) > 0 %>
+            <div class="late-date"><%= (task.pot.late(task.name)) %> <%= "day".pluralize(task.pot.late(task.name)) %> late</div>
           <% end %>
         </div>
         <div class="task-message">

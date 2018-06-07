@@ -38,10 +38,14 @@ class Pot < ApplicationRecord
   end
 
   def next_task_date(task_name)
-   next_task_date = send("last_#{task_name}") + plant.send("#{task_name}_frequency")
-   if next_task_date < Date.today
-     next_task_date = Date.today + plant.send("#{task_name}_frequency")
-   end
+   next_task_date = send("last_#{task_name}") + plant.send("#{task_name}_frequency").days
+   # if next_task_date < Date.today
+   #   next_task_date = Date.today + plant.send("#{task_name}_frequency")
+   # end
    return next_task_date
+  end
+
+  def late(task_name)
+    days_late = (Date.today - next_task_date(task_name)).to_i
   end
 end
