@@ -18,7 +18,7 @@
               <%=  image_tag "watering.png", size: 40, class: "icons" %>
             </div>
           <% elsif task.name == "fertilizing" %>
-            <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>g</span> of fertilizer<br></p>
+            <p> <span class='pot-name'><%= task.pot.name.capitalize %></span> needs <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>cl</span> of fertilizer<br></p>
             <div class="tasks-badges-test">
               <%=  image_tag "fertilize.jpg", size: 40, class: "icons" %>
             </div>
