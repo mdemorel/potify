@@ -64,7 +64,7 @@
          display: block;
          height: 0;
          visibility: hidden;
-     } 
+     }
      .clearfix:after {
          clear: both;
      }
@@ -217,7 +217,7 @@
   <body class="plain error-page-wrapper background-color background-image">
     <div class="content-container">
 	<div class="head-line secondary-text-color">
-		503
+		500
 	</div>
 	<div class="subheader primary-text-color">
 		Looks like we're having <br>
@@ -226,7 +226,7 @@
     <hr>
     <div class="clearfix"></div>
     <div class="context primary-text-color">
-      
+
     <p>
       Go back to the previous page and try again.
       If you think something is broken, report a problem.
@@ -298,7 +298,7 @@
 
 
      ErrorPage.prototype.handleStatusFetchSuccess = function (pageType, data) {
-       if (pageType == '503') {
+       if (pageType == '500') {
          $('#replace-with-fetched-data').html(data.status.description);
        } else {
          if (!!data.scheduled_maintenances.length) {
@@ -325,7 +325,7 @@
        var url = ''
          , self = this;
 
-       if (pageType == '503') {
+       if (pageType == '500') {
          url = pageUrl + '/api/v2/status.json';
        }
        else {
@@ -344,7 +344,7 @@
        });
 
      };
-     var ep = new ErrorPage('body', "503", "plain");
+     var ep = new ErrorPage('body', "500", "plain");
      ep.initialize();
 
      // hack to make sure content stays centered >_<
@@ -354,7 +354,7 @@
 
     </script>
 
-    
+
       <!-- OneTrust Cookies Consent Notice (statuspage.io, en-GB) start -->
   <script src="https://cdn.cookielaw.org/consent/0800f092-2124-46ec-b11d-b4f48b677302.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript">
