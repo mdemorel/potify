@@ -12,7 +12,6 @@
           <% end %>
         </div>
         <div class="task-message">
-
           <% if task.name == "watering" %>
             <p> You need to <%= task.action_name %> <span class='pot-name'><%= task.pot.name.capitalize %></span> with <span class='plant-quantity'><%= task.pot.plant.send("#{task.name}_quantity") %>cl</span><br></p>
              <div class="tasks-badges-element">

@@ -1,7 +1,6 @@
 .pot-content {
   color: $black;
   display: flex;
-  align-items: center;
   padding: 0px;
 }
 
@@ -18,32 +17,28 @@
   min-height: 708px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-
-  // img {
-  //   height: 30%
-  // }
 }
 
-.image-links {
-    flex: 0 0 10px;
-}
 
 
 .pot-info {
     flex: 0 0 60%;
     padding-left: 40px;
     padding-right:40px ;
-    height: 95%;
 }
 
 .header {
-  top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
 
-  a {
-    position: absolute;
-    right: 73px;
-    top: 23px;
-  }
+  // a {
+  //   position: absolute;
+  //   right: 73px;
+  //   top: 23px;
+  // }
 
   h3 {
   font-size: 50px;

@@ -7,11 +7,11 @@
     <div class="pot-user-info">
       <div class="header">
         <h3><%= pot.name.capitalize %></h3>
-        <div class="about_the_pot">
-          <p><i><%= pot.description %></i></p>
-        </div>
         <%= link_to "Learn more", plant_path(pot.plant), class: "btn btn-minimal "%>
       </div>
+      <div class="about_the_pot">
+          <p><i><%= pot.description %></i></p>
+        </div>
       <div class="border-top">
       </div>
       <div class="recap">
