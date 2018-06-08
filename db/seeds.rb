@@ -192,7 +192,7 @@ Plant.where("watering_frequency".nil?).each do |plant|
   plant[:fertilizing_frequency] = 2
   plant[:fertilizing_quantity] = 3
   plant[:fertilizing_type] = "indoor fertilizer"
-  plant[:exposition] = 1
+  plant[:exposition] = 3
   plant[:cutting_frequency] = 4
   plant[:temperature] = 18
   plant.save
