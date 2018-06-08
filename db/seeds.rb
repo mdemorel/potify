@@ -214,7 +214,7 @@ louise = User.new(
   first_name: "Louise",
   email: "louise@darche.com",
   password: "123456",
-  points: 11700,
+  points: 11300,
   photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/h16ouwa2bz1faf4gxgpe.jpg")
 louise.save!
 
@@ -312,10 +312,10 @@ User.all.each do |user|
     created_at: Date.today - 5.week,
     updated_at: Date.today - 5.week,
     adoption_date: Date.today - 3.week,
-    last_watering: Date.today - 2.week,
-    last_cutting: Date.today - 2.week,
-    last_potting: Date.today - 2.week,
-    last_fertilizing: Date.today - 2.week
+    last_watering: Date.today,
+    last_cutting: Date.today,
+    last_potting: Date.today,
+    last_fertilizing: Date.today
     )
   pot.save!
 
@@ -344,9 +344,9 @@ pot = Pot.new(
   updated_at: Date.today - 5.week,
   adoption_date: Date.today - 5.week,
   last_watering: Date.today - 1.week,
-  last_cutting: Date.today - 2.day,
-  last_potting: Date.today - 2.day,
-  last_fertilizing: Date.today - 2.day
+  last_cutting: Date.today - 5.week,
+  last_potting: Date.today - 5.week,
+  last_fertilizing: Date.today - 5.week
   )
 pot.save!
 
