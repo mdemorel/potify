@@ -4,15 +4,15 @@ class PagesController < ApplicationController
   def home
     @best_users = User.includes(:pots).where.not(pots: []).order(points: :desc).limit(3)
     @pots = Pot.all
-    @pots.each do |pot|
-      pot.generate_tasks
-    end
     @plants = Plant.all
   end
 
   def dashboard
     @user = current_user
     @pots = Pot.where(user: current_user)
+    @pots.each do |pot|
+      pot.generate_tasks
+    end
     @users = User.all
   end
 end

@@ -120,8 +120,6 @@ senecio.save
 tillandsia = Plant.new(name: "Tillandsia", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/Tillandsia-oaxacana-planter-ideas-600x629.jpg")
 tillandsia.save
 
-opuntia = Plant.new(name: "Opuntia Cactus", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/indoor-cactus-Opuntia-microdasys-600x804.jpg")
-opuntia.save
 
 aloe = Plant.new(
   name: "Aloe Vera",
@@ -135,14 +133,6 @@ aloe.save
 pothos = Plant.new(name: "Pothos", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/indoor-plant-with-vines-Epipremnum-aureum-600x600.jpg")
 pothos.save
 
-monstera = Plant.new(
-  name: "Monstera Deliciosa",
-  photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/tropical-plants-Monstera-deliciosa-600x600.jpg",
-  description: "The scientific name Monstera deliciosa refers, in part, to the edible pineapple-like fruit this rainforest plant can provide – just make sure to read about how to ripen the fruits properly to avoid irritation upon consuming. These stunning large-leafed plants make a great statement piece and add warm, tropical appeal to any interior.",
-  watering_frequency: 3,
-  watering_quantity: 30,
-  )
-monstera.save
 
 maranta = Plant.new(name: "Maranta", photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/colorful-house-plant-Maranta-leuconeura-600x900.jpg")
 maranta.save
@@ -175,6 +165,39 @@ Plant.where("watering_frequency".nil?).each do |plant|
   plant.save
 end
 
+monstera = Plant.new(
+  name: "Monstera Deliciosa",
+  photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/tropical-plants-Monstera-deliciosa-600x600.jpg",
+  description: "The scientific name Monstera deliciosa refers, in part, to the edible pineapple-like fruit this rainforest plant can provide – just make sure to read about how to ripen the fruits properly to avoid irritation upon consuming. These stunning large-leafed plants make a great statement piece and add warm, tropical appeal to any interior.",
+  watering_frequency: 7,
+  watering_quantity: 30,
+  potting_frequency: 3,
+  fertilizing_frequency: 1,
+  fertilizing_quantity: 3,
+  fertilizing_type: "indoor fertilizer",
+  exposition: 3,
+  cutting_frequency: 140,
+  temperature: 18
+  )
+monstera.save
+
+opuntia = Plant.new(
+  name: "Opuntia Cactus",
+  photo: "http://cdn.home-designing.com/wp-content/uploads/2017/01/indoor-cactus-Opuntia-microdasys-600x804.jpg",
+  description: "The scientific name Monstera deliciosa refers, in part, to the edible pineapple-like fruit this rainforest plant can provide – just make sure to read about how to ripen the fruits properly to avoid irritation upon consuming. These stunning large-leafed plants make a great statement piece and add warm, tropical appeal to any interior.",
+  watering_frequency: 1,
+  watering_quantity: 5,
+  potting_frequency: 3,
+  fertilizing_frequency: 20,
+  fertilizing_quantity: 4,
+  fertilizing_type: "Cacti fertilizer",
+  exposition: 3,
+  cutting_frequency: 140,
+  temperature: 22
+  )
+opuntia.save
+
+
 puts "scraping of plants over!"
 
 puts "scraping users"
@@ -191,7 +214,7 @@ louise = User.new(
   first_name: "Louise",
   email: "louise@darche.com",
   password: "123456",
-  points: 650,
+  points: 11700,
   photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/h16ouwa2bz1faf4gxgpe.jpg")
 louise.save!
 
@@ -320,11 +343,12 @@ pot = Pot.new(
   created_at: Date.today - 5.week,
   updated_at: Date.today - 5.week,
   adoption_date: Date.today - 5.week,
-  last_watering: Date.today - 2.week,
-  last_cutting: Date.today - 2.week,
-  last_potting: Date.today - 2.week,
-  last_fertilizing: Date.today - 2.week
+  last_watering: Date.today - 1.week,
+  last_cutting: Date.today - 2.day,
+  last_potting: Date.today - 2.day,
+  last_fertilizing: Date.today - 2.day
   )
+pot.save!
 
 puts "Alphonse created"
 
