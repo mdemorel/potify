@@ -2,7 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @best_users = User.includes(:pots).where.not(pots: []).order(points: :desc).limit(3)
     @pots = Pot.all
+    @pots.each do |pot|
+      pot.generate_tasks
+    end
     @plants = Plant.all
   end
 

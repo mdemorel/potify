@@ -1,7 +1,8 @@
 .pot-content {
   color: $black;
   display: flex;
-  padding: 20px;
+  align-items: center;
+  padding: 0px;
 }
 
 .link-flex-end {
@@ -19,7 +20,6 @@
   img {
     height: 30%
   }
-
 }
 
 .image-links {
@@ -127,8 +127,6 @@
   right: 50px;
 }
 
-
-
 .btn-minimal:hover p {
   color: $green;
 }
@@ -136,6 +134,7 @@
 .btn-minimal p {
   margin: 0px;
 }
+
 .border-top {
   border-bottom: solid 4px $gray;
   margin-top: 20px;
@@ -191,10 +190,7 @@
   margin-bottom: 10px;
 }
 
-// .follow-up-card {
-//   padding-bottom: 20px;
 
-//  }
 
 .gray-line {
   width: 6px;
@@ -225,7 +221,31 @@
   padding-left: 15px;
 }
 
-// p.show-task-item {
-//   font-size: 18px;
+/* For plant show */
 
-// }
+.plant_info {
+  .plant-details {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    padding-left: 15px;
+    justify-content: space-evenly;
+  }
+  h4 {
+    font-size: 18px;
+    font-family: "Paytone One", "sans-serif";
+  }
+  .icons-task {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(21,233,166,0.3);
+  }
+}
+
+  .show-task-title-card-hearder {
+    display: flex;
+    justify-content: space-between;
+
+    .padding-right {
+      padding-right: 15px;
+    }
+  }

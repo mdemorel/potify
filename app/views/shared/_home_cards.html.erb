@@ -1,14 +1,13 @@
 
 <div class="cards-selection">
   <div class="row">
-    <% elements.sample(3).each do |element| %>
+    <% elements.each do |user| %>
       <div class="col-xs-12 col-md-4">
         <!-- be careful with the path -->
-        <%= link_to pot_path(element) do %>
-          <%= render "shared/card", element: element, select: false %>
-        <% end %>
+
+          <%= render "shared/card", element: user.pots.first, select: false %>
+
       </div>
     <% end %>
   </div>
-
 </div>
