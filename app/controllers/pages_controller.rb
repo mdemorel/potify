@@ -5,6 +5,9 @@ class PagesController < ApplicationController
     @best_users = User.includes(:pots).where.not(pots: []).order(points: :desc).limit(3)
     @pots = Pot.all
     @plants = Plant.all
+    @pots.each do |pot|
+      pot.generate_tasks
+    end
   end
 
   def dashboard
