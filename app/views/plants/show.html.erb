@@ -1,20 +1,18 @@
-<div class="container container-gray full-screen">
+<div class="container container-gray container-show">
   <div class="pot-content">
     <% if current_user.admin == true %>
       <%= link_to "update", edit_plant_path(@plant) %>
     <% end %>
-    <div class="pot-image" style="background-image: url('<%= @plant.photo %>')">
+    <div class="plant-image" style="background-image: url('<%= @plant.photo %>')">
     </div>
     <div class="pot-info">
       <div class="header">
         <h3><%= @plant.name %></h3>
-        <p><%= @plant.category %></p>
-        <div class="border-top">
-        </div>
-        <p class="about_the_plant">About this plant: <%= @plant.description %></p>
-        <%#= link_to "Back to plants", plants_path, class: "link-black" %>
       </div>
       <div class="border-top">
+      </div>
+      <p class="about_the_plant">About this plant: <%= @plant.description %></p>
+      <div class="border-top-small">
       </div>
       <%= render "shared/plant_information", plant: @plant %>
     </div>
