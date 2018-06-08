@@ -15,11 +15,13 @@
   background-size: cover;
   background-position: center;
   flex: 0 0 40%;
-  height: 693px;
+  min-height: 708px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 
-  img {
-    height: 30%
-  }
+  // img {
+  //   height: 30%
+  // }
 }
 
 .image-links {
@@ -247,5 +249,23 @@
 
     .padding-right {
       padding-right: 15px;
+    }
+  }
+
+  .container-show {
+    padding-left: 0;
+  }
+
+  .plant-image {
+    min-height: 581px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex: 0 0 40%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    img {
+
     }
   }

@@ -1,9 +1,9 @@
-<div class="container container-gray full-screen">
+<div class="container container-gray container-show">
   <div class="pot-content">
     <% if current_user.admin == true %>
       <%= link_to "update", edit_plant_path(@plant) %>
     <% end %>
-    <div class="pot-image" style="background-image: url('<%= @plant.photo %>')">
+    <div class="plant-image" style="background-image: url('<%= @plant.photo %>')">
     </div>
     <div class="pot-info">
       <div class="header">
